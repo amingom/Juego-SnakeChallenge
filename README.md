@@ -8,7 +8,6 @@ serpiente hambrienta que come alimentos para crecer y acumular puntos.
 
 La serpiente está en constante movimiento, se desplaza en busca de comida y cuanto
 más coma, más crecerá.
-
 En este juego se busca añadir diferentes tipos de alimentos, cada uno con un valor
 distinto de puntos.
 - **Manzana**. (1p)
