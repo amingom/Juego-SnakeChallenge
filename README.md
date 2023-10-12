@@ -13,7 +13,7 @@ En este juego se busca añadir diferentes tipos de alimentos, cada uno con un va
 distinto de puntos.
 - Manzana (1p)
 - Cereza (2p)
-- Plátano (3p)
+- Plátano. (3p)
 
 
 En la pantalla de juego irán apareciendo obstáculos, los cuales irán apareciendo,
