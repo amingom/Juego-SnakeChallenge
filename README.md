@@ -112,4 +112,9 @@ classDiagram
 
 ![alt text](https://cdn.discordapp.com/attachments/1155565182584627280/1159827014056943726/Interfaz_Usuario.png?ex=65327014&is=651ffb14&hm=a07f02bfe6479d2d3478bab8061b62e685575866acbee8268320f27fd0c8a4dd&)
 
+**Tablero**
+
+![alt text](https://cdn.discordapp.com/attachments/1155565182584627280/1160891183246090320/image.png?ex=65364f2a&is=6523da2a&hm=146db4d04415454f520c7e7c8e678871539bd7d31f2886d9eb27c0286f253af9&)
+
+
 
