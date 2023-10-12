@@ -106,6 +106,10 @@ classDiagram
 
 #### Interfaz de usuario
 
+En la interfaz de usuario aparecerán cuatro botones, el primero de jugar, donde se
+pasará a los tres modos de dificultad, el segundo botón pertenece cómo jugar, donde se
+muestran las instrucciones de cómo jugar, el tercer botón sirve para personalizar la skin
+de la serpiente y el cuarto es el botón de salir, para finalizar el juego.
 
 
 **Pantalla inicial.**
