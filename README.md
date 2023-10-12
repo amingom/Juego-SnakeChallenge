@@ -122,5 +122,10 @@ de la serpiente y el cuarto es el botón de salir, para finalizar el juego.
 
 ![alt text](https://cdn.discordapp.com/attachments/1155565182584627280/1160891183246090320/image.png?ex=65364f2a&is=6523da2a&hm=146db4d04415454f520c7e7c8e678871539bd7d31f2886d9eb27c0286f253af9&)
 
+**Diseño de seleccion de serpiente.**
+
+![alt text](https://cdn.discordapp.com/attachments/1155565182584627280/1162155529745989723/image.png?ex=653ae8ae&is=652873ae&hm=01a85eea248d3f839e091049215ccb200170b3721384898301bdc29f250f517c&)
+
+
 
 
