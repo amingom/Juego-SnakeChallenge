@@ -20,8 +20,6 @@ la velocidad de aparición de estos irá aumentando considerablemente. Chocar co
 finalizará el juego.
 - Rocas.
 - Muros.
-- enemigos.
-
 
 Los jugadores irán obteniendo puntos al comer los distintos alimentos, el objetivo es
 conseguir la mayor cantidad de puntos hasta perder. Se podrá ver la puntuación actual
