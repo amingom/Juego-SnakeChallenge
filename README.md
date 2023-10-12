@@ -11,9 +11,9 @@ más coma, más crecerá.
 
 En este juego se busca añadir diferentes tipos de alimentos, cada uno con un valor
 distinto de puntos.
-- Manzana. (1p)
-- Cereza. (2p)
-- Plátano. (3p)
+- *Manzana*. (1p)
+- *Cereza*. (2p)
+- *Plátano*. (3p)
 
 En la pantalla de juego irán apareciendo obstáculos, los cuales dependiendo del nivel de dificultad,
 la velocidad de aparición de estos irá aumentando considerablemente. Chocar con alguno de estos obstaculos
