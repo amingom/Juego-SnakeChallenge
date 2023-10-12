@@ -1,6 +1,6 @@
 #  Snake Challenge
 ##  Autores: Diego Hernández García-Panadero y Álvaro Mingo Muñoz
-_________________________________________________________________
+========================================================
 
 ###  Descripción
 El juego es una versión mejorada del juego Snake. Los jugadores manejarán una
