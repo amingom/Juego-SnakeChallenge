@@ -24,3 +24,82 @@ conseguir la mayor cantidad de puntos hasta perder. Se podrá ver la puntuación
 en la pantalla en tiempo real.
 
 #### __Esquema UML__
+
+```mermaid
+
+classDiagram
+    JUEGOSERPIENTE <|-- Food
+    JUEGOSERPIENTE <|-- Obstacle
+    JUEGOSERPIENTE <|-- Snake
+    MANZANA--|> Food
+    CEREZA --|> Food
+    BANANA --|> Food
+    ROCA --|> Obstacle
+    MURO --|> Obstacle
+
+    JUEGOSERPIENTE : -Snake snake
+    JUEGOSERPIENTE : -LinkedList<Food>foods
+    JUEGOSERPIENTE : -LinkedList<Obstacle>obstacles
+    JUEGOSERPIENTE : -LinkedList<Food>foods
+    JUEGOSERPIENTE : +SnakeGame()
+    JUEGOSERPIENTE : +Void Start()
+    JUEGOSERPIENTE: +Void checkCollisions()
+    JUEGOSERPIENTE: +Void spawnFood()
+
+    class Snake{
+    - LinkedList<Point> body
+    - Direction direction
+    + void move()
+    + Point calculateNewHead()
+    + void setDirection()
+    }
+    class Food{
+    - Point position;
+    - int points;
+    + void draw()
+    + Object getLocation()
+    }
+
+    class MANZANA{
+    - Point position;
+    - int points;
+    + void draw()
+    + Object getLocation()
+    }
+
+      class CEREZA{
+    - Point position;
+    - int points;
+    + void draw()
+    + Object getLocation()
+    }
+
+      class BANANA{
+    - Point position;
+    - int points;
+    + void draw()
+    + Object getLocation()
+    }
+
+    class Obstacle{
+      - Point position;
+      + Point getPosition() 
+      + void draw()
+      + Object getLocation()
+    }
+
+        class ROCA{
+      - Point position;
+      + Point getPosition() 
+      + void draw()
+      + Object getLocation()
+    }
+
+
+        class MURO{
+      - Point position;
+      + Point getPosition() 
+      + void draw()
+      + Object getLocation()
+    }
+```
