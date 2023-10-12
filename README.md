@@ -114,7 +114,7 @@ classDiagram
 
 **Marcador.**
 
-![alt text](https://cdn.discordapp.com/attachments/1155565182584627280/1162155458698674216/image.png?ex=653ae89d&is=6528739d&hm=b7b333fc723e74b5a6e9278d49f25bc728ea431fc3a66e0dc3d3adf6ca43254a&)
+![alt text](https://cdn.discordapp.com/attachments/1155565182584627280/1162155862111047710/image.png?ex=653ae8fd&is=652873fd&hm=47213d759133f3cea613afac45ac06b4d070ee0e3b5f7e4f76a9ad5ebf82ae06&)
 
 **Tablero.**
 
