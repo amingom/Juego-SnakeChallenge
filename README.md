@@ -23,4 +23,4 @@ Los jugadores irán obteniendo puntos al comer los distintos alimentos, el objet
 conseguir la mayor cantidad de puntos hasta perder. Se podrá ver la puntuación actual
 en la pantalla en tiempo real.
 
-#### 
+#### __Esquema UML__
