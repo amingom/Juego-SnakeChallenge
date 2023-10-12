@@ -5,15 +5,15 @@ _________________________________________________________________
 ###  Descripción
 El juego es una versión mejorada del juego Snake. Los jugadores manejarán una
 serpiente hambrienta que come alimentos para crecer y acumular puntos.
-
+-
 La serpiente está en constante movimiento, se desplaza en busca de comida y cuanto
 más coma, más crecerá.
 
 En este juego se busca añadir diferentes tipos de alimentos, cada uno con un valor
 distinto de puntos.
-- Manzana
-- Cereza
-- Plátano
+- Manzana (1p)
+- Cereza (2p)
+- Plátano (3p)
 
 
 En la pantalla de juego irán apareciendo obstáculos, los cuales irán apareciendo,
