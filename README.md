@@ -1,5 +1,6 @@
 #  Snake Challenge
-##  Hecho por Diego Hernández García-Panadero y Álvaro Mingo
+##  Hecho por Diego Hernández García-Panadero y Álvaro Mingo Muñoz
+###  
 
 Buenos dias
 
