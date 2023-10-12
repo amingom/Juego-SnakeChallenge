@@ -11,14 +11,17 @@ más coma, más crecerá.
 
 En este juego se busca añadir diferentes tipos de alimentos, cada uno con un valor
 distinto de puntos.
-- Manzana (1p)
-- Cereza (2p)
+- Manzana. (1p)
+- Cereza. (2p)
 - Plátano. (3p)
 
+En la pantalla de juego irán apareciendo obstáculos, los cuales dependiendo del nivel de dificultad,
+la velocidad de aparición de estos irá aumentando considerablemente. Chocar con alguno de estos obstaculos
+finalizará el juego.
+- Rocas.
+- Muros.
+- enemigos.
 
-En la pantalla de juego irán apareciendo obstáculos, los cuales irán apareciendo,
-dependiendo del nivel de dificultad, que la serpiente debe evitar. Chocar con algún
-elemento finalizará el juego. Los objetos pueden ser rocas o muros.
 
 Los jugadores irán obteniendo puntos al comer los distintos alimentos, el objetivo es
 conseguir la mayor cantidad de puntos hasta perder. Se podrá ver la puntuación actual
