@@ -106,4 +106,9 @@ classDiagram
 
 ##### Interfaz de usuario
 
+**Pantalla inicial**
+
+Inline-style: 
+![alt text](https://cdn.discordapp.com/attachments/1155565182584627280/1159827014056943726/Interfaz_Usuario.png?ex=65327014&is=651ffb14&hm=a07f02bfe6479d2d3478bab8061b62e685575866acbee8268320f27fd0c8a4dd&)
+
 
