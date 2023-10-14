@@ -3,8 +3,6 @@
 - Diego Hernández García-Panadero  
 - Álvaro Mingo Muñoz
 
-========================================================
-
 ###  Descripción
 El juego es una versión mejorada del juego Snake. Los jugadores manejarán una
 serpiente hambrienta que come alimentos para crecer y acumular puntos.
