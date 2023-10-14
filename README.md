@@ -1,5 +1,7 @@
 #  Snake Challenge
-##  Autores: Diego Hernández García-Panadero y Álvaro Mingo Muñoz
+## Desarrolladores:
+-Diego Hernández García-Panadero  
+-Álvaro Mingo Muñoz
 ========================================================
 
 ###  Descripción
