@@ -1,7 +1,8 @@
 #  Snake Challenge
-### Desarrolladores:
+## Desarrolladores:
 - Diego Hernández García-Panadero  
 - Álvaro Mingo Muñoz
+
 ========================================================
 
 ###  Descripción
