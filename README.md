@@ -1,7 +1,7 @@
 #  Snake Challenge
 ## Desarrolladores:
-- Diego Hernández García-Panadero  
-- Álvaro Mingo Muñoz(NIGGER)
+- Diego Hernández García-Panadero. 
+- Álvaro Mingo Muñoz.
 
 ###  Descripción
 El juego es una versión mejorada del juego Snake. Los jugadores manejarán una
