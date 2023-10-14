@@ -16,7 +16,7 @@ distinto de puntos.
 - **Plátano**. (3p)
 
 En la pantalla de juego irán apareciendo obstáculos, los cuales aumentarán su frecuencia
-dependiendo del nivel de dificultad. Chocar con alguno de estos obstaculos finalizará el juego.
+dependiendo del nivel de dificultad. Chocar con alguno de estos obstáculos finalizará el juego.
 - **Rocas**.
 - **Muros**.
 
