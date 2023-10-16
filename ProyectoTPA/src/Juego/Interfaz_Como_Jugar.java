@@ -83,7 +83,6 @@ public class Interfaz_Como_Jugar extends JFrame {
 		            
 		        }
 		    });
-			ComoJugar.add(Atras);                                //agregamos la etiqueta al panel
-						
+			ComoJugar.add(Atras);                                //agregamos la etiqueta al panel					
 		}
 }

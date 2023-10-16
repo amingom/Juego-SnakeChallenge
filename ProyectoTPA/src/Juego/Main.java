@@ -7,5 +7,4 @@ public class Main {
         Interfaz_Usuario v1 = new Interfaz_Usuario();        
         v1.setVisible(true); // visible la ventana
     }
-    
 }

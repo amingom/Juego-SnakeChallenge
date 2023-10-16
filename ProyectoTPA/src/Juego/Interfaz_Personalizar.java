@@ -100,4 +100,5 @@ public class Interfaz_Personalizar extends JFrame {
 	    });
 		Personalizar.add(Atras);
 	}
+	
 }

@@ -138,8 +138,7 @@ public class Interfaz_Usuario extends JFrame {
         });
 		
 		panel.add(Salir);
-		
-				
+					
 	}
 	
 }

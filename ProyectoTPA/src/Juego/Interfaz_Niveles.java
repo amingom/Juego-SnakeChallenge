@@ -92,5 +92,4 @@ public class Interfaz_Niveles extends JFrame{
     });
 	niveles.add(Atras);
 }
-	
 }
