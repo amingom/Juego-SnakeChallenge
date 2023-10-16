@@ -45,7 +45,6 @@ public class Interfaz_Niveles extends JFrame{
 	niveles.add(Niveles1);                                  //agregamos la etiqueta al panel
 	
 	
-	
 	JButton Facil = new JButton();  							//creamos el boton
 	Facil.setText("Facil");								       //establecemos texto al boton
 	Facil.setBounds(178,150,300,70);  						  //tamaño y posicion del boton
