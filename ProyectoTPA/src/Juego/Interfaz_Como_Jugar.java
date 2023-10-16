@@ -1,15 +1,9 @@
 package Juego;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.SwingConstants;
-//import javax.swing.ImageIcon;
-import javax.swing.JButton;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
 
 
 public class Interfaz_Como_Jugar extends JFrame {
@@ -32,7 +26,7 @@ public class Interfaz_Como_Jugar extends JFrame {
 		void iniciarComponentes() {
 			
 			JPanel ComoJugar = new JPanel();                                           // creacion de un panel		
-			ComoJugar.setBackground(Color.DARK_GRAY);                                 //establecemos el color del panel
+			ComoJugar.setBackground(Color.LIGHT_GRAY);                                 //establecemos el color del panel
 			ComoJugar.setLayout(null);                                               //desactiva su diseño
 			this.getContentPane().add(ComoJugar);                                   //agregamos el panel a la ventana
 			
@@ -42,27 +36,32 @@ public class Interfaz_Como_Jugar extends JFrame {
 			Comojugar.setHorizontalAlignment(SwingConstants.CENTER);           //centramos el texto en la etiqueta
 			Comojugar.setForeground(Color.BLACK);                             //establecemos el color del texto
 			Comojugar.setOpaque(true);                                       // establecemos el poder pintar la etiqueta
-			Comojugar.setBackground(Color.DARK_GRAY);                       //cambiamos el color del fondo de la etiqueta
+			Comojugar.setBackground(Color.LIGHT_GRAY);                       //cambiamos el color del fondo de la etiqueta
 			Comojugar.setFont(new Font("arial",Font.BOLD,50));             //establecemos la fuente del texto	
 			ComoJugar.add(Comojugar);                                     //agregamos la etiqueta al panel
 			
 			
 			
 			JLabel Instrucciones = new JLabel();                                                                        //creamos una etiqueta de texto		
-			Instrucciones.setText("Línea 111111111111111\n"
-					+ "Línea 222222222222222222222222222\n"
-					+ "Línea 333333333333333333333333333\n"
-					+ "Línea 444444444444444444444444444\n"
-					+ "Línea 555555555555555555555555555\n"
-					+ "Línea 666666666666666666666666666\n"
-					+ "Línea 777777777777777777777777777\n");                                                     //establecemos el texto de la etiqueta
+			Instrucciones.setText("El Snake Challenge es un juego que consiste en conseguir la mayor cantidad de puntos\n"
+			+ " antes de terminar la partida.\n"
+			+ " \nEl jugador debe dirigir a la serpiente hacia la comida esquivando todos los obstáculos y\n"
+			+ " los bordes del mapa para que la partida no finalice.\n"
+			+ " \nLos controles son las teclas w, a, s, d, que sirven para subir, derecha, abajo e izquierda\n"
+			+ " respectivamente.\n"
+			+ " \nLos puntos se conseguirán al alimentar a la serpiente y ésta a su vez irá creciendo.\n"
+			+ " \nHay distintos tipos de alimentos que harán crecer de distinta manera a la serpiente y\n"
+			+ " tendrán distinto valor de puntos.\n"
+			+ " \nEl jugador podrá ver la puntuación en tiempo real a través del marcador en la parte \n"
+			+ " superior de la pantalla.\n");       //establecemos el texto de la etiqueta
+			
 			Instrucciones.setText("<html>" + Instrucciones.getText().replaceAll("\n", "<br/>") + "</html>");
-			Instrucciones.setBounds(-60,100,800,200);
+			Instrucciones.setBounds(-50,40,800,500);
 			Instrucciones.setHorizontalAlignment(SwingConstants.CENTER);                                        //centramos el texto en la etiqueta
 			Instrucciones.setForeground(Color.BLACK);                                                          //establecemos el color del texto
 			Instrucciones.setOpaque(true);                                                                    // establecemos el poder pintar la etiqueta
-			Instrucciones.setBackground(Color.DARK_GRAY);                                                    //cambiamos el color del fondo de la etiqueta
-			Instrucciones.setFont(new Font("arial",Font.BOLD,20));                                          //establecemos la fuente del texto	
+			Instrucciones.setBackground(Color.LIGHT_GRAY);                                                    //cambiamos el color del fondo de la etiqueta
+			Instrucciones.setFont(new Font("arial",Font.BOLD,15));                                          //establecemos la fuente del texto	
 			ComoJugar.add(Instrucciones);                                                                  //agregamos la etiqueta al panel
 			
 			
@@ -71,7 +70,7 @@ public class Interfaz_Como_Jugar extends JFrame {
 			Atras.setBounds(50,600,150,40);                                      //tamaño y posicion del boton
 			Atras.setEnabled(true);                                             //habilita o deshabilita el click		
 			Atras.setForeground(Color.BLACK);                                  //color de las letras del boton
-			Atras.setBackground(Color.DARK_GRAY);
+			Atras.setBackground(Color.WHITE);
 			Atras.setFont(new Font("algerian",Font.BOLD,20));                //fuente de la letra del boton
 			ComoJugar.add(Atras);
 			Atras.addActionListener(new ActionListener() {
@@ -80,9 +79,13 @@ public class Interfaz_Como_Jugar extends JFrame {
 		        public void actionPerformed(ActionEvent e) {
 		            Interfaz_Usuario ventanaInicial = new Interfaz_Usuario();
 		            ventanaInicial.setVisible(true);
+		            ((JFrame) SwingUtilities.getWindowAncestor(Atras)).dispose();  //cierra la ventana
 		            
 		        }
 		    });
-			ComoJugar.add(Atras);                                //agregamos la etiqueta al panel					
+			ComoJugar.add(Atras);                                //agregamos la etiqueta al panel
+			
+					
 		}
+
 }

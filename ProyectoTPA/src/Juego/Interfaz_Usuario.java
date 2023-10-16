@@ -1,16 +1,8 @@
 package Juego;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.SwingConstants;
-//import javax.swing.ImageIcon;
-import javax.swing.JButton;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
 
 public class Interfaz_Usuario extends JFrame {
 	
@@ -64,12 +56,15 @@ public class Interfaz_Usuario extends JFrame {
 		ComoJugar.setForeground(Color.BLACK); //color de las letras del boton
 		ComoJugar.setBackground(Color.WHITE);
 		ComoJugar.setFont(new Font("algerian",Font.BOLD,40)); //fuente de la letra del boton
-		ComoJugar.addActionListener(new ActionListener() {
-			
+		
+		
+		//  abre la ventana relacionada con las instrucciones del juego y cierra la ventana de inicio
+		ComoJugar.addActionListener(new ActionListener() {	
             @Override
             public void actionPerformed(ActionEvent e) {
                 Interfaz_Como_Jugar ventanaComoJugar = new Interfaz_Como_Jugar();
                 ventanaComoJugar.setVisible(true);
+                ((JFrame) SwingUtilities.getWindowAncestor(ComoJugar)).dispose();  //cierra la ventana
             }
         });
 		panel.add(ComoJugar);
@@ -84,14 +79,17 @@ public class Interfaz_Usuario extends JFrame {
 		Jugar.setForeground(Color.BLACK); //color de las letras del boton
 		Jugar.setBackground(Color.WHITE);
 		Jugar.setFont(new Font("algerian",Font.BOLD,40)); //fuente de la letra del boton
+		
+	    //  abre la ventana relacionada con los niveles del juego y cierra la ventana de inicio
 		Jugar.addActionListener(new ActionListener() {
 			
             @Override
             public void actionPerformed(ActionEvent e) {
                 Interfaz_Niveles ventanaNiveles = new Interfaz_Niveles();
-                ventanaNiveles.setVisible(true);
-            }
-        });
+                ventanaNiveles.setVisible(true);    
+                ((JFrame) SwingUtilities.getWindowAncestor(Jugar)).dispose();  //cierra la ventana
+            }                      
+        });		
 		panel.add(Jugar);
 		
 		
@@ -106,13 +104,18 @@ public class Interfaz_Usuario extends JFrame {
 		Personalizar.setEnabled(true);  //habilita o deshabilita el click		
 		Personalizar.setForeground(Color.BLACK); //color de las letras del boton
 		Personalizar.setBackground(Color.WHITE);
-		Personalizar.setFont(new Font("algerian",Font.BOLD,35)); //fuente de la letra del boton				
+		Personalizar.setFont(new Font("algerian",Font.BOLD,35)); //fuente de la letra del boton		
+		
+		
+		
+		//  abre la ventana relacionada con la personalización de las serpientes y cierra la ventana de inicio
 		Personalizar.addActionListener(new ActionListener() {
 			
             @Override
             public void actionPerformed(ActionEvent e) {
                 Interfaz_Personalizar ventanaPersonalizacion = new Interfaz_Personalizar();
                 ventanaPersonalizacion.setVisible(true);
+                ((JFrame) SwingUtilities.getWindowAncestor(Personalizar)).dispose();  //cierra la ventana
                 
             }
         });
@@ -130,9 +133,11 @@ public class Interfaz_Usuario extends JFrame {
 		Salir.setForeground(Color.BLACK); //color de las letras del boton
 		Salir.setBackground(Color.WHITE);
 		Salir.setFont(new Font("algerian",Font.BOLD,40)); //fuente de la letra del boton
+		
+		
+		//cierra la ventana principal
 		Salir.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                // Cerrar la ventana secundaria
+            public void actionPerformed(ActionEvent e) {   
             	System.exit(0);
             }
         });

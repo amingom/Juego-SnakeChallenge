@@ -1,15 +1,8 @@
 package Juego;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.SwingConstants;
-//import javax.swing.ImageIcon;
-import javax.swing.JButton;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
 
 public class Interfaz_Niveles extends JFrame{
 	
@@ -52,7 +45,17 @@ public class Interfaz_Niveles extends JFrame{
 	Facil.setForeground(Color.BLACK); 						//color de las letras del boton
 	Facil.setBackground(Color.WHITE);					   //color del boton
 	Facil.setFont(new Font("algerian",Font.BOLD,40)); 	  //fuente de la letra del boton
+	Facil.addActionListener(new ActionListener() {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            Interfaz_juego_facil ventanaJuegoFacil = new Interfaz_juego_facil();
+            ventanaJuegoFacil.setVisible(true);
+
+        }
+    });
 	niveles.add(Facil);
+	
 	
 	
 	JButton Medio = new JButton(); 							    //creamos el boton
@@ -87,7 +90,8 @@ public class Interfaz_Niveles extends JFrame{
         @Override
         public void actionPerformed(ActionEvent e) {
             Interfaz_Usuario ventanaInicial = new Interfaz_Usuario();
-            ventanaInicial.setVisible(true);        
+            ventanaInicial.setVisible(true); 
+            ((JFrame) SwingUtilities.getWindowAncestor(Atras)).dispose();  //cierra la ventana
         }
     });
 	niveles.add(Atras);
