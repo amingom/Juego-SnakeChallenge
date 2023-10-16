@@ -142,5 +142,4 @@ public class Interfaz_Usuario extends JFrame {
 				
 	}
 	
-
 }
