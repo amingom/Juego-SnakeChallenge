@@ -32,6 +32,11 @@ classDiagram
     JUEGOSERPIENTE <|-- Food
     JUEGOSERPIENTE <|-- Obstacle
     JUEGOSERPIENTE <|-- Snake
+    JUEGOSERPIENTE <|-- Interfaz_Usuario
+    JUEGOSERPIENTE <|-- Interfaz_Como_Jugar
+    JUEGOSERPIENTE <|-- Interfaz_juego_facil
+    JUEGOSERPIENTE <|-- Interfaz_Niveles
+    JUEGOSERPIENTE <|-- Interfaz_Personalizar
     MANZANA--|> Food
     CEREZA --|> Food
     BANANA --|> Food
@@ -103,6 +108,37 @@ classDiagram
       + void draw()
       + Object getLocation()
     }
+
+   class Interfaz_Usuario{ 
+    +void iniciarComponentes()
+   }
+ 
+
+    class Interfaz_Como_Jugar{
+        void iniciarComponentes()
+    }
+
+
+    class Interfaz_juego_facil{
+    - JPanel gamePanel;
+    - LinkedList<Point> snake;
+    - Timer timer;
+    - int direction;
+    + void iniciarComponentes()
+    + void draw()
+    + void move()
+
+
+    }
+
+    class Interfaz_Niveles{
+        void iniciarComponentes()
+    }
+
+      class Interfaz_Personalizar{
+        void iniciarComponentes()
+    }
+
 ```
 
 #### Interfaz de usuario
