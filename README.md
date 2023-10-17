@@ -149,21 +149,21 @@ muestran las instrucciones de cómo jugar, el tercer botón sirve para personali
 de la serpiente y el cuarto es el botón de salir, para finalizar el juego.
 
 
-**Pantalla inicial.**
+**Pantalla Inicial.**
 
 ![alt text](https://cdn.discordapp.com/attachments/1155565182584627280/1163522723784441980/image.png?ex=653fe1fa&is=652d6cfa&hm=c5122c48605ef8b9f7f2e79e3e75f737c8660ed699145fe0269c00286d5f617a&)
 
-**Pantalla de niveles**
+**Pantalla de Niveles**
 
 ![alt text](https://cdn.discordapp.com/attachments/1155565182584627280/1163522767258398760/image.png?ex=653fe204&is=652d6d04&hm=4f8709773805420dbd7b68c391b10579f42b957cccf730f9e0d27b6e4d7afa5d&)
 
 
-**Pantalla de personalización**
+**Pantalla de Personalización**
 
 ![alt text](https://cdn.discordapp.com/attachments/1155565182584627280/1163522953590341722/image.png?ex=653fe231&is=652d6d31&hm=3259e88cf23c21f90e328d811e836cdfc424f8890702261b717d1cee8afe7c08&)
 
 
-**Pantalla de como jugar**
+**Pantalla de Cómo Jugar**
 
 ![alt text](https://cdn.discordapp.com/attachments/1155565182584627280/1163522890042441728/image.png?ex=653fe222&is=652d6d22&hm=8e2046f2f04d3953e92e93569775c58dceac48ee1f75361edd4f26ba2e50a7c3&)
 
