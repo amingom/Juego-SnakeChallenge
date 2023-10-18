@@ -1,20 +1,20 @@
 package Juego;
 
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
 /**
  * Esta clase representa la interfaz de seleccion de niveles en el juego Snake Challenge.
  * Permite al jugador elegir entre diferentes niveles de dificultad.
  */
-
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
 
 public class Interfaz_Niveles extends JFrame{
 
 
     /**
      * Constructor de la clase que configura la interfaz de seleccion de niveles.
-     * Establece el tamaño, titulo, posicion y otros aspectos de la ventana.
+     * Establece el tamano, titulo, posicion y otros aspectos de la ventana.
      */
 	public Interfaz_Niveles() {
 

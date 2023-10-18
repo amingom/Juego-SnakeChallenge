@@ -1,19 +1,19 @@
 package Juego;
 
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
 /**
  * Esta clase representa la interfaz de usuario principal del juego Snake Challenge.
  * Permite a los jugadores acceder a diferentes opciones, como jugar, aprender a jugar, personalizar y salir.
  */
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
-
 public class Interfaz_Usuario extends JFrame {
 
 	 /**
      * Constructor de la clase que configura la interfaz de usuario principal.
-     * Establece el tamaño, titulo, posicion y otros aspectos de la ventana.
+     * Establece el tamano, titulo, posicion y otros aspectos de la ventana.
      */
 	public Interfaz_Usuario() {
 

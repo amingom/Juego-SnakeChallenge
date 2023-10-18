@@ -1,19 +1,19 @@
 package Juego;
 
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
 /**
  * Esta clase representa la interfaz de personalizacion de la serpiente en el juego Snake Challenge.
  * Permite al jugador elegir entre diferentes aspectos para la serpiente.
  */
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
-
 public class Interfaz_Personalizar extends JFrame {
 
 	/**
      * Constructor de la clase que configura la interfaz de personalizacion.
-     * Establece el tamaño, titulo, posicion y otros aspectos de la ventana.
+     * Establece el tamano, titulo, posicion y otros aspectos de la ventana.
      */
 	public Interfaz_Personalizar() {
 

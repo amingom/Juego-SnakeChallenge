@@ -1,14 +1,14 @@
 package Juego;
 
-/**
- * Esta clase representa la interfaz del juego Snake Challenge en el nivel facil.
- * Permite a los jugadores jugar el juego en un nivel de dificultad mas bajo.
- */
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.LinkedList;
+
+/**
+ * Esta clase representa la interfaz del juego Snake Challenge en el nivel facil.
+ * Permite a los jugadores jugar el juego en un nivel de dificultad mas bajo.
+ */
 
 public class Interfaz_juego_facil extends JFrame {
 	private JPanel gamePanel;
@@ -18,7 +18,7 @@ public class Interfaz_juego_facil extends JFrame {
 	
 	/**
      * Constructor de la clase que configura la interfaz del juego en el nivel facil.
-     * Establece el tamaño, titulo, posicion y otros aspectos de la ventana.
+     * Establece el tamano, titulo, posicion y otros aspectos de la ventana.
      */
 	public Interfaz_juego_facil() {
 		setSize(720, 665);

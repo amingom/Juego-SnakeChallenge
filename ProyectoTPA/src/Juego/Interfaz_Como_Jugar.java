@@ -1,19 +1,19 @@
 package Juego;
 
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
 /**
  * Esta clase representa la interfaz de "Como Jugar" en el juego Snake Challenge.
  * Proporciona informacion sobre las reglas y controles del juego.
  */
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
-
 public class Interfaz_Como_Jugar extends JFrame {
 	
 	/**
      * Constructor de la clase que configura la interfaz "Como Jugar".
-     * Establece el tamaño, titulo, posicion y otros aspectos de la ventana.
+     * Establece el tamano, titulo, posicion y otros aspectos de la ventana.
      */
 	public Interfaz_Como_Jugar() {
 
@@ -33,7 +33,7 @@ public class Interfaz_Como_Jugar extends JFrame {
 	
 	/**
      * Inicializa los componentes visuales de la interfaz "Como Jugar".
-     * Crea un panel, etiquetas de texto y un botón de "Atras".
+     * Crea un panel, etiquetas de texto y un boton de "Atras".
      */
 	void iniciarComponentes() {
 
