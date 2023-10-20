@@ -5,7 +5,7 @@
 
 ###  Descripción
 El juego es una versión mejorada del juego Snake. Los jugadores manejarán una
-serpiente hambrienta que come alimentos para crecer y acumular puntos.hola
+serpiente hambrienta que come alimentos para crecer y acumular puntos.
 
 La serpiente está en constante movimiento, se desplaza en busca de comida y cuanto
 más coma, más crecerá.
