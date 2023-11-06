@@ -29,19 +29,17 @@ en la pantalla en tiempo real.
 ```mermaid
 
 classDiagram
-    JUEGOSERPIENTE <|-- Food
-    JUEGOSERPIENTE <|-- Obstacle
-    JUEGOSERPIENTE <|-- Snake
     JUEGOSERPIENTE <|-- Interfaz_Usuario
-    JUEGOSERPIENTE <|-- Interfaz_Como_Jugar
-    JUEGOSERPIENTE <|-- Interfaz_juego_facil
-    JUEGOSERPIENTE <|-- Interfaz_Niveles
-    JUEGOSERPIENTE <|-- Interfaz_Personalizar
-    MANZANA--|> Food
-    CEREZA --|> Food
-    BANANA --|> Food
-    ROCA --|> Obstacle
-    MURO --|> Obstacle
+    Interfaz_Usuario <|-- Interfaz_Como_Jugar
+    Interfaz_Cobra <|-- Interfaz_juego_facil
+    Interfaz_Piton <|-- Interfaz_juego_facil
+    Interfaz_Vibora <|-- Interfaz_juego_facil
+    Interfaz_Usuario <|-- Interfaz_Niveles
+    Interfaz_Niveles <|-- Interfaz_Personalizar
+    Interfaz_Personalizar <|-- Interfaz_Cobra
+    Interfaz_Personalizar <|-- Interfaz_Piton
+    Interfaz_Personalizar <|-- Interfaz_Vibora
+
 
     JUEGOSERPIENTE : -Snake snake
     JUEGOSERPIENTE : -LinkedList<Food>foods
@@ -52,62 +50,7 @@ classDiagram
     JUEGOSERPIENTE: +Void checkCollisions()
     JUEGOSERPIENTE: +Void spawnFood()
 
-    class Snake{
-    - LinkedList<Point> body
-    - Direction direction
-    + void move()
-    + Point calculateNewHead()
-    + void setDirection()
-    }
-    class Food{
-    - Point position;
-    - int points;
-    + void draw()
-    + Object getLocation()
-    }
-
-    class MANZANA{
-    - Point position;
-    - int points;
-    + void draw()
-    + Object getLocation()
-    }
-
-      class CEREZA{
-    - Point position;
-    - int points;
-    + void draw()
-    + Object getLocation()
-    }
-
-      class BANANA{
-    - Point position;
-    - int points;
-    + void draw()
-    + Object getLocation()
-    }
-
-    class Obstacle{
-      - Point position;
-      + Point getPosition() 
-      + void draw()
-      + Object getLocation()
-    }
-
-        class ROCA{
-      - Point position;
-      + Point getPosition() 
-      + void draw()
-      + Object getLocation()
-    }
-
-
-        class MURO{
-      - Point position;
-      + Point getPosition() 
-      + void draw()
-      + Object getLocation()
-    }
+    
 
    class Interfaz_Usuario{ 
     +void iniciarComponentes()
@@ -124,6 +67,7 @@ classDiagram
     - LinkedList<Point> snake;
     - Timer timer;
     - int direction;
+    - private Point food;
     + void iniciarComponentes()
     + void draw()
     + void move()
@@ -135,9 +79,21 @@ classDiagram
        + void iniciarComponentes()
     }
 
-      class Interfaz_Personalizar{
+    class Interfaz_Personalizar{
        + void iniciarComponentes()
     }
+
+     class Interfaz_Cobra{
+        + void iniciarComponentes()
+     }
+
+     class Interfaz_Piton{
+        + void iniciarComponentes()
+     }
+
+     class Interfaz_Vibora{
+        + void iniciarComponentes()
+     }
 
 ```
 
