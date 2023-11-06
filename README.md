@@ -107,7 +107,7 @@ de la serpiente y el cuarto es el botón de salir, para finalizar el juego.
 
 **Pantalla Inicial.**
 
-![alt text](https://cdn.discordapp.com/attachments/1155565182584627280/1163522723784441980/image.png?ex=653fe1fa&is=652d6cfa&hm=c5122c48605ef8b9f7f2e79e3e75f737c8660ed699145fe0269c00286d5f617a&)
+![alt text](https://media.discordapp.net/attachments/1155565182584627280/1171145032158412861/image.png?ex=655b9cce&is=654927ce&hm=22dd7376a5a56399ca134348a1c64d6335a4383f089b9e9c7fb318866a3390d4&=)
 
 **Pantalla de Niveles**
 
@@ -132,8 +132,16 @@ de la serpiente y el cuarto es el botón de salir, para finalizar el juego.
 
 **Personalización de la serpiente.**
 
-![alt text](https://cdn.discordapp.com/attachments/1155565182584627280/1162155529745989723/image.png?ex=653ae8ae&is=652873ae&hm=01a85eea248d3f839e091049215ccb200170b3721384898301bdc29f250f517c&)
 
+**Cobra.**
+
+![alt text](https://cdn.discordapp.com/attachments/1155565182584627280/1171136205354700981/cobra.png?ex=655b9496&is=65491f96&hm=34b27f165e6cd8570b7753ccb858dd570567add485d2557b619c98ed05c9dec1&)
+
+**Pitón.**
+![alt text](https://cdn.discordapp.com/attachments/1159130537831694397/1170875111197376542/piton.jpg?ex=655aa16c&is=65482c6c&hm=a0a31393de1f4aae8ff60a1d76c93e3e5ca9d1f4f8bba3aaeb1623b84be6cf11&)
+
+**Víbora.**
+![alt text](https://cdn.discordapp.com/attachments/1155565182584627280/1171136377115643914/vibora.png?ex=655b94be&is=65491fbe&hm=afc943d30d697bdd1e86f0d41578d084b59009a781755241199ba378ab074333&)
 
 
 
