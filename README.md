@@ -141,6 +141,7 @@ de la serpiente y el cuarto es el botón de salir, para finalizar el juego.
 ![alt text](https://cdn.discordapp.com/attachments/1159130537831694397/1170875111197376542/piton.jpg?ex=655aa16c&is=65482c6c&hm=a0a31393de1f4aae8ff60a1d76c93e3e5ca9d1f4f8bba3aaeb1623b84be6cf11&)
 
 **Víbora.**
+
 ![alt text](https://cdn.discordapp.com/attachments/1155565182584627280/1171136377115643914/vibora.png?ex=655b94be&is=65491fbe&hm=afc943d30d697bdd1e86f0d41578d084b59009a781755241199ba378ab074333&)
 
 
