@@ -11,10 +11,10 @@ import java.awt.event.*;
 
 public class Interfaz_Usuario extends JFrame {
 
-	 /**
-     * Constructor de la clase que configura la interfaz de usuario principal.
-     * Establece el tamano, titulo, posicion y otros aspectos de la ventana.
-     */
+	/**
+	 * Constructor de la clase que configura la interfaz de usuario principal.
+	 * Establece el tamaño, titulo, posicion y otros aspectos de la ventana.
+	 */
 	public Interfaz_Usuario() {
 
 		setSize(700,700);  //ancho largo
@@ -32,9 +32,9 @@ public class Interfaz_Usuario extends JFrame {
 	}
 
 	/**
-     * Inicializa los componentes visuales de la interfaz de usuario principal.
-     * Crea un panel, etiquetas de texto y botones para diferentes opciones.
-     */
+	 * Inicializa los componentes visuales de la interfaz de usuario principal.
+	 * Crea un panel, etiquetas de texto y botones para diferentes opciones.
+	 */
 	void iniciarComponentes() {
 
 		JPanel panel = new JPanel();    // creacion de un panel		
@@ -60,7 +60,7 @@ public class Interfaz_Usuario extends JFrame {
 
 		JButton ComoJugar = new JButton(); //creamos el boton
 		ComoJugar.setText("Cómo jugar");	//establecemos texto al boton
-		ComoJugar.setBounds(178,275,300,70);  //tamaño y posicion del boton
+		ComoJugar.setBounds(178,325,300,70);  //tamaño y posicion del boton
 		ComoJugar.setEnabled(true);  //habilita o deshabilita el click		
 		ComoJugar.setForeground(Color.BLACK); //color de las letras del boton
 		ComoJugar.setBackground(Color.WHITE);
@@ -99,35 +99,11 @@ public class Interfaz_Usuario extends JFrame {
 		});		
 		panel.add(Jugar);
 
-		// Boton para Personalizar
-
-		JButton Personalizar = new JButton(); //creamos el boton
-		Personalizar.setText("Personalizar");	//establecemos texto al boton
-		Personalizar.setBounds(178,400,300,70);  //tamaño y posicion del boton
-		Personalizar.setEnabled(true);  //habilita o deshabilita el click		
-		Personalizar.setForeground(Color.BLACK); //color de las letras del boton
-		Personalizar.setBackground(Color.WHITE);
-		Personalizar.setFont(new Font("algerian",Font.BOLD,30)); //fuente de la letra del boton		
-
-		//  abre la ventana relacionada con la personalización de las serpientes y cierra la ventana de inicio
-		Personalizar.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				Interfaz_Personalizar ventanaPersonalizacion = new Interfaz_Personalizar();
-				ventanaPersonalizacion.setVisible(true);
-				((JFrame) SwingUtilities.getWindowAncestor(Personalizar)).dispose();  //cierra la ventana
-
-			}
-		});
-
-		panel.add(Personalizar);
-
 		//Boton para salir
 
 		JButton Salir = new JButton(); //creamos el boton
 		Salir.setText("Salir");	//establecemos texto al boton
-		Salir.setBounds(178,525,300,70);  //tamaño y posicion del boton
+		Salir.setBounds(178,500,300,70);  //tamaño y posicion del boton
 		Salir.setEnabled(true);  //habilita o deshabilita el click		
 		Salir.setForeground(Color.BLACK); //color de las letras del boton
 		Salir.setBackground(Color.WHITE);

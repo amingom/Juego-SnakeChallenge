@@ -11,11 +11,10 @@ import java.awt.event.*;
 
 public class Interfaz_Niveles extends JFrame{
 
-
-    /**
-     * Constructor de la clase que configura la interfaz de seleccion de niveles.
-     * Establece el tamano, titulo, posicion y otros aspectos de la ventana.
-     */
+	/**
+	 * Constructor de la clase que configura la interfaz de seleccion de niveles.
+	 * Establece el tamaño, titulo, posicion y otros aspectos de la ventana.
+	 */
 	public Interfaz_Niveles() {
 
 		setSize(700,700);                                                       //ancho largo
@@ -31,11 +30,11 @@ public class Interfaz_Niveles extends JFrame{
 		setDefaultCloseOperation(EXIT_ON_CLOSE);					  //hace que termine el programa al cerrar la ventana
 
 	}
-	
+
 	/**
-     * Inicializa los componentes visuales de la interfaz de seleccion de niveles.
-     * Crea un panel, etiquetas de texto y botones para diferentes niveles de dificultad.
-     */
+	 * Inicializa los componentes visuales de la interfaz de seleccion de niveles.
+	 * Crea un panel, etiquetas de texto y botones para diferentes niveles de dificultad.
+	 */
 	void iniciarComponentes() {
 
 		JPanel niveles = new JPanel();    									// creacion de un panel		
@@ -59,14 +58,17 @@ public class Interfaz_Niveles extends JFrame{
 		Facil.setForeground(Color.BLACK); 						//color de las letras del boton
 		Facil.setBackground(Color.WHITE);					   //color del boton
 		Facil.setFont(new Font("algerian",Font.BOLD,40)); 	  //fuente de la letra del boton
+
+		//  abre la ventana relacionada con la personalización de las serpientes y cierra la ventana de inicio
 		Facil.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Interfaz_juego_facil ventanaJuegoFacil = new Interfaz_juego_facil();
-				ventanaJuegoFacil.setVisible(true);
-			}
-		});
+				Interfaz_Personalizar ventanaNiveles = new Interfaz_Personalizar();
+				ventanaNiveles.setVisible(true);    
+				((JFrame) SwingUtilities.getWindowAncestor(Facil)).dispose();  //cierra la ventana
+			}                      
+		});		
 		niveles.add(Facil);
 
 		JButton Medio = new JButton(); 							    //creamos el boton
@@ -76,6 +78,19 @@ public class Interfaz_Niveles extends JFrame{
 		Medio.setForeground(Color.BLACK); 						//color de las letras del boton
 		Medio.setBackground(Color.WHITE); 					   //color del boton
 		Medio.setFont(new Font("algerian",Font.BOLD,40));     //fuente de la letra del boton
+
+		//  abre la ventana relacionada con la personalización de las serpientes y cierra la ventana de inicio
+		Medio.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Interfaz_Personalizar ventanaPersonalizacion = new Interfaz_Personalizar();
+				ventanaPersonalizacion.setVisible(true);
+				((JFrame) SwingUtilities.getWindowAncestor(Medio)).dispose();  //cierra la ventana
+
+			}
+		});
+
 		niveles.add(Medio);
 
 		JButton Dificil = new JButton(); 							//creamos el boton
@@ -85,6 +100,19 @@ public class Interfaz_Niveles extends JFrame{
 		Dificil.setForeground(Color.BLACK); 					//color de las letras del boton
 		Dificil.setBackground(Color.WHITE); 				   //color del boton
 		Dificil.setFont(new Font("algerian",Font.BOLD,40));   //fuente de la letra del boton
+
+		//  abre la ventana relacionada con la personalización de las serpientes y cierra la ventana de inicio
+		Dificil.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Interfaz_Personalizar ventanaPersonalizacion = new Interfaz_Personalizar();
+				ventanaPersonalizacion.setVisible(true);
+				((JFrame) SwingUtilities.getWindowAncestor(Dificil)).dispose();  //cierra la ventana
+
+			}
+		});
+
 		niveles.add(Dificil);
 
 		JButton Atras = new JButton(); 							   //creamos el boton

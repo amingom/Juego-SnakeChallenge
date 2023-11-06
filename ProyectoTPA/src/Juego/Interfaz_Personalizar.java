@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
+
 /**
  * Esta clase representa la interfaz de personalizacion de la serpiente en el juego Snake Challenge.
  * Permite al jugador elegir entre diferentes aspectos para la serpiente.
@@ -12,9 +13,9 @@ import java.awt.event.*;
 public class Interfaz_Personalizar extends JFrame {
 
 	/**
-     * Constructor de la clase que configura la interfaz de personalizacion.
-     * Establece el tamano, titulo, posicion y otros aspectos de la ventana.
-     */
+	 * Constructor de la clase que configura la interfaz de personalizacion.
+	 * Establece el tamano, titulo, posicion y otros aspectos de la ventana.
+	 */
 	public Interfaz_Personalizar() {
 
 		setSize(700,700);                                             //ancho largo
@@ -27,14 +28,14 @@ public class Interfaz_Personalizar extends JFrame {
 
 		iniciarComponentes();                                 //Inicia los botones , imagenes...
 
-		setDefaultCloseOperation(EXIT_ON_CLOSE);            //hace que termine el programa al cerrar la ventana				
+		setDefaultCloseOperation(EXIT_ON_CLOSE);            //hace que termine el programa al cerrar la ventana
 
 	}
 
 	/**
-     * Inicializa los componentes visuales de la interfaz de personalizacion.
-     * Crea un panel, etiquetas de texto y botones para diferentes aspectos de la serpiente.
-     */
+	 * Inicializa los componentes visuales de la interfaz de personalizacion.
+	 * Crea un panel, etiquetas de texto y botones para diferentes aspectos de la serpiente.
+	 */
 	void iniciarComponentes() {
 
 		JPanel Personalizar = new JPanel();                              // creacion de un panel		
@@ -50,34 +51,73 @@ public class Interfaz_Personalizar extends JFrame {
 		Personalizacion_Serpiente.setOpaque(true);                                // establecemos el poder pintar la etiqueta
 		Personalizacion_Serpiente.setBackground(Color.cyan);                     //cambiamos el color del fondo de la etiqueta
 		Personalizacion_Serpiente.setFont(new Font("arial",Font.BOLD,50));      //establecemos la fuente del texto	
+
+
 		Personalizar.add(Personalizacion_Serpiente);                           //agregamos la etiqueta al panel
 
-		JButton Facil = new JButton();                                //creamos el boton
-		Facil.setText("Cobra");	                                     //establecemos texto al boton
-		Facil.setBounds(178,150,300,70);                            //tamaño y posicion del boton
-		Facil.setEnabled(true);                                    //habilita o deshabilita el click		
-		Facil.setForeground(Color.BLACK);                         //color de las letras del boton
-		Facil.setBackground(Color.WHITE);
-		Facil.setFont(new Font("algerian",Font.BOLD,40));       //fuente de la letra del boton
-		Personalizar.add(Facil);
 
-		JButton Medio = new JButton();                          //creamos el boton
-		Medio.setText("Piton");	                               //establecemos texto al boton
-		Medio.setBounds(178,300,300,70);                      //tamaño y posicion del boton
-		Medio.setEnabled(true);                              //habilita o deshabilita el click		
-		Medio.setForeground(Color.BLACK);                   //color de las letras del boton
-		Medio.setBackground(Color.WHITE);
-		Medio.setFont(new Font("algerian",Font.BOLD,40)); //fuente de la letra del boton
-		Personalizar.add(Medio);
+		JButton Cobra = new JButton();                                //creamos el boton
+		Cobra.setText("Cobra");	                                     //establecemos texto al boton
+		Cobra.setBounds(178,150,300,70);                            //tamaño y posicion del boton
+		Cobra.setEnabled(true);                                    //habilita o deshabilita el click		
+		Cobra.setForeground(Color.BLACK);                         //color de las letras del boton
+		Cobra.setBackground(Color.WHITE);
+		Cobra.setFont(new Font("algerian",Font.BOLD,40));       //fuente de la letra del boton
 
-		JButton Dificil = new JButton();                            //creamos el boton
-		Dificil.setText("Vibora");	                               //establecemos texto al boton
-		Dificil.setBounds(178,450,300,70);                        //tamaño y posicion del boton
-		Dificil.setEnabled(true);                                //habilita o deshabilita el click		
-		Dificil.setForeground(Color.BLACK);                     //color de las letras del boton
-		Dificil.setBackground(Color.WHITE);
-		Dificil.setFont(new Font("algerian",Font.BOLD,40));   //fuente de la letra del boton
-		Personalizar.add(Dificil);
+		Cobra.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Interfaz_Cobra ventanaCobra = new Interfaz_Cobra();
+				ventanaCobra.setVisible(true);
+				((JFrame) SwingUtilities.getWindowAncestor(Cobra)).dispose();  //cierra la ventana
+
+			}
+		});
+
+		Personalizar.add(Cobra);
+
+		JButton Piton = new JButton();                          //creamos el boton
+		Piton.setText("Pitón");	                               //establecemos texto al boton
+		Piton.setBounds(178,300,300,70);                      //tamaño y posicion del boton
+		Piton.setEnabled(true);                              //habilita o deshabilita el click		
+		Piton.setForeground(Color.BLACK);                   //color de las letras del boton
+		Piton.setBackground(Color.WHITE);
+		Piton.setFont(new Font("algerian",Font.BOLD,40)); //fuente de la letra del boton
+
+		Piton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Interfaz_Piton ventanaPiton = new Interfaz_Piton();
+				ventanaPiton.setVisible(true);
+				((JFrame) SwingUtilities.getWindowAncestor(Piton)).dispose();  //cierra la ventana
+
+			}
+		});
+
+		Personalizar.add(Piton);
+
+		JButton Vibora = new JButton();                            //creamos el boton
+		Vibora.setText("Víbora");	                               //establecemos texto al boton
+		Vibora.setBounds(178,450,300,70);                        //tamaño y posicion del boton
+		Vibora.setEnabled(true);                                //habilita o deshabilita el click		
+		Vibora.setForeground(Color.BLACK);                     //color de las letras del boton
+		Vibora.setBackground(Color.WHITE);
+		Vibora.setFont(new Font("algerian",Font.BOLD,40));   //fuente de la letra del boton
+
+		Vibora.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Interfaz_Vibora ventanaVibora = new Interfaz_Vibora();
+				ventanaVibora.setVisible(true);
+				((JFrame) SwingUtilities.getWindowAncestor(Vibora)).dispose();  //cierra la ventana
+
+			}
+		});
+
+		Personalizar.add(Vibora);
 
 		JButton Atras = new JButton();                              //creamos el boton
 		Atras.setText("Atras");	                                   //establecemos texto al boton
