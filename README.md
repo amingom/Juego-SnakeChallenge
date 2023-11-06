@@ -105,7 +105,7 @@ muestran las instrucciones de cómo jugar, el tercer botón sirve para personali
 de la serpiente y el cuarto es el botón de salir, para finalizar el juego.
 
 
-**Pantalla Inicial.**
+**Pantalla Inicial**
 
 ![alt text](https://media.discordapp.net/attachments/1155565182584627280/1171145032158412861/image.png?ex=655b9cce&is=654927ce&hm=22dd7376a5a56399ca134348a1c64d6335a4383f089b9e9c7fb318866a3390d4&=)
 
@@ -124,23 +124,24 @@ de la serpiente y el cuarto es el botón de salir, para finalizar el juego.
 ![alt text](https://cdn.discordapp.com/attachments/1155565182584627280/1163522890042441728/image.png?ex=653fe222&is=652d6d22&hm=8e2046f2f04d3953e92e93569775c58dceac48ee1f75361edd4f26ba2e50a7c3&)
 
 
-**Marcador y Tablero.**
+**Marcador y Tablero**
 
 ![alt text](https://cdn.discordapp.com/attachments/1155565182584627280/1162155862111047710/image.png?ex=653ae8fd&is=652873fd&hm=47213d759133f3cea613afac45ac06b4d070ee0e3b5f7e4f76a9ad5ebf82ae06&)
 
 ![alt text](https://cdn.discordapp.com/attachments/1155565182584627280/1160891183246090320/image.png?ex=65364f2a&is=6523da2a&hm=146db4d04415454f520c7e7c8e678871539bd7d31f2886d9eb27c0286f253af9&)
 
-**Personalización de la serpiente.**
+**Personalización de la serpiente**
 
 
-**Cobra.**
+**Cobra**
 
 ![alt text](https://cdn.discordapp.com/attachments/1155565182584627280/1171136205354700981/cobra.png?ex=655b9496&is=65491f96&hm=34b27f165e6cd8570b7753ccb858dd570567add485d2557b619c98ed05c9dec1&)
 
 **Pitón.**
+
 ![alt text](https://cdn.discordapp.com/attachments/1159130537831694397/1170875111197376542/piton.jpg?ex=655aa16c&is=65482c6c&hm=a0a31393de1f4aae8ff60a1d76c93e3e5ca9d1f4f8bba3aaeb1623b84be6cf11&)
 
-**Víbora.**
+**Víbora**
 
 ![alt text](https://cdn.discordapp.com/attachments/1155565182584627280/1171136377115643914/vibora.png?ex=655b94be&is=65491fbe&hm=afc943d30d697bdd1e86f0d41578d084b59009a781755241199ba378ab074333&)
 
