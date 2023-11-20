@@ -144,9 +144,9 @@ de la serpiente y el cuarto es el botón de salir, para finalizar el juego.
 
 **Marcador y Tablero**
 
-![alt text](https://cdn.discordapp.com/attachments/1155565182584627280/1162155862111047710/image.png?ex=653ae8fd&is=652873fd&hm=47213d759133f3cea613afac45ac06b4d070ee0e3b5f7e4f76a9ad5ebf82ae06&)
+![alt text](https://media.discordapp.net/attachments/1155565182584627280/1176214816470351912/pixil-frame-0_1.png?ex=656e0e69&is=655b9969&hm=0e0e20d461ebeed00b1d9a791b40b3dbb9f7d70039eeb60d0eb81ce08ec8a7b2&=)
 
-![alt text](https://cdn.discordapp.com/attachments/1155565182584627280/1160891183246090320/image.png?ex=65364f2a&is=6523da2a&hm=146db4d04415454f520c7e7c8e678871539bd7d31f2886d9eb27c0286f253af9&)
+![alt text](https://cdn.discordapp.com/attachments/807178652042264596/1176121409999736912/pixil-frame-0_7.png?ex=656db76b&is=655b426b&hm=240acdc0838208d968b2bebb1df41dcae1422a083759e8a1652975eb42f7d369&)
 
 **Personalización de la serpiente**
 
@@ -162,6 +162,39 @@ de la serpiente y el cuarto es el botón de salir, para finalizar el juego.
 **Víbora**
 
 ![alt text](https://cdn.discordapp.com/attachments/1155565182584627280/1171136377115643914/vibora.png?ex=655b94be&is=65491fbe&hm=afc943d30d697bdd1e86f0d41578d084b59009a781755241199ba378ab074333&)
+
+
+
+**Cobra en el juego**
+
+![alt text](https://cdn.discordapp.com/attachments/1155565182584627280/1175855554636288122/cabeza_cobra_derecha.png?ex=656cbfd2&is=655a4ad2&hm=de43ef62a4ce0386425e2215b82ae88cc82428d1cb9a0b192569d96420b170bd&)
+
+![alt text](https://cdn.discordapp.com/attachments/807178652042264596/1175858479269953576/cobra_cabeza_izquierda_preview_rev_1.png?ex=656cc28b&is=655a4d8b&hm=feeb3d4c7072daba086e09e861aea5f617994b77e6d4da585c681bcfbc38549f&)
+
+![alt text](https://cdn.discordapp.com/attachments/807178652042264596/1175858479538393098/cobra_cabeza_arriba_preview_rev_1.png?ex=656cc28b&is=655a4d8b&hm=6482a8d423ae8dca638d47a2a3b1c2db8396f4e7f54111664655fe948e0b7a53&)
+
+![alt text](https://media.discordapp.net/attachments/807178652042264596/1175858479865532426/cobra_cabeza_abajo_preview_rev_1.png?ex=656cc28b&is=655a4d8b&hm=53a850ee824aa278fb1eaba9963f14f04ffbe181c0dcd8dad6fb315b5d3674fd&=)
+
+**víbora en el juego**
+
+![alt text](https://cdn.discordapp.com/attachments/1155565182584627280/1175577503109230692/piton_cabeza_izquierda.png?ex=656bbcdd&is=655947dd&hm=080866df483ccbef970c4c04946dafb585536d2267146d2d701e277f6c954459&)
+
+![alt text](https://cdn.discordapp.com/attachments/807178652042264596/1175857226762702918/piton_cabeza_arriba_preview_rev_1.png?ex=656cc161&is=655a4c61&hm=32763b1f6819b7ba2c959b56b669de6ee799e078d4c07f5cc198d6c05674f7b3&)
+
+![alt text](https://cdn.discordapp.com/attachments/807178652042264596/1175857227094040606/piton_cabeza_abajo_preview_rev_1.png?ex=656cc161&is=655a4c61&hm=d46dcbe81be8cf07b828fb55a094e1b29eb4cdf37f03bfdd5c0176d04c36ba60&)
+
+![alt text](https://cdn.discordapp.com/attachments/807178652042264596/1175857227387645983/piton_cabeza_derecha_preview_rev_1.png?ex=656cc161&is=655a4c61&hm=bd607a0603f557a131cc4d93fa5cb5f13938a5454559919b5df34521b5569f21&)
+
+**Cobra en el juego**
+
+![alt text](https://cdn.discordapp.com/attachments/1155565182584627280/1175575432813350963/vibora_cabexa_izquierda.png?ex=656bbaf0&is=655945f0&hm=afdd2d7bc9536bc0602aa7f3c132d5b90f5f921fe26b388ed53df92905050369&)
+
+![alt text](https://cdn.discordapp.com/attachments/807178652042264596/1175856434903257158/vibora_cabeza_derecha_preview_rev_1.png?ex=656cc0a4&is=655a4ba4&hm=5f813b487369e947b4f57bbde0d0987a6827e5a75118806bc02a0a20d3731fea&)
+
+![alt text](https://cdn.discordapp.com/attachments/807178652042264596/1175856694664900739/vibora_cabeza_abajo_preview_rev_1.png?ex=656cc0e2&is=655a4be2&hm=d4fcb647fd718066b4467a78d8f1b31c2c8614a1c7e80c5d9aa7d37f356e0dd9&)
+
+![alt text](https://cdn.discordapp.com/attachments/807178652042264596/1175856849447301180/vibora_cabeza_arriba_preview_rev_1.png?ex=656cc107&is=655a4c07&hm=7a9a0ba8019c175ccf1582e31a37dcd677afb72d97963810dd7b23b14c1bbb73&)
+
 
 
 
