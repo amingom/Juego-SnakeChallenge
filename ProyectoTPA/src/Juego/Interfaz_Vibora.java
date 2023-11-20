@@ -10,7 +10,7 @@ public class Interfaz_Vibora extends JFrame {
      * Constructor de la clase que configura la interfaz "Vibora".
      * Establece el tamano, titulo, posicion y otros aspectos de la ventana.
      */
-	public Interfaz_Vibora() {
+	public Interfaz_Vibora(String animal) {
 
 		setSize(700,700);                                                               //ancho largo
 

@@ -11,6 +11,16 @@ import java.awt.event.*;
  */
 
 public class Interfaz_Personalizar extends JFrame {
+	
+	static private String animal;
+	
+	public String getAnimal() {
+		return animal;
+	}
+	
+	public static void setAnimal(String _animal) {
+		animal = _animal;
+	}
 
 	/**
 	 * Constructor de la clase que configura la interfaz de personalizacion.
@@ -68,7 +78,8 @@ public class Interfaz_Personalizar extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Interfaz_Cobra ventanaCobra = new Interfaz_Cobra();
+				animal = "cobra";
+				Interfaz_Cobra ventanaCobra = new Interfaz_Cobra(getAnimal());
 				ventanaCobra.setVisible(true);
 				((JFrame) SwingUtilities.getWindowAncestor(Cobra)).dispose();  //cierra la ventana
 
@@ -89,7 +100,8 @@ public class Interfaz_Personalizar extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Interfaz_Piton ventanaPiton = new Interfaz_Piton();
+				animal = "piton";
+				Interfaz_Piton ventanaPiton = new Interfaz_Piton(getAnimal());
 				ventanaPiton.setVisible(true);
 				((JFrame) SwingUtilities.getWindowAncestor(Piton)).dispose();  //cierra la ventana
 
@@ -110,7 +122,8 @@ public class Interfaz_Personalizar extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Interfaz_Vibora ventanaVibora = new Interfaz_Vibora();
+				animal = "vibora";
+				Interfaz_Vibora ventanaVibora = new Interfaz_Vibora(getAnimal());
 				ventanaVibora.setVisible(true);
 				((JFrame) SwingUtilities.getWindowAncestor(Vibora)).dispose();  //cierra la ventana
 

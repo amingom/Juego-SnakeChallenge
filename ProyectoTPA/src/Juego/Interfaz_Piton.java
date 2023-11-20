@@ -5,12 +5,12 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class Interfaz_Piton extends JFrame {
-	
+
 	/**
      * Constructor de la clase que configura la interfaz "Piton".
      * Establece el tamano, titulo, posicion y otros aspectos de la ventana.
      */
-	public Interfaz_Piton() {
+	public Interfaz_Piton(String animal) {
 
 		setSize(700,700);                                                               //ancho largo
 

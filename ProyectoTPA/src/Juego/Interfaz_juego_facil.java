@@ -1,8 +1,12 @@
 package Juego;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.LinkedList;
 import javax.swing.JOptionPane; //sirve para mostrar un cuadro al usuario para avisar que ha perdido
 
@@ -17,17 +21,26 @@ public class Interfaz_juego_facil extends JFrame {
 	private Timer timer;
 	private int direction;
 	private Point food;
+	private int foodType;  // Representa el tipo de alimento actual
+	private int score;     // Representa la puntuación del jugador
+	private JLabel scoreLabel;
+	private BufferedImage headImage;
+	private BufferedImage bodyImage;
+	private Point obstacle;
+	private BufferedImage obstacleImage;
+	private Interfaz_Personalizar animal;
 	
 	/**
      * Constructor de la clase que configura la interfaz del juego en el nivel facil.
      * Establece el tamano, titulo, posicion y otros aspectos de la ventana.
      */
 	public Interfaz_juego_facil() {
-		setSize(720, 665);							//tamaño de la ventana
+		setSize(720, 750);							//tamaño de la ventana
 		setTitle("Snake Challenge");				//título de la ventana
 		setLocationRelativeTo(null);				//establecer en el centro de la pantalla
 		iniciarComponentes();						//inicia el juego
 		setDefaultCloseOperation(EXIT_ON_CLOSE);	//cierra el programa al dar a la X
+		animal = new Interfaz_Personalizar();
 	}
 
 	/**
@@ -39,12 +52,24 @@ public class Interfaz_juego_facil extends JFrame {
 			protected void paintComponent(Graphics g) {				
 				super.paintComponent(g);
 				// Dibuja la imagen de fondo
-				ImageIcon backgroundImage = new ImageIcon("tablero.jpg");			//imagen del fondo
+				ImageIcon backgroundImage = new ImageIcon("tablero.png");			//imagen del fondo
 				g.drawImage(backgroundImage.getImage(), 0, 0, getWidth(), getHeight(), null);		//establece las medidas de la imagen a las de la ventana
 			}
 		};
 		NivelFacil.setLayout(null);					//desactiva el diseño
 		getContentPane().add(NivelFacil);			//añade el panel
+		
+		JPanel marcador = new JPanel();
+        marcador.setBounds(0, -5, 720, 35);
+        marcador.setBackground(Color.GRAY); // Puedes cambiar el color según tus necesidades
+
+        JLabel imageLabel = new JLabel();
+        imageLabel.setBounds(0, -5, 720, 35);
+        ImageIcon defaultImage = new ImageIcon("marcador.png");
+        imageLabel.setIcon(defaultImage);
+
+        marcador.add(imageLabel);
+        NivelFacil.add(marcador);
 
 		// Crea una etiqueta que representa la serpiente
 		gamePanel = new JPanel() {
@@ -54,7 +79,7 @@ public class Interfaz_juego_facil extends JFrame {
 				draw(g);
 			}
 		};
-		gamePanel.setBounds(0, 0, 720, 640);		//establece el tamaño
+		gamePanel.setBounds(0, 30, 720, 720);		//establece el tamaño
 		gamePanel.setOpaque(false); // Hace que el fondo del gamePanel sea transparente
 		NivelFacil.add(gamePanel);
 
@@ -63,6 +88,13 @@ public class Interfaz_juego_facil extends JFrame {
 		snake.add(new Point(5, 5));		//posición inicial de la serpiente
 		direction = KeyEvent.VK_RIGHT;	//la serpiente comienza a moverse hacia la derecha
 
+		// Nuevo componente JLabel para mostrar la puntuación
+        scoreLabel = new JLabel("0", SwingConstants.CENTER);
+        scoreLabel.setForeground(Color.WHITE);
+        scoreLabel.setBounds(73, 5, 770, 20);
+        scoreLabel.setFont(new Font("Arial", Font.PLAIN, 20));
+        imageLabel.add(scoreLabel);
+		
 		// Agrega un temporizador para mover la serpiente
 		timer = new Timer(100, new ActionListener() {
 			@Override
@@ -94,40 +126,163 @@ public class Interfaz_juego_facil extends JFrame {
 		
 		
 	    spawnFood(); // Inicializa la comida en una posición aleatoria
+	        
+	    try {
+	        obstacleImage = ImageIO.read(new File("Enemy.png"));
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
 	}
 	
 	/**
 	 * Genera una posición aleatoria para la comida en el tablero.
 	 */
 	public void spawnFood() {
-	    int maxX = 35; // Rango máximo de columnas
-	    int maxY = 31; // Rango máximo de filas
-	    int foodX, foodY;
+        int maxX = 35; // Rango máximo de columnas
+        int maxY = 34; // Rango máximo de filas
+        int foodX, foodY;
 
-	    // Genera una posición aleatoria hasta que sea válida y que sea en una coordenada diferente a la serpiente
-	    do {
-	        foodX = (int) (Math.random() * maxX); 
-	        foodY = (int) (Math.random() * maxY);
-	    } while (snake.contains(new Point(foodX, foodY)));
+        // Genera una posición aleatoria hasta que sea válida y que sea en una coordenada diferente a la serpiente
+        do {
+            foodX = (int) (Math.random() * maxX); 
+            foodY = (int) (Math.random() * maxY);
+        } while (snake.contains(new Point(foodX, foodY)));
 
-	    food = new Point(foodX, foodY);
-	}
+        // Elige aleatoriamente el tipo de alimento y su puntuación
+        foodType = (int) (Math.random() * 3); // 0: manzana, 1: cereza, 2: plátano
 
+        food = new Point(foodX, foodY);
+
+        // Genera una posición aleatoria para el obstáculo hasta que sea válida y que sea en una coordenada diferente a la serpiente y a la comida
+        do {
+            obstacle = new Point((int) (Math.random() * maxX), (int) (Math.random() * maxY));
+        } while (snake.contains(obstacle) || obstacle.equals(food));
+    }
+	
 	/**
      * Dibuja la serpiente y el alimento en el juego.
      * @param g El objeto Graphics utilizado para dibujar la serpiente y el alimento.
      */
 	public void draw(Graphics g) {
-		g.setColor(Color.GREEN);
-		for (Point segment : snake) {
-			g.fillRect(segment.x * 20, segment.y * 20, 20, 20);
-		}
+       
+
+        for (int i = 0; i < snake.size(); i++) {
+            Point segment = snake.get(i);
+            if (i == 0) {
+				drawHeadImage(g, segment.x * 20, segment.y * 20);
+            } else {
+                drawBodyImage(g, segment.x * 20, segment.y * 20);
+            }
+        }
+        
+
+        // Dibuja el alimento según su tipo
+        if (foodType == 0) {
+            drawFoodImage(g, "apple.png");
+        } else if (foodType == 1) {
+            drawFoodImage(g, "cherry.png");
+        } else if (foodType == 2) {
+            drawFoodImage(g, "banana.png");
+        }
+        
+     // Dibuja el obstáculo
+        g.drawImage(obstacleImage, obstacle.x * 20, obstacle.y * 20, 20, 20, this);
+         
+    }
+	
+	// Agregar estos métodos al cuerpo de la clase
+	private void drawHeadImage(Graphics g, int x, int y) {
 		
-		// Genera la comida
-	    g.setColor(Color.RED); // establece el color
-	    g.fillRect(food.x * 20, food.y * 20, 20, 20);  //establecer el tamaño del alimento
+	    try {
+	        
+	        switch (direction) {
+	            case KeyEvent.VK_UP:
+	            	if(animal.getAnimal() == "cobra") {
+	            		headImage = ImageIO.read(new File("cobra_cabeza_arriba.png"));	
+	            	}
+	            	else if(animal.getAnimal() == "piton") {
+	            		headImage = ImageIO.read(new File("piton_cabeza_arriba.png"));
+	            	}
+	            	else if(animal.getAnimal() == "vibora") {
+	            		headImage = ImageIO.read(new File("vibora_cabeza_arriba.png"));
+	            	}
+	                break;
+	            case KeyEvent.VK_DOWN:
+	            	if(animal.getAnimal() == "cobra") {
+	            		headImage = ImageIO.read(new File("cobra_cabeza_abajo.png"));
+	            	}
+	            	else if(animal.getAnimal() == "piton"){
+	            		headImage = ImageIO.read(new File("piton_cabeza_abajo.png"));
+	            	}
+	            	else if(animal.getAnimal() == "vibora") {
+	            		headImage = ImageIO.read(new File("vibora_cabeza_abajo.png"));
+	            	}
+	                break;
+	            case KeyEvent.VK_LEFT:
+	            	if(animal.getAnimal() == "cobra") {
+	                headImage = ImageIO.read(new File("cobra_cabeza_izquierda.png"));
+	            	}
+	            	else if(animal.getAnimal() == "piton") {
+	            		headImage = ImageIO.read(new File("piton_cabeza_izquierda.png"));
+	            	}
+	            	else if(animal.getAnimal() == "vibora") {
+	            		headImage = ImageIO.read(new File("vibora_cabeza_izquierda.png"));
+	            	}
+	                break;
+	            case KeyEvent.VK_RIGHT:
+	            	if(animal.getAnimal() == "cobra") {
+	            		headImage = ImageIO.read(new File("cobra_cabeza_derecha.png"));
+	        		}
+	                else if(animal.getAnimal() == "piton") {
+	            		headImage = ImageIO.read(new File("piton_cabeza_derecha.png"));
+	            	}
+	            	else if(animal.getAnimal() == "vibora") {
+	            		headImage = ImageIO.read(new File("vibora_cabeza_derecha.png"));
+	            	}
+	                break;
+	            default:
+	                headImage = ImageIO.read(new File("cabeza.png"));
+	                break;
+	        }
+	        g.drawImage(headImage, x, y, 20, 20, this);
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
+	}
+
+	private void drawBodyImage(Graphics g, int x, int y) {
+		try {
+			if(animal.getAnimal() == "cobra") {
+        		bodyImage = ImageIO.read(new File("cuerpo_cobra.png"));	
+        	}
+        	else if(animal.getAnimal() == "piton") {
+        		bodyImage = ImageIO.read(new File("cuerpo_piton.png"));
+        	}
+        	else if(animal.getAnimal() == "vibora") {
+        		bodyImage = ImageIO.read(new File("cuerpo_vibora.png"));
+        	}
+			g.drawImage(bodyImage, x, y, 20, 20, this);
+		} catch (IOException e) {
+	        e.printStackTrace();
+		}
+	    
 	}
 	
+	/**
+	 * Dibuja la imagen de la comida con fondo transparente.
+	 * @param g El objeto Graphics utilizado para dibujar.
+	 * @param imgPath La ruta de la imagen de la comida.
+	 */
+	private void drawFoodImage(Graphics g, String imgPath) {
+	    try {
+	        BufferedImage foodImage = ImageIO.read(new File(imgPath));
+	     // Dentro del método drawFoodImage
+	      g.drawImage(foodImage, food.x * 20, food.y * 20, 25, 25, this);  // Aumenta el tamaño de la imagen de la comida a 40x40 píxeles
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
+	}
+
 	/**
 	 * Verifica si la serpiente ha colisionado con los bordes del juego o con su propio cuerpo.
 	 * Si ha colisionado, detiene el temporizador y muestra un mensaje de game over.
@@ -135,51 +290,95 @@ public class Interfaz_juego_facil extends JFrame {
 	public void checkCollision() {
 	    Point head = snake.getFirst();
 	    
-	    // Verifica si la serpiente choca con el borde del juego
-	    if (head.x < 0 || head.x >= 35 || head.y < 0 || head.y >= 32) {
-	        timer.stop(); // Detiene el temporizador
-	        JOptionPane.showMessageDialog(this, "¡Game Over! Has chocado con el borde.", "Game Over", JOptionPane.INFORMATION_MESSAGE);
-	    }
+	 // Verifica si la serpiente choca con el borde del juego
+        if (head.x < 0 || head.x >= 35 || head.y < 0 || head.y >= 34) {
+            timer.stop(); // Detiene el temporizador
+            JOptionPane.showMessageDialog(this, "¡Game Over! Has chocado con el borde.", "Game Over", JOptionPane.INFORMATION_MESSAGE);
+        }
 	    
 	    // Verifica si la serpiente se choca con su propio cuerpo
 	    if (snake.size() > 1 && snake.subList(1, snake.size()).contains(head)) {
 	        timer.stop(); // Detiene el temporizador
 	        JOptionPane.showMessageDialog(this, "¡Game Over! Has chocado con tu propio cuerpo.", "Game Over", JOptionPane.INFORMATION_MESSAGE);
 	    }
+	    
+	    // Verifica si la serpiente choca con el obstáculo
+	    if (snake.getFirst().equals(obstacle)) {
+	        timer.stop(); // Detiene el temporizador
+	        JOptionPane.showMessageDialog(this, "¡Game Over! Has chocado con un hambriento salvaje.", "Game Over", JOptionPane.INFORMATION_MESSAGE);
+	    }
+	    
 	}
 
 	/**
-     * Mueve la serpiente en la direccion actual.
-     * Actualiza la posicion de la serpiente en funcion de la direccion.
-     */
+	 * Mueve la serpiente en la dirección actual.
+	 * Actualiza la posición de la serpiente en función de la dirección.
+	 */
 	public void move() {
-		int headX = snake.getFirst().x;
-		int headY = snake.getFirst().y;
+	    int headX = snake.getFirst().x;
+	    int headY = snake.getFirst().y;
 
-		switch (direction) {
-		case KeyEvent.VK_UP:
-			snake.addFirst(new Point(headX, headY - 1));
-			break;
-		case KeyEvent.VK_DOWN:
-			snake.addFirst(new Point(headX, headY + 1));
-			break;
-		case KeyEvent.VK_LEFT:
-			snake.addFirst(new Point(headX - 1, headY));
-			break;
-		case KeyEvent.VK_RIGHT:
-			snake.addFirst(new Point(headX + 1, headY));
-			break;
-		}
-		
-		// Verifica si la serpiente ha comido
+	    // Guarda la longitud actual de la serpiente antes de moverla
+
+	    switch (direction) {
+	        case KeyEvent.VK_UP:
+	            snake.addFirst(new Point(headX, headY - 1));
+	            break;
+	        case KeyEvent.VK_DOWN:
+	            snake.addFirst(new Point(headX, headY + 1));
+	            break;
+	        case KeyEvent.VK_LEFT:
+	            snake.addFirst(new Point(headX - 1, headY));
+	            break;
+	        case KeyEvent.VK_RIGHT:
+	            snake.addFirst(new Point(headX + 1, headY));
+	            break;
+	    }
+
+	    // Verifica si la serpiente ha comido
 	    if (snake.getFirst().equals(food)) {
-	        // Hace crecer la serpiente
-	        spawnFood(); // Genera otra posición para la comida
+	    	
+	        // Hace crecer la serpiente según el tipo de alimento
+	        for (int i = 1; i < getGrowthAmount(); i++) {
+	            snake.addLast(new Point(-1, -1)); // Añade segmentos los pixeles correspondientes para el crecimiento
+	        }
+
+	        // Actualiza la puntuación total
+	        score += foodType + 1;
+
+	        // Genera otra posición para el alimento
+	        spawnFood();
+	        
 	    } else {
 	        snake.removeLast();
 	    }
-		checkCollision(); //verifica la colisión de la serpiente con la pared
+
+	    checkCollision(); // Verifica la colisión de la serpiente con la pared
+	    updateScoreLabel(); // Actualiza el JLabel de puntuación
 
 	}
 
+	/**
+	 * Actualiza el JLabel de puntuación con la puntuación total.
+	 */
+	private void updateScoreLabel() {
+	    scoreLabel.setText("" + score);
+	}
+
+	/**
+	 * Obtiene la cantidad de segmentos que debe crecer la serpiente según el tipo de alimento.
+	 * @return La cantidad de segmentos que debe crecer la serpiente.
+	 */
+	private int getGrowthAmount() {
+	    switch (foodType) {
+	        case 0: // Manzana
+	            return 1;
+	        case 1: // Cereza
+	            return 2;
+	        case 2: // Plátano
+	            return 3;
+	        default:
+	            return 0;
+	    }
+	}
 }

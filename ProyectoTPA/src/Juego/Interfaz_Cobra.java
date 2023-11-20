@@ -10,7 +10,7 @@ public class Interfaz_Cobra extends JFrame {
 	 * Constructor de la clase que configura la interfaz "Cobra".
 	 * Establece el tamano, titulo, posicion y otros aspectos de la ventana.
 	 */
-	public Interfaz_Cobra() {
+	public Interfaz_Cobra(String animal) {
 
 		setSize(700,700);                                                               //ancho largo
 
