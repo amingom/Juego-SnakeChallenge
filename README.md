@@ -64,12 +64,28 @@ classDiagram
 
     class Interfaz_juego_facil{
     - JPanel gamePanel;
-    - LinkedList<Point> snake;
-    - Timer timer;
-    - int direction;
-    - private Point food;
+	- LinkedList<Point> snake;
+	- Timer timer;
+	- int direction;
+	- Point food;
+	- int foodType;
+	- int score; 
+	- JLabel scoreLabel;
+	- BufferedImage headImage;
+	- BufferedImage bodyImage;
+	- Point obstacle;
+	- BufferedImage obstacleImage;
+	- String animal;
+
+    + void updateScoreLabel()
+    + void updateScoreLabel()
+    + void checkCollision()
+    + void drawFoodImage(Graphics g, String imgPath)
+    + void drawBodyImage(Graphics g, int x, int y)
+    + void drawHeadImage(Graphics g, int x, int y)
+    + void spawnFood()
     + void iniciarComponentes()
-    + void draw()
+    + void draw(Graphics g)
     + void move()
 
 
@@ -94,6 +110,8 @@ classDiagram
      class Interfaz_Vibora{
         + void iniciarComponentes()
      }
+
+
 
 ```
 
