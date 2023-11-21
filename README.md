@@ -175,7 +175,7 @@ de la serpiente y el cuarto es el botón de salir, para finalizar el juego.
 
 ![alt text](https://media.discordapp.net/attachments/807178652042264596/1175858479865532426/cobra_cabeza_abajo_preview_rev_1.png?ex=656cc28b&is=655a4d8b&hm=53a850ee824aa278fb1eaba9963f14f04ffbe181c0dcd8dad6fb315b5d3674fd&=)
 
-**víbora en el juego**
+**Víbora en el juego**
 
 ![alt text](https://cdn.discordapp.com/attachments/1155565182584627280/1175577503109230692/piton_cabeza_izquierda.png?ex=656bbcdd&is=655947dd&hm=080866df483ccbef970c4c04946dafb585536d2267146d2d701e277f6c954459&)
 
@@ -185,7 +185,7 @@ de la serpiente y el cuarto es el botón de salir, para finalizar el juego.
 
 ![alt text](https://cdn.discordapp.com/attachments/807178652042264596/1175857227387645983/piton_cabeza_derecha_preview_rev_1.png?ex=656cc161&is=655a4c61&hm=bd607a0603f557a131cc4d93fa5cb5f13938a5454559919b5df34521b5569f21&)
 
-**Cobra en el juego**
+**Pitón en el juego**
 
 ![alt text](https://cdn.discordapp.com/attachments/1155565182584627280/1175575432813350963/vibora_cabexa_izquierda.png?ex=656bbaf0&is=655945f0&hm=afdd2d7bc9536bc0602aa7f3c132d5b90f5f921fe26b388ed53df92905050369&)
 
