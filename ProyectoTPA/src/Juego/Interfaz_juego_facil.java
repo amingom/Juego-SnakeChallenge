@@ -190,7 +190,7 @@ public class Interfaz_juego_facil extends JFrame {
          
     }
 	
-	// Agregar estos métodos al cuerpo de la clase
+	// Método para dibujar la cabeza según el tipo de la serpiente
 	private void drawHeadImage(Graphics g, int x, int y) {
 		
 	    try {
@@ -250,6 +250,7 @@ public class Interfaz_juego_facil extends JFrame {
 	    }
 	}
 
+	//Método para dibujar el cuerpo según el tipo de serpiente
 	private void drawBodyImage(Graphics g, int x, int y) {
 		try {
 			if(animal.getAnimal() == "cobra") {
