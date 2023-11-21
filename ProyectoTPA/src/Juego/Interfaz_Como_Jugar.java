@@ -81,6 +81,7 @@ public class Interfaz_Como_Jugar extends JFrame {
 		Atras.setForeground(Color.BLACK);                                  //color de las letras del boton
 		Atras.setBackground(Color.WHITE);
 		Atras.setFont(new Font("algerian",Font.BOLD,20));                //fuente de la letra del boton
+		Atras.setFocusPainted(false);
 		ComoJugar.add(Atras);
 		Atras.addActionListener(new ActionListener() {
 

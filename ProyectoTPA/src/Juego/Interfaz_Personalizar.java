@@ -73,6 +73,7 @@ public class Interfaz_Personalizar extends JFrame {
 		Cobra.setForeground(Color.BLACK);                         //color de las letras del boton
 		Cobra.setBackground(Color.WHITE);
 		Cobra.setFont(new Font("algerian",Font.BOLD,40));       //fuente de la letra del boton
+		Cobra.setFocusPainted(false);
 
 		Cobra.addActionListener(new ActionListener() {
 
@@ -95,6 +96,7 @@ public class Interfaz_Personalizar extends JFrame {
 		Piton.setForeground(Color.BLACK);                   //color de las letras del boton
 		Piton.setBackground(Color.WHITE);
 		Piton.setFont(new Font("algerian",Font.BOLD,40)); //fuente de la letra del boton
+		Piton.setFocusPainted(false);
 
 		Piton.addActionListener(new ActionListener() {
 
@@ -117,6 +119,7 @@ public class Interfaz_Personalizar extends JFrame {
 		Vibora.setForeground(Color.BLACK);                     //color de las letras del boton
 		Vibora.setBackground(Color.WHITE);
 		Vibora.setFont(new Font("algerian",Font.BOLD,40));   //fuente de la letra del boton
+		Vibora.setFocusPainted(false);
 
 		Vibora.addActionListener(new ActionListener() {
 
@@ -139,6 +142,7 @@ public class Interfaz_Personalizar extends JFrame {
 		Atras.setForeground(Color.BLACK);                       //color de las letras del boton
 		Atras.setBackground(Color.WHITE);
 		Atras.setFont(new Font("algerian",Font.BOLD,20));     //fuente de la letra del boton
+		Atras.setFocusPainted(false);
 		Personalizar.add(Atras);
 		Atras.addActionListener(new ActionListener() {
 

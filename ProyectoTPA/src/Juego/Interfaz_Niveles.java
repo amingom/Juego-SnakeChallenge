@@ -58,6 +58,7 @@ public class Interfaz_Niveles extends JFrame{
 		Facil.setForeground(Color.BLACK); 						//color de las letras del boton
 		Facil.setBackground(Color.WHITE);					   //color del boton
 		Facil.setFont(new Font("algerian",Font.BOLD,40)); 	  //fuente de la letra del boton
+		Facil.setFocusPainted(false);
 
 		//  abre la ventana relacionada con la personalización de las serpientes y cierra la ventana de inicio
 		Facil.addActionListener(new ActionListener() {
@@ -78,6 +79,7 @@ public class Interfaz_Niveles extends JFrame{
 		Medio.setForeground(Color.BLACK); 						//color de las letras del boton
 		Medio.setBackground(Color.WHITE); 					   //color del boton
 		Medio.setFont(new Font("algerian",Font.BOLD,40));     //fuente de la letra del boton
+		Medio.setFocusPainted(false);
 
 		//  abre la ventana relacionada con la personalización de las serpientes y cierra la ventana de inicio
 		Medio.addActionListener(new ActionListener() {
@@ -100,6 +102,7 @@ public class Interfaz_Niveles extends JFrame{
 		Dificil.setForeground(Color.BLACK); 					//color de las letras del boton
 		Dificil.setBackground(Color.WHITE); 				   //color del boton
 		Dificil.setFont(new Font("algerian",Font.BOLD,40));   //fuente de la letra del boton
+		Dificil.setFocusPainted(false);
 
 		//  abre la ventana relacionada con la personalización de las serpientes y cierra la ventana de inicio
 		Dificil.addActionListener(new ActionListener() {
@@ -122,6 +125,7 @@ public class Interfaz_Niveles extends JFrame{
 		Atras.setForeground(Color.BLACK); 					   //color de las letras del boton
 		Atras.setBackground(Color.WHITE);				      //color del boton
 		Atras.setFont(new Font("algerian",Font.BOLD,20));    //fuente de la letra del boton
+		Atras.setFocusPainted(false);
 		niveles.add(Atras);
 		Atras.addActionListener(new ActionListener() {
 

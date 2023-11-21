@@ -64,6 +64,7 @@ public class Interfaz_Vibora extends JFrame {
 		Atras.setForeground(Color.white);                                  //color de las letras del boton
 		Atras.setBackground(Color.WHITE);
 		Atras.setFont(new Font("algerian",Font.BOLD,20));                //fuente de la letra del boton
+		Atras.setFocusPainted(false);
 		Atras.setOpaque(false);  										// establecemos el poder pintar la etiqueta
 		Atras.setSelected(false);
 		vibora.add(Atras);
@@ -86,6 +87,7 @@ public class Interfaz_Vibora extends JFrame {
 		Start.setForeground(Color.WHITE);                                  //color de las letras del boton
 		Start.setBackground(Color.WHITE);
 		Start.setFont(new Font("algerian",Font.BOLD,20));                //fuente de la letra del boton
+		Start.setFocusPainted(false);
 		Start.setOpaque(false);  										// establecemos el poder pintar la etiqueta
 		Start.setSelected(false);
 		vibora.add(Start);

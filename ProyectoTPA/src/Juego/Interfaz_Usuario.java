@@ -65,6 +65,7 @@ public class Interfaz_Usuario extends JFrame {
 		ComoJugar.setForeground(Color.BLACK); //color de las letras del boton
 		ComoJugar.setBackground(Color.WHITE);
 		ComoJugar.setFont(new Font("algerian",Font.BOLD,40)); //fuente de la letra del boton
+		ComoJugar.setFocusPainted(false);
 
 		//  abre la ventana relacionada con las instrucciones del juego y cierra la ventana de inicio
 		ComoJugar.addActionListener(new ActionListener() {	
@@ -86,6 +87,7 @@ public class Interfaz_Usuario extends JFrame {
 		Jugar.setForeground(Color.BLACK); //color de las letras del boton
 		Jugar.setBackground(Color.WHITE);
 		Jugar.setFont(new Font("algerian",Font.BOLD,40)); //fuente de la letra del boton
+		Jugar.setFocusPainted(false);
 
 		//  abre la ventana relacionada con los niveles del juego y cierra la ventana de inicio
 		Jugar.addActionListener(new ActionListener() {
@@ -108,6 +110,7 @@ public class Interfaz_Usuario extends JFrame {
 		Salir.setForeground(Color.BLACK); //color de las letras del boton
 		Salir.setBackground(Color.WHITE);
 		Salir.setFont(new Font("algerian",Font.BOLD,40)); //fuente de la letra del boton
+		Salir.setFocusPainted(false);
 
 		//cierra la ventana principal
 		Salir.addActionListener(new ActionListener() {
