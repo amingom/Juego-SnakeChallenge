@@ -37,7 +37,7 @@ public class Interfaz_Vibora extends JFrame {
 			protected void paintComponent(Graphics g) {
 				super.paintComponent(g);
 				// Dibuja la imagen de fondo
-				ImageIcon backgroundImage = new ImageIcon("vibora.jpg");
+				ImageIcon backgroundImage = new ImageIcon("img\\vibora.jpg");
 				g.drawImage(backgroundImage.getImage(), 0, 0, getWidth(), getHeight(), null);
 			}
 		};

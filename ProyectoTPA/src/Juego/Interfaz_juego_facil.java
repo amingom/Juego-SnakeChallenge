@@ -52,7 +52,7 @@ public class Interfaz_juego_facil extends JFrame {
 			protected void paintComponent(Graphics g) {				
 				super.paintComponent(g);
 				// Dibuja la imagen de fondo
-				ImageIcon backgroundImage = new ImageIcon("tablero.png");			//imagen del fondo
+				ImageIcon backgroundImage = new ImageIcon("img\\tablero.png");			//imagen del fondo
 				g.drawImage(backgroundImage.getImage(), 0, 0, getWidth(), getHeight(), null);		//establece las medidas de la imagen a las de la ventana
 			}
 		};
@@ -65,7 +65,7 @@ public class Interfaz_juego_facil extends JFrame {
 
         JLabel imageLabel = new JLabel();
         imageLabel.setBounds(0, -5, 720, 35);
-        ImageIcon defaultImage = new ImageIcon("marcador.png");
+        ImageIcon defaultImage = new ImageIcon("img\\marcador.png");
         imageLabel.setIcon(defaultImage);
 
         marcador.add(imageLabel);
@@ -128,7 +128,7 @@ public class Interfaz_juego_facil extends JFrame {
 	    spawnFood(); // Inicializa la comida en una posición aleatoria
 	        
 	    try {
-	        obstacleImage = ImageIO.read(new File("Enemy.png"));
+	        obstacleImage = ImageIO.read(new File("img\\Enemy.png"));
 	    } catch (IOException e) {
 	        e.printStackTrace();
 	    }
@@ -178,11 +178,11 @@ public class Interfaz_juego_facil extends JFrame {
 
         // Dibuja el alimento según su tipo
         if (foodType == 0) {
-            drawFoodImage(g, "apple.png");
+            drawFoodImage(g, "img\\apple.png");
         } else if (foodType == 1) {
-            drawFoodImage(g, "cherry.png");
+            drawFoodImage(g, "img\\cherry.png");
         } else if (foodType == 2) {
-            drawFoodImage(g, "banana.png");
+            drawFoodImage(g, "img\\banana.png");
         }
         
      // Dibuja el obstáculo
@@ -198,50 +198,50 @@ public class Interfaz_juego_facil extends JFrame {
 	        switch (direction) {
 	            case KeyEvent.VK_UP:
 	            	if(animal.getAnimal() == "cobra") {
-	            		headImage = ImageIO.read(new File("cobra_cabeza_arriba.png"));	
+	            		headImage = ImageIO.read(new File("img\\cobra_cabeza_arriba.png"));	
 	            	}
 	            	else if(animal.getAnimal() == "piton") {
-	            		headImage = ImageIO.read(new File("piton_cabeza_arriba.png"));
+	            		headImage = ImageIO.read(new File("img\\piton_cabeza_arriba.png"));
 	            	}
 	            	else if(animal.getAnimal() == "vibora") {
-	            		headImage = ImageIO.read(new File("vibora_cabeza_arriba.png"));
+	            		headImage = ImageIO.read(new File("img\\vibora_cabeza_arriba.png"));
 	            	}
 	                break;
 	            case KeyEvent.VK_DOWN:
 	            	if(animal.getAnimal() == "cobra") {
-	            		headImage = ImageIO.read(new File("cobra_cabeza_abajo.png"));
+	            		headImage = ImageIO.read(new File("img\\cobra_cabeza_abajo.png"));
 	            	}
 	            	else if(animal.getAnimal() == "piton"){
-	            		headImage = ImageIO.read(new File("piton_cabeza_abajo.png"));
+	            		headImage = ImageIO.read(new File("img\\piton_cabeza_abajo.png"));
 	            	}
 	            	else if(animal.getAnimal() == "vibora") {
-	            		headImage = ImageIO.read(new File("vibora_cabeza_abajo.png"));
+	            		headImage = ImageIO.read(new File("img\\vibora_cabeza_abajo.png"));
 	            	}
 	                break;
 	            case KeyEvent.VK_LEFT:
 	            	if(animal.getAnimal() == "cobra") {
-	                headImage = ImageIO.read(new File("cobra_cabeza_izquierda.png"));
+	                headImage = ImageIO.read(new File("img\\cobra_cabeza_izquierda.png"));
 	            	}
 	            	else if(animal.getAnimal() == "piton") {
-	            		headImage = ImageIO.read(new File("piton_cabeza_izquierda.png"));
+	            		headImage = ImageIO.read(new File("img\\piton_cabeza_izquierda.png"));
 	            	}
 	            	else if(animal.getAnimal() == "vibora") {
-	            		headImage = ImageIO.read(new File("vibora_cabeza_izquierda.png"));
+	            		headImage = ImageIO.read(new File("img\\vibora_cabeza_izquierda.png"));
 	            	}
 	                break;
 	            case KeyEvent.VK_RIGHT:
 	            	if(animal.getAnimal() == "cobra") {
-	            		headImage = ImageIO.read(new File("cobra_cabeza_derecha.png"));
+	            		headImage = ImageIO.read(new File("img\\cobra_cabeza_derecha.png"));
 	        		}
 	                else if(animal.getAnimal() == "piton") {
-	            		headImage = ImageIO.read(new File("piton_cabeza_derecha.png"));
+	            		headImage = ImageIO.read(new File("img\\piton_cabeza_derecha.png"));
 	            	}
 	            	else if(animal.getAnimal() == "vibora") {
-	            		headImage = ImageIO.read(new File("vibora_cabeza_derecha.png"));
+	            		headImage = ImageIO.read(new File("img\\vibora_cabeza_derecha.png"));
 	            	}
 	                break;
 	            default:
-	                headImage = ImageIO.read(new File("cabeza.png"));
+	                headImage = ImageIO.read(new File("img\\cobra_cabeza_derecha.png"));
 	                break;
 	        }
 	        g.drawImage(headImage, x, y, 20, 20, this);
@@ -254,13 +254,13 @@ public class Interfaz_juego_facil extends JFrame {
 	private void drawBodyImage(Graphics g, int x, int y) {
 		try {
 			if(animal.getAnimal() == "cobra") {
-        		bodyImage = ImageIO.read(new File("cuerpo_cobra.png"));	
+        		bodyImage = ImageIO.read(new File("img\\cuerpo_cobra.png"));	
         	}
         	else if(animal.getAnimal() == "piton") {
-        		bodyImage = ImageIO.read(new File("cuerpo_piton.png"));
+        		bodyImage = ImageIO.read(new File("img\\cuerpo_piton.png"));
         	}
         	else if(animal.getAnimal() == "vibora") {
-        		bodyImage = ImageIO.read(new File("cuerpo_vibora.png"));
+        		bodyImage = ImageIO.read(new File("img\\cuerpo_vibora.png"));
         	}
 			g.drawImage(bodyImage, x, y, 20, 20, this);
 		} catch (IOException e) {
