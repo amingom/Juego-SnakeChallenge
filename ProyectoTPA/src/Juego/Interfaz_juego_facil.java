@@ -28,8 +28,8 @@ public class Interfaz_juego_facil extends JFrame {
 	private BufferedImage bodyImage;
 	private Point obstacle;
 	private BufferedImage obstacleImage;
-	private Interfaz_Personalizar animal;
-	private long lastDirectionChangeTime = System.currentTimeMillis();
+	private Interfaz_Personalizar animal; 
+	private long lastDirectionChangeTime = System.currentTimeMillis(); // Sirve para guardar el último cambio de dirección de la serpiente
 	private static final long tiempoMinimo = 100; // Tiempo mínimo entre cambios de dirección en milisegundos
 
 	public int getScore() {
@@ -205,7 +205,9 @@ public class Interfaz_juego_facil extends JFrame {
 
 	}
 
-	// Método para dibujar la cabeza según el tipo de la serpiente
+	/**
+	 * Método para dibujar la cabeza según el tipo de la serpiente
+	 */
 	private void drawHeadImage(Graphics g, int x, int y) {
 
 		try {
@@ -265,7 +267,9 @@ public class Interfaz_juego_facil extends JFrame {
 		}
 	}
 
-	//Método para dibujar el cuerpo según el tipo de serpiente
+	/**
+	 * Método para dibujar el cuerpo según el tipo de serpiente
+	 */
 	private void drawBodyImage(Graphics g, int x, int y) {
 		try {
 			if(animal.getAnimal() == "cobra") {
@@ -329,6 +333,9 @@ public class Interfaz_juego_facil extends JFrame {
 
 	}
 
+	/**
+	 * Método para interfaz de Game Over
+	 */
 	private void abrirNuevaInterfaz() {
 		// Crea una nueva interfaz o ventana aquí
 

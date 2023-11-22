@@ -5,9 +5,17 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
+/**
+ * Esta clase representa la interfaz de la Pantalla Final
+ * Permite a los jugadores jugar salir del juego, jugar de nuevo o seleccionar el nivel.
+ */
 public class Interfaz_Pantalla_final extends JFrame{
 	private Interfaz_juego_facil puntos;
 	
+	/**
+	 * Constructor de la clase que configura la interfaz de la pantalla final.
+	 * Establece el tamano, titulo, posicion y otros aspectos de la ventana.
+	 */
 	public Interfaz_Pantalla_final(Interfaz_juego_facil puntos) {
 		this.puntos = puntos;
 		setSize(400,300);                                                               //ancho largo
@@ -18,6 +26,10 @@ public class Interfaz_Pantalla_final extends JFrame{
 		setDefaultCloseOperation(EXIT_ON_CLOSE);                              //hace que termine el programa al cerrar la ventana
 	}
 	
+	/**
+	 * Inicializa los componentes visuales de la interfaz de Pantalla Final.
+	 * Crea un panel, etiquetas de texto y botones para Salir, Volver a jugar y Seleccionar nivel.
+	 */
 	void iniciarComponentes() {
 		
 		JPanel panel = new JPanel();    // creacion de un panel		
