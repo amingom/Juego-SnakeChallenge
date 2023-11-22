@@ -294,22 +294,32 @@ public class Interfaz_juego_facil extends JFrame {
 	 // Verifica si la serpiente choca con el borde del juego
         if (head.x < 0 || head.x >= 35 || head.y < 0 || head.y >= 34) {
             timer.stop(); // Detiene el temporizador
-            JOptionPane.showMessageDialog(this, "¡Game Over! Has chocado con el borde.", "Game Over", JOptionPane.INFORMATION_MESSAGE);
+            dispose();
+            abrirNuevaInterfaz();
         }
 	    
 	    // Verifica si la serpiente se choca con su propio cuerpo
 	    if (snake.size() > 1 && snake.subList(1, snake.size()).contains(head)) {
 	        timer.stop(); // Detiene el temporizador
-	        JOptionPane.showMessageDialog(this, "¡Game Over! Has chocado con tu propio cuerpo.", "Game Over", JOptionPane.INFORMATION_MESSAGE);
+	        dispose();
+            abrirNuevaInterfaz();
 	    }
 	    
 	    // Verifica si la serpiente choca con el obstáculo
 	    if (snake.getFirst().equals(obstacle)) {
 	        timer.stop(); // Detiene el temporizador
-	        JOptionPane.showMessageDialog(this, "¡Game Over! Has chocado con un hambriento salvaje.", "Game Over", JOptionPane.INFORMATION_MESSAGE);
+	        dispose();
+            abrirNuevaInterfaz();
 	    }
 	    
 	}
+	
+	private void abrirNuevaInterfaz() {
+        // Crea una nueva interfaz o ventana aquí
+        Interfaz_Pantalla_final pantalla_final = new Interfaz_Pantalla_final();
+        pantalla_final.setVisible(true);
+    
+    }
 
 	/**
 	 * Mueve la serpiente en la dirección actual.
