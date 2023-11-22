@@ -8,14 +8,14 @@ import java.awt.event.*;
 public class Interfaz_Pantalla_final extends JFrame{
 	private Interfaz_juego_facil puntos;
 	
-	public Interfaz_Pantalla_final() {
+	public Interfaz_Pantalla_final(Interfaz_juego_facil puntos) {
+		this.puntos = puntos;
 		setSize(400,300);                                                               //ancho largo
 		setTitle("Snake Challenge");                                                  //establecemos el titulo de la ventana	
 		setLocationRelativeTo(null);                                                //establecemos la ventana en el centro de la pantalla
 		this.getContentPane().setBackground(Color.green);                         //establecemos el color de la ventana
 		iniciarComponentes();                                                   //Inicia los botones , imagenes...
 		setDefaultCloseOperation(EXIT_ON_CLOSE);                              //hace que termine el programa al cerrar la ventana
-		puntos = new Interfaz_juego_facil();
 	}
 	
 	void iniciarComponentes() {

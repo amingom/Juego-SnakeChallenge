@@ -325,7 +325,7 @@ public class Interfaz_juego_facil extends JFrame {
 	private void abrirNuevaInterfaz() {
         // Crea una nueva interfaz o ventana aquí
              
-        Interfaz_Pantalla_final pantalla_final = new Interfaz_Pantalla_final(); 
+        Interfaz_Pantalla_final pantalla_final = new Interfaz_Pantalla_final(this); 
         pantalla_final.setVisible(true);
     
     }
@@ -365,8 +365,6 @@ public class Interfaz_juego_facil extends JFrame {
 
 	        // Actualiza la puntuación total
 	        score += foodType + 1;
-	        
-	        System.out.println("Puntuacion: " + getScore());
 
 	        // Genera otra posición para el alimento
 	        spawnFood();
