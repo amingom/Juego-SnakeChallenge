@@ -14,6 +14,7 @@ public class Interfaz_Cobra extends JFrame {
 	/**
 	 * Constructor de la clase que configura la interfaz "Cobra".
 	 * Establece el tamano, titulo, posicion y otros aspectos de la ventana.
+	 * @param animal Parametro que representa el tipo de animal.
 	 */
 	public Interfaz_Cobra(String animal) {
 

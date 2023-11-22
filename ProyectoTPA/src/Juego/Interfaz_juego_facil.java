@@ -206,7 +206,10 @@ public class Interfaz_juego_facil extends JFrame {
 	}
 
 	/**
-	 * Método para dibujar la cabeza según el tipo de la serpiente
+	 * Dibuja la cabeza de la serpiente según el tipo de la serpiente y dirección.
+	 * @param g El objeto Graphics utilizado para dibujar.
+	 * @param x La coordenada x de la cabeza de la serpiente.
+	 * @param y La coordenada y de la cabeza de la serpiente.
 	 */
 	private void drawHeadImage(Graphics g, int x, int y) {
 
@@ -268,7 +271,10 @@ public class Interfaz_juego_facil extends JFrame {
 	}
 
 	/**
-	 * Método para dibujar el cuerpo según el tipo de serpiente
+	 * Dibuja el cuerpo de la serpiente según el tipo de la serpiente.
+	 * @param g El objeto Graphics utilizado para dibujar.
+	 * @param x La coordenada x del cuerpo de la serpiente.
+	 * @param y La coordenada y del cuerpo de la serpiente.
 	 */
 	private void drawBodyImage(Graphics g, int x, int y) {
 		try {
