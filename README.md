@@ -195,6 +195,17 @@ de la serpiente y el cuarto es el botón de salir, para finalizar el juego.
 
 ![alt text](https://cdn.discordapp.com/attachments/807178652042264596/1175856849447301180/vibora_cabeza_arriba_preview_rev_1.png?ex=656cc107&is=655a4c07&hm=7a9a0ba8019c175ccf1582e31a37dcd677afb72d97963810dd7b23b14c1bbb73&)
 
+**Comida**
 
+**Manzana**
 
+![alt text](https://media.discordapp.net/attachments/807178652042264596/1172560418649165854/apple.png?ex=6569fd7c&is=6557887c&hm=208ec42c43ae7b5d986f5771c06bac398acc5def5f9d6b346da72803de656b55&=&format=webp)
+
+**Cereza**
+
+![alt text](https://media.discordapp.net/attachments/807178652042264596/1172560418384912454/cherry.png?ex=6569fd7c&is=6557887c&hm=fdddc8047fb0fc7cdd9cd53270b9862ec7d7c86c4ba888c6b68ca0257b56436f&=&format=webp&width=676&height=676)
+
+**Platano**
+
+![alt text](https://media.discordapp.net/attachments/807178652042264596/1172560418049380445/banana.png?ex=6569fd7c&is=6557887c&hm=e8a015466f0d7e62b8256d236ccc2c8ecea32741fb8fd202c445f108d7a58b13&=&format=webp)
 
