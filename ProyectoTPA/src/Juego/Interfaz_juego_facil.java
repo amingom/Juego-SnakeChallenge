@@ -18,7 +18,7 @@ import javax.swing.JOptionPane; //sirve para mostrar un cuadro al usuario para a
 public class Interfaz_juego_facil extends JFrame {
 	private JPanel gamePanel;  // Sirve para representar visualmente el juego
 	private LinkedList<Point> snake; //Representa la serpiente
-	private Timer timer;  // Srive para gestionar el tiempo en el juego
+	private Timer timer;  // Sirve para gestionar el tiempo en el juego
 	private int direction;  // Almacena la dirección de movimiento de la serpiente
 	private Point food;  //Representa la posición de la comida
 	private int foodType;  // Representa el tipo de alimento actual
@@ -32,10 +32,12 @@ public class Interfaz_juego_facil extends JFrame {
 	private long lastDirectionChangeTime = System.currentTimeMillis(); // Sirve para guardar el último cambio de dirección de la serpiente
 	private static final long tiempoMinimo = 100; // Tiempo mínimo entre cambios de dirección en milisegundos
 
+	//Método para obtener la puntuación
 	public int getScore() {
 		return score;
 	}
 
+	//Método que permite establecer el valor de la puntuación
 	public void setScore(int _score) {
 		score = _score;
 	}
