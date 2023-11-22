@@ -409,3 +409,5 @@ public class Interfaz_juego_facil extends JFrame {
 		}
 	}
 }
+
+//prueba
