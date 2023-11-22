@@ -30,6 +30,14 @@ public class Interfaz_juego_facil extends JFrame {
 	private BufferedImage obstacleImage;
 	private Interfaz_Personalizar animal;
 	
+	public int getScore() {
+		return score;
+	}
+	
+	public void setScore(int _score) {
+		score = _score;
+	}
+	
 	/**
      * Constructor de la clase que configura la interfaz del juego en el nivel facil.
      * Establece el tamano, titulo, posicion y otros aspectos de la ventana.
@@ -316,7 +324,8 @@ public class Interfaz_juego_facil extends JFrame {
 	
 	private void abrirNuevaInterfaz() {
         // Crea una nueva interfaz o ventana aquí
-        Interfaz_Pantalla_final pantalla_final = new Interfaz_Pantalla_final();
+             
+        Interfaz_Pantalla_final pantalla_final = new Interfaz_Pantalla_final(); 
         pantalla_final.setVisible(true);
     
     }
@@ -356,6 +365,8 @@ public class Interfaz_juego_facil extends JFrame {
 
 	        // Actualiza la puntuación total
 	        score += foodType + 1;
+	        
+	        System.out.println("Puntuacion: " + getScore());
 
 	        // Genera otra posición para el alimento
 	        spawnFood();
@@ -366,14 +377,14 @@ public class Interfaz_juego_facil extends JFrame {
 
 	    checkCollision(); // Verifica la colisión de la serpiente con la pared
 	    updateScoreLabel(); // Actualiza el JLabel de puntuación
-
+	    
 	}
 
 	/**
 	 * Actualiza el JLabel de puntuación con la puntuación total.
 	 */
 	private void updateScoreLabel() {
-	    scoreLabel.setText("" + score);
+	    scoreLabel.setText("" + getScore());
 	}
 
 	/**

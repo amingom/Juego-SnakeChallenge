@@ -6,24 +6,16 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class Interfaz_Pantalla_final extends JFrame{
-	
+	private Interfaz_juego_facil puntos;
 	
 	public Interfaz_Pantalla_final() {
-		
 		setSize(400,300);                                                               //ancho largo
-
 		setTitle("Snake Challenge");                                                  //establecemos el titulo de la ventana	
-
 		setLocationRelativeTo(null);                                                //establecemos la ventana en el centro de la pantalla
-
 		this.getContentPane().setBackground(Color.green);                         //establecemos el color de la ventana
-
 		iniciarComponentes();                                                   //Inicia los botones , imagenes...
-
 		setDefaultCloseOperation(EXIT_ON_CLOSE);                              //hace que termine el programa al cerrar la ventana
-
-		
-		
+		puntos = new Interfaz_juego_facil();
 	}
 	
 	void iniciarComponentes() {
@@ -33,28 +25,23 @@ public class Interfaz_Pantalla_final extends JFrame{
 		panel.setLayout(null);  //desactiva su dise単o
 		this.getContentPane().add(panel);  //agregamos el panel a la ventana
 		
-		
 		JLabel Mensaje = new JLabel();   //creamos una etiqueta de texto		
 		Mensaje.setText("GAME OVER");
 		Mensaje.setBounds(80,10,200,40);
 		Mensaje.setHorizontalAlignment(SwingConstants.CENTER);   //centramos el texto en la etiqueta
 		Mensaje.setForeground(Color.BLACK);   //establecemos el color del texto
 		Mensaje.setOpaque(false);  // establecemos el poder pintar la etiqueta
-		//etiqueta.setBackground(Color.black);  //cambiamos el color del fondo de la etiqueta
 		Mensaje.setFont(new Font("arial",0,30));  //establecemos la fuente del texto
 		panel.add(Mensaje);   //agregamos la etiqueta al panel
 		
-		
 		JLabel Puntuacion = new JLabel();   //creamos una etiqueta de texto		
-		Puntuacion.setText("PUNTUACION : ");
+		Puntuacion.setText("PUNTUACION : " + puntos.getScore());
 		Puntuacion.setBounds(30,60,300,30);
 		Puntuacion.setHorizontalAlignment(SwingConstants.CENTER);   //centramos el texto en la etiqueta
 		Puntuacion.setForeground(Color.BLACK);   //establecemos el color del texto
 		Puntuacion.setOpaque(false);  // establecemos el poder pintar la etiqueta
-		//etiqueta.setBackground(Color.black);  //cambiamos el color del fondo de la etiqueta
 		Puntuacion.setFont(new Font("arial",0,30));  //establecemos la fuente del texto
 		panel.add(Puntuacion);   //agregamos la etiqueta al panel
-		
 		
 		JButton Salir = new JButton(); //creamos el boton
 		Salir.setText("EXIT");	//establecemos texto al boton
@@ -73,7 +60,6 @@ public class Interfaz_Pantalla_final extends JFrame{
 		});
 
 		panel.add(Salir);	
-		
 		
 		JButton Reiniciar = new JButton(); //creamos el boton
 		Reiniciar.setText("PLAY AGAIN");	//establecemos texto al boton
@@ -97,10 +83,6 @@ public class Interfaz_Pantalla_final extends JFrame{
 
 		panel.add(Reiniciar);	
 		
-		
-		
-		
-		
 		JButton Jugar_de_nuevo = new JButton(); //creamos el boton
 		Jugar_de_nuevo.setText("SELECCION NIVEL");	//establecemos texto al boton
 		Jugar_de_nuevo.setBounds(245,218,140,30);  //tama単o y posicion del boton
@@ -123,8 +105,5 @@ public class Interfaz_Pantalla_final extends JFrame{
 		
 		panel.add(Jugar_de_nuevo);
 
-		
-		
-		
 	}
 }
