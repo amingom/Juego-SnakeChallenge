@@ -13,6 +13,7 @@ public class Interfaz_Piton extends JFrame {
 	/**
      * Constructor de la clase que configura la interfaz "Piton".
      * Establece el tamano, titulo, posicion y otros aspectos de la ventana.
+     * @param animal Parametro que representa el tipo de animal.
      */
 	public Interfaz_Piton(String animal) {
 

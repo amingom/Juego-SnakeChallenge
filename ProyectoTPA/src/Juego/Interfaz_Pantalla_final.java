@@ -10,11 +10,12 @@ import java.awt.event.*;
  * Permite a los jugadores jugar salir del juego, jugar de nuevo o seleccionar el nivel.
  */
 public class Interfaz_Pantalla_final extends JFrame{
-	private Interfaz_juego_facil puntos;
+	private Interfaz_juego_facil puntos;  // Se utiliza para obtener la puntuación del juego a través del getScore()
 	
 	/**
 	 * Constructor de la clase que configura la interfaz de la pantalla final.
 	 * Establece el tamano, titulo, posicion y otros aspectos de la ventana.
+	 * @param puntos Instancia de Interfaz juego facil para acceder a la puntuacion del juego.
 	 */
 	public Interfaz_Pantalla_final(Interfaz_juego_facil puntos) {
 		this.puntos = puntos;

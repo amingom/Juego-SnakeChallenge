@@ -16,19 +16,19 @@ import javax.swing.JOptionPane; //sirve para mostrar un cuadro al usuario para a
  */
 
 public class Interfaz_juego_facil extends JFrame {
-	private JPanel gamePanel;
-	private LinkedList<Point> snake;
-	private Timer timer;
-	private int direction;
-	private Point food;
+	private JPanel gamePanel;  // Sirve para representar visualmente el juego
+	private LinkedList<Point> snake; //Representa la serpiente
+	private Timer timer;  // Srive para gestionar el tiempo en el juego
+	private int direction;  // Almacena la dirección de movimiento de la serpiente
+	private Point food;  //Representa la posición de la comida
 	private int foodType;  // Representa el tipo de alimento actual
 	private int score;     // Representa la puntuación del jugador
-	private JLabel scoreLabel;
-	private BufferedImage headImage;
-	private BufferedImage bodyImage;
-	private Point obstacle;
-	private BufferedImage obstacleImage;
-	private Interfaz_Personalizar animal; 
+	private JLabel scoreLabel;  //Se utiliza para mostrar la puntuación 
+	private BufferedImage headImage;  // Almacena la imagen de la cabeza
+	private BufferedImage bodyImage; // Almacena la imagen del cuerpo
+	private Point obstacle;  // Representa la posición del obstáculo
+	private BufferedImage obstacleImage; // Almacena la imagen obstáculo
+	private Interfaz_Personalizar animal; // Sirve para saber la serpiente elegida por el usuario
 	private long lastDirectionChangeTime = System.currentTimeMillis(); // Sirve para guardar el último cambio de dirección de la serpiente
 	private static final long tiempoMinimo = 100; // Tiempo mínimo entre cambios de dirección en milisegundos
 
@@ -106,7 +106,7 @@ public class Interfaz_juego_facil extends JFrame {
 		imageLabel.add(scoreLabel);
 
 		// Agrega un temporizador para mover la serpiente
-		timer = new Timer(100, new ActionListener() {
+		timer = new Timer(100, new ActionListener() { //velocidad de la serpiente
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				move();
