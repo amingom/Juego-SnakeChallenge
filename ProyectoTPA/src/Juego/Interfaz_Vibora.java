@@ -4,6 +4,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
+/**
+ * Esta clase representa la interfaz de "Vibora" en el juego Snake Challenge.
+ * Proporciona informacion sobre la Vibora y sus habilidades.
+ */
 public class Interfaz_Vibora extends JFrame {
 	
 	/**

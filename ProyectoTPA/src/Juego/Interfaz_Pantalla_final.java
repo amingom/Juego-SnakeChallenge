@@ -34,7 +34,7 @@ public class Interfaz_Pantalla_final extends JFrame{
 		
 		JPanel panel = new JPanel();    // creacion de un panel		
 		panel.setBackground(Color.MAGENTA);  //establecemos el color del panel
-		panel.setLayout(null);  //desactiva su dise単o
+		panel.setLayout(null);  //desactiva su diseno
 		this.getContentPane().add(panel);  //agregamos el panel a la ventana
 		
 		JLabel Mensaje = new JLabel();   //creamos una etiqueta de texto		
@@ -57,7 +57,7 @@ public class Interfaz_Pantalla_final extends JFrame{
 		
 		JButton Salir = new JButton(); //creamos el boton
 		Salir.setText("EXIT");	//establecemos texto al boton
-		Salir.setBounds(2,218,100,30);  //tama単o y posicion del boton
+		Salir.setBounds(2,218,100,30);  //tamano y posicion del boton
 		Salir.setEnabled(true);  //habilita o deshabilita el click		
 		Salir.setForeground(Color.BLACK); //color de las letras del boton
 		Salir.setBackground(Color.WHITE);
@@ -75,7 +75,7 @@ public class Interfaz_Pantalla_final extends JFrame{
 		
 		JButton Reiniciar = new JButton(); //creamos el boton
 		Reiniciar.setText("PLAY AGAIN");	//establecemos texto al boton
-		Reiniciar.setBounds(108,218,130,30);  //tama単o y posicion del boton
+		Reiniciar.setBounds(108,218,130,30);  //tamano y posicion del boton
 		Reiniciar.setEnabled(true);  //habilita o deshabilita el click		
 		Reiniciar.setForeground(Color.BLACK); //color de las letras del boton
 		Reiniciar.setBackground(Color.WHITE);
@@ -97,7 +97,7 @@ public class Interfaz_Pantalla_final extends JFrame{
 		
 		JButton Jugar_de_nuevo = new JButton(); //creamos el boton
 		Jugar_de_nuevo.setText("SELECCION NIVEL");	//establecemos texto al boton
-		Jugar_de_nuevo.setBounds(245,218,140,30);  //tama単o y posicion del boton
+		Jugar_de_nuevo.setBounds(245,218,140,30);  //tamano y posicion del boton
 		Jugar_de_nuevo.setEnabled(true);  //habilita o deshabilita el click		
 		Jugar_de_nuevo.setForeground(Color.BLACK); //color de las letras del boton
 		Jugar_de_nuevo.setBackground(Color.WHITE);

@@ -4,6 +4,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
+/**
+ * Esta clase representa la interfaz de "Piton" en el juego Snake Challenge.
+ * Proporciona informacion sobre la Piton y sus habilidades.
+ */
 public class Interfaz_Piton extends JFrame {
 
 	/**
