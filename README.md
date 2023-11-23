@@ -79,6 +79,8 @@ classDiagram
     - long lastDirectionChangeTime = System.currentTimeMillis(); 
 	- static final long tiempoMinimo = 100;
 
+
+
     + void setScore(int _score)
     + int getScore()
     + void updateScoreLabel()
