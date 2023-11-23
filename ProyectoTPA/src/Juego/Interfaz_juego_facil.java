@@ -8,7 +8,6 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.LinkedList;
-import javax.swing.JOptionPane; //sirve para mostrar un cuadro al usuario para avisar que ha perdido
 
 /**
  * Esta clase representa la interfaz del juego Snake Challenge en el nivel facil.
