@@ -76,8 +76,8 @@ classDiagram
 	- Point obstacle;
 	- BufferedImage obstacleImage;
 	- String animal;
-    - long lastDirectionChangeTime = System.currentTimeMillis(); 
-	- static final long tiempoMinimo = 100;
+        - long lastDirectionChangeTime; 
+	- static final long tiempoMinimo;
 
 
 
