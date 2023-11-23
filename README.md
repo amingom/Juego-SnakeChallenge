@@ -39,7 +39,7 @@ classDiagram
     Interfaz_Personalizar <|-- Interfaz_Cobra
     Interfaz_Personalizar <|-- Interfaz_Piton
     Interfaz_Personalizar <|-- Interfaz_Vibora
-
+    Interfaz_Pantalla_final <|-- Interfaz_juego_facil
 
     JUEGOSERPIENTE : -Snake snake
     JUEGOSERPIENTE : -LinkedList<Food>foods
@@ -76,7 +76,11 @@ classDiagram
 	- Point obstacle;
 	- BufferedImage obstacleImage;
 	- String animal;
+    - long lastDirectionChangeTime = System.currentTimeMillis(); 
+	- static final long tiempoMinimo = 100;
 
+    + void setScore(int _score)
+    + int getScore()
     + void updateScoreLabel()
     + void updateScoreLabel()
     + void checkCollision()
@@ -87,6 +91,7 @@ classDiagram
     + void iniciarComponentes()
     + void draw(Graphics g)
     + void move()
+    - void abrirNuevaInterfaz()
 
 
     }
@@ -96,7 +101,11 @@ classDiagram
     }
 
     class Interfaz_Personalizar{
+        static - String animal;
+
        + void iniciarComponentes()
+       + String getAnimal()
+       + static void setAnimal(String _animal)
     }
 
      class Interfaz_Cobra{
@@ -111,7 +120,12 @@ classDiagram
         + void iniciarComponentes()
      }
 
+     class Interfaz_Pantalla_final{
+        - Interfaz_juego_facil puntos;
 
+
+        + void iniciarComponentes()
+     }
 
 ```
 
