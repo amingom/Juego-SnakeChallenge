@@ -40,6 +40,8 @@ classDiagram
     Interfaz_Personalizar <|-- Interfaz_Piton
     Interfaz_Personalizar <|-- Interfaz_Vibora
     Interfaz_Pantalla_final <|-- Interfaz_juego_facil
+    Interfaz_Personalizar <|-- Interfaz_Pantalla_final
+    Interfaz_Niveles <|-- Interfaz_Pantalla_final
 
     JUEGOSERPIENTE : -Snake snake
     JUEGOSERPIENTE : -LinkedList<Food>foods
@@ -128,6 +130,7 @@ classDiagram
 
         + void iniciarComponentes()
      }
+
 
 ```
 
