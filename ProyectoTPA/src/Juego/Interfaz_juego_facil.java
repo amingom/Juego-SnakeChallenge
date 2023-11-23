@@ -41,6 +41,7 @@ public class Interfaz_juego_facil extends JFrame {
 		score = _score;
 	}
 
+
 	/**
 	 * Constructor de la clase que configura la interfaz del juego en el nivel facil.
 	 * Establece el tamano, titulo, posicion y otros aspectos de la ventana.

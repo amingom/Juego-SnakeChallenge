@@ -11,14 +11,14 @@ import java.awt.event.*;
  */
 
 public class Interfaz_Personalizar extends JFrame {
-	
+
 	static private String animal; // Almacena la serpiente seleccionada en la interfaz de personalización
-	
+
 	//Método para obtener el animal seleccionado
 	public String getAnimal() {
 		return animal;
 	}
-	
+
 	//Método que permite establecer el valor de la variable animal
 	public static void setAnimal(String _animal) {
 		animal = _animal;

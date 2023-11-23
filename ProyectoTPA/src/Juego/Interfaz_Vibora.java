@@ -9,12 +9,12 @@ import java.awt.event.*;
  * Proporciona informacion sobre la Vibora y sus habilidades.
  */
 public class Interfaz_Vibora extends JFrame {
-	
+
 	/**
-     * Constructor de la clase que configura la interfaz "Vibora".
-     * Establece el tamano, titulo, posicion y otros aspectos de la ventana.
-     * @param animal Parametro que representa el tipo de animal.
-     */
+	 * Constructor de la clase que configura la interfaz "Vibora".
+	 * Establece el tamano, titulo, posicion y otros aspectos de la ventana.
+	 * @param animal Parametro que representa el tipo de animal.
+	 */
 	public Interfaz_Vibora(String animal) {
 
 		setSize(700,700);                                                               //ancho largo
@@ -30,13 +30,13 @@ public class Interfaz_Vibora extends JFrame {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);                              //hace que termine el programa al cerrar la ventana
 
 	}
-	
+
 	/**
-     * Inicializa los componentes visuales de la interfaz "Vibora".
-     * Crea un panel, etiquetas de texto, un boton de "Atras" y un boton de "Start".
-     */
+	 * Inicializa los componentes visuales de la interfaz "Vibora".
+	 * Crea un panel, etiquetas de texto, un boton de "Atras" y un boton de "Start".
+	 */
 	void iniciarComponentes() {
-		
+
 		JPanel vibora = new JPanel() {
 			@Override
 			protected void paintComponent(Graphics g) {
@@ -48,7 +48,7 @@ public class Interfaz_Vibora extends JFrame {
 		};
 		vibora.setLayout(null);
 		getContentPane().add(vibora);
-		
+
 		JLabel Info = new JLabel();   //creamos una etiqueta de texto		
 		Info.setText("Información de la víbora:\n"
 				+ "-Color: azul.\n"
@@ -61,7 +61,7 @@ public class Interfaz_Vibora extends JFrame {
 		//etiqueta.setBackground(Color.black);  //cambiamos el color del fondo de la etiqueta
 		Info.setFont(new Font("arial",0,23));  //establecemos la fuente del texto
 		vibora.add(Info);   //agregamos la etiqueta al panel
-		
+
 		JButton Atras = new JButton();                                         //creamos el boton
 		Atras.setText("Atras");	                                              //establecemos texto al boton
 		Atras.setBounds(50,600,150,40);                                      //tamaño y posicion del boton
@@ -84,7 +84,7 @@ public class Interfaz_Vibora extends JFrame {
 			}
 		});
 		vibora.add(Atras);                                //agregamos la etiqueta al panel
-		
+
 		JButton Start = new JButton();                                         //creamos el boton
 		Start.setText("Start");	                                              //establecemos texto al boton
 		Start.setBounds(490,600,150,40);                                      //tamaño y posicion del boton
@@ -107,5 +107,5 @@ public class Interfaz_Vibora extends JFrame {
 			}
 		});
 		vibora.add(Start);                                //agregamos la etiqueta al panel
- }		
+	}		
 }

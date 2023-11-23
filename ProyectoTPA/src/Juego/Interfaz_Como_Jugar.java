@@ -10,11 +10,11 @@ import java.awt.event.*;
  */
 
 public class Interfaz_Como_Jugar extends JFrame {
-	
+
 	/**
-     * Constructor de la clase que configura la interfaz "Como Jugar".
-     * Establece el tamano, titulo, posicion y otros aspectos de la ventana.
-     */
+	 * Constructor de la clase que configura la interfaz "Como Jugar".
+	 * Establece el tamano, titulo, posicion y otros aspectos de la ventana.
+	 */
 	public Interfaz_Como_Jugar() {
 
 		setSize(700,700);                                                               //ancho largo
@@ -30,11 +30,11 @@ public class Interfaz_Como_Jugar extends JFrame {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);                              //hace que termine el programa al cerrar la ventana
 
 	}
-	
+
 	/**
-     * Inicializa los componentes visuales de la interfaz "Como Jugar".
-     * Crea un panel, etiquetas de texto y un boton de "Atras".
-     */
+	 * Inicializa los componentes visuales de la interfaz "Como Jugar".
+	 * Crea un panel, etiquetas de texto y un boton de "Atras".
+	 */
 	void iniciarComponentes() {
 
 		JPanel ComoJugar = new JPanel();                                           // creacion de un panel		

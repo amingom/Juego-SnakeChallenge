@@ -85,7 +85,7 @@ public class Interfaz_Cobra extends JFrame {
 			}
 		});
 		cobra.add(Atras);                                //agregamos la etiqueta al panel
-		
+
 		JButton Start = new JButton();                                         //creamos el boton
 		Start.setText("Start");	                                              //establecemos texto al boton
 		Start.setBounds(490,600,150,40);                                      //tamaño y posicion del boton

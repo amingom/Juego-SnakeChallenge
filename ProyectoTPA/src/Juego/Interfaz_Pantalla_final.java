@@ -11,7 +11,7 @@ import java.awt.event.*;
  */
 public class Interfaz_Pantalla_final extends JFrame{
 	private Interfaz_juego_facil puntos;  // Se utiliza para obtener la puntuación del juego a través del getScore()
-	
+
 	/**
 	 * Constructor de la clase que configura la interfaz de la pantalla final.
 	 * Establece el tamano, titulo, posicion y otros aspectos de la ventana.
@@ -26,18 +26,18 @@ public class Interfaz_Pantalla_final extends JFrame{
 		iniciarComponentes();                                                   //Inicia los botones , imagenes...
 		setDefaultCloseOperation(EXIT_ON_CLOSE);                              //hace que termine el programa al cerrar la ventana
 	}
-	
+
 	/**
 	 * Inicializa los componentes visuales de la interfaz de Pantalla Final.
 	 * Crea un panel, etiquetas de texto y botones para Salir, Volver a jugar y Seleccionar nivel.
 	 */
 	void iniciarComponentes() {
-		
+
 		JPanel panel = new JPanel();    // creacion de un panel		
 		panel.setBackground(Color.MAGENTA);  //establecemos el color del panel
 		panel.setLayout(null);  //desactiva su diseno
 		this.getContentPane().add(panel);  //agregamos el panel a la ventana
-		
+
 		JLabel Mensaje = new JLabel();   //creamos una etiqueta de texto		
 		Mensaje.setText("GAME OVER");
 		Mensaje.setBounds(80,10,200,40);
@@ -46,7 +46,7 @@ public class Interfaz_Pantalla_final extends JFrame{
 		Mensaje.setOpaque(false);  // establecemos el poder pintar la etiqueta
 		Mensaje.setFont(new Font("arial",0,30));  //establecemos la fuente del texto
 		panel.add(Mensaje);   //agregamos la etiqueta al panel
-		
+
 		JLabel Puntuacion = new JLabel();   //creamos una etiqueta de texto		
 		Puntuacion.setText("PUNTUACION : " + puntos.getScore());
 		Puntuacion.setBounds(30,60,300,30);
@@ -55,7 +55,7 @@ public class Interfaz_Pantalla_final extends JFrame{
 		Puntuacion.setOpaque(false);  // establecemos el poder pintar la etiqueta
 		Puntuacion.setFont(new Font("arial",0,30));  //establecemos la fuente del texto
 		panel.add(Puntuacion);   //agregamos la etiqueta al panel
-		
+
 		JButton Salir = new JButton(); //creamos el boton
 		Salir.setText("EXIT");	//establecemos texto al boton
 		Salir.setBounds(2,218,100,30);  //tamano y posicion del boton
@@ -73,7 +73,7 @@ public class Interfaz_Pantalla_final extends JFrame{
 		});
 
 		panel.add(Salir);	
-		
+
 		JButton Reiniciar = new JButton(); //creamos el boton
 		Reiniciar.setText("PLAY AGAIN");	//establecemos texto al boton
 		Reiniciar.setBounds(108,218,130,30);  //tamano y posicion del boton
@@ -95,7 +95,7 @@ public class Interfaz_Pantalla_final extends JFrame{
 		});
 
 		panel.add(Reiniciar);	
-		
+
 		JButton Jugar_de_nuevo = new JButton(); //creamos el boton
 		Jugar_de_nuevo.setText("SELECCION NIVEL");	//establecemos texto al boton
 		Jugar_de_nuevo.setBounds(245,218,140,30);  //tamano y posicion del boton
@@ -104,7 +104,7 @@ public class Interfaz_Pantalla_final extends JFrame{
 		Jugar_de_nuevo.setBackground(Color.WHITE);
 		Jugar_de_nuevo.setFont(new Font("algerian",Font.BOLD,12)); //fuente de la letra del boton
 		Jugar_de_nuevo.setFocusPainted(false);
-		
+
 		Jugar_de_nuevo.addActionListener(new ActionListener() {
 
 			@Override
@@ -115,7 +115,7 @@ public class Interfaz_Pantalla_final extends JFrame{
 
 			}
 		});
-		
+
 		panel.add(Jugar_de_nuevo);
 
 	}

@@ -9,7 +9,6 @@ public class Main {
 
 	//Main del programa
 	public static void main(String[] args) {
-
 		new Interfaz_Usuario().setVisible(true);
 	}
 
