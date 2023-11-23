@@ -17,7 +17,7 @@ distinto de puntos.
 
 En la pantalla de juego irán apareciendo obstáculos, los cuales aumentarán su frecuencia
 dependiendo del nivel de dificultad. Chocar con alguno de estos obstáculos finalizará el juego.
-- **Rocas**.
+- **Enemigos**.
 - **Muros**.
 
 Los jugadores irán obteniendo puntos al comer los distintos alimentos, el objetivo es
