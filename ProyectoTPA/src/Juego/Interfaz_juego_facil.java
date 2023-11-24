@@ -29,10 +29,10 @@ public class Interfaz_juego_facil extends JFrame {
 	private BufferedImage obstacleImage; // Almacena la imagen obstáculo
 	private Interfaz_Personalizar animal; // Sirve para saber la serpiente elegida por el usuario
 	private long lastDirectionChangeTime = System.currentTimeMillis(); // Sirve para guardar el último cambio de dirección de la serpiente
-	private static final long tiempoMinimo = 100; // Tiempo mínimo entre cambios de dirección en milisegundos
-	private Interfaz_Niveles nivel;
+	private static final long tiempoMinimo = 80; // Tiempo mínimo entre cambios de dirección en milisegundos
+	private Interfaz_Niveles nivel; // Sirve para saber el nivel elegido por el usuario
 	private int velocidad; //Almacena el valor de la velocidad como numero entero
-	private int cantidadObstaculos;
+	private int cantidadObstaculos; //Almacena la cantidad de obstáculos
 
 	//Método para obtener la puntuación
 	public int getScore() {
@@ -388,7 +388,7 @@ public class Interfaz_juego_facil extends JFrame {
 	 * Método para interfaz de Game Over
 	 */
 	private void abrirNuevaInterfaz() {
-		// Crea una nueva interfaz o ventana aquí
+		// Crea una nueva interfaz
 
 		Interfaz_Pantalla_final pantalla_final = new Interfaz_Pantalla_final(this); 
 		pantalla_final.setVisible(true);
