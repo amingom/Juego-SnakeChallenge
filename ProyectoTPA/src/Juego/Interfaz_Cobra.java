@@ -1,6 +1,7 @@
 package Juego;
 
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.*;
 
@@ -18,7 +19,7 @@ public class Interfaz_Cobra extends JFrame {
 	 */
 	public Interfaz_Cobra(String animal) {
 
-		setSize(700,700);                                                               //ancho largo
+		setSize(600,600);                                                               //ancho largo
 
 		setTitle("Snake Challenge");                                                  //establecemos el titulo de la ventana	
 
@@ -55,25 +56,25 @@ public class Interfaz_Cobra extends JFrame {
 				+ "-Color: negro.\n"
 				+ "-Velocidad: rápida.");   //establecemos el texto de la etiqueta
 		Info.setText("<html>" + Info.getText().replaceAll("\n", "<br/>") + "</html>");
-		Info.setBounds(50,50,318,300);
+		Info.setBounds(2,2,280,180);
 		Info.setHorizontalAlignment(SwingConstants.CENTER);   //centramos el texto en la etiqueta
-		Info.setForeground(Color.BLACK);   //establecemos el color del texto
+		Info.setForeground(Color.white);   //establecemos el color del texto
 		Info.setOpaque(false);  // establecemos el poder pintar la etiqueta
-		//etiqueta.setBackground(Color.black);  //cambiamos el color del fondo de la etiqueta
-		Info.setFont(new Font("arial",0,23));  //establecemos la fuente del texto
+		Info.setFont(new Font("arial",0,25));  //establecemos la fuente del texto
 		cobra.add(Info);   //agregamos la etiqueta al panel
 
 		JButton Atras = new JButton();                                         //creamos el boton
 		Atras.setText("Atras");	                                              //establecemos texto al boton
-		Atras.setBounds(50,600,150,40);                                      //tamaño y posicion del boton
+		Atras.setBounds(10,510,150,40);                                      //tamaño y posicion del boton
 		Atras.setEnabled(true);                                             //habilita o deshabilita el click		
-		Atras.setForeground(Color.BLACK);                                  //color de las letras del boton
-		Atras.setBackground(Color.WHITE);
+		Atras.setForeground(Color.white);                                  //color de las letras del boton
+		Atras.setBackground(Color.black);
 		Atras.setFont(new Font("algerian",Font.BOLD,20));                //fuente de la letra del boton
 		Atras.setFocusPainted(false);
-		Atras.setOpaque(false);  										// establecemos el poder pintar la etiqueta
+		Atras.setOpaque(true); 										// establecemos el poder pintar la etiqueta
 		Atras.setSelected(false);
-		cobra.add(Atras);
+		LineBorder borde_Atras_Cobra = new LineBorder(Color.black);   // colorea el borde del boton
+		Atras.setBorder(borde_Atras_Cobra);
 		Atras.addActionListener(new ActionListener() {
 
 			@Override
@@ -85,18 +86,19 @@ public class Interfaz_Cobra extends JFrame {
 			}
 		});
 		cobra.add(Atras);                                //agregamos la etiqueta al panel
-		
+
 		JButton Start = new JButton();                                         //creamos el boton
 		Start.setText("Start");	                                              //establecemos texto al boton
-		Start.setBounds(490,600,150,40);                                      //tamaño y posicion del boton
+		Start.setBounds(425,510,150,40);                                      //tamaño y posicion del boton
 		Start.setEnabled(true);                                             //habilita o deshabilita el click		
-		Start.setForeground(Color.WHITE);                                  //color de las letras del boton
-		Start.setBackground(Color.WHITE);
+		Start.setForeground(Color.white);                                  //color de las letras del boton
+		Start.setBackground(Color.black);
 		Start.setFont(new Font("algerian",Font.BOLD,20));                //fuente de la letra del boton
+		Start.setOpaque(true);  										// establecemos el poder pintar la etiqueta
 		Start.setFocusPainted(false);
-		Start.setOpaque(false);  										// establecemos el poder pintar la etiqueta
 		Start.setSelected(false);
-		cobra.add(Start);
+		LineBorder borde_Start_Cobra = new LineBorder(Color.black);   // colorea el borde del boton
+		Start.setBorder(borde_Start_Cobra);
 		Start.addActionListener(new ActionListener() {
 
 			@Override

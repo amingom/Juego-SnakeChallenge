@@ -17,7 +17,7 @@ public class Interfaz_Usuario extends JFrame {
 	 */
 	public Interfaz_Usuario() {
 
-		setSize(700,700);  //ancho largo
+		setSize(600,600);  //ancho largo
 
 		setTitle("Snake Challenge");  //establecemos el titulo de la ventana	
 
@@ -46,7 +46,7 @@ public class Interfaz_Usuario extends JFrame {
 
 		JLabel TituloJuego = new JLabel();     //creamos una etiqueta de texto		
 		TituloJuego.setText("SNAKE CHALLENGE");     //establecemos el texto de la etiqueta
-		TituloJuego.setBounds(-60,20,800,100);
+		TituloJuego.setBounds(-115,20,800,100);
 		TituloJuego.setHorizontalAlignment(SwingConstants.CENTER);   //centramos el texto en la etiqueta
 		TituloJuego.setForeground(Color.BLACK);     //establecemos el color del texto
 		TituloJuego.setOpaque(true);    // establecemos el poder pintar la etiqueta
@@ -56,33 +56,11 @@ public class Interfaz_Usuario extends JFrame {
 
 		// Botones de la pantalla inicial
 
-		// Boton para Como jugar
-
-		JButton ComoJugar = new JButton(); //creamos el boton
-		ComoJugar.setText("Cómo jugar");	//establecemos texto al boton
-		ComoJugar.setBounds(178,325,300,70);  //tamaño y posicion del boton
-		ComoJugar.setEnabled(true);  //habilita o deshabilita el click		
-		ComoJugar.setForeground(Color.BLACK); //color de las letras del boton
-		ComoJugar.setBackground(Color.WHITE);
-		ComoJugar.setFont(new Font("algerian",Font.BOLD,40)); //fuente de la letra del boton
-		ComoJugar.setFocusPainted(false);
-
-		//  abre la ventana relacionada con las instrucciones del juego y cierra la ventana de inicio
-		ComoJugar.addActionListener(new ActionListener() {	
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				Interfaz_Como_Jugar ventanaComoJugar = new Interfaz_Como_Jugar();
-				ventanaComoJugar.setVisible(true);
-				((JFrame) SwingUtilities.getWindowAncestor(ComoJugar)).dispose();  //cierra la ventana
-			}
-		});
-		panel.add(ComoJugar);
-
 		// Boton para jugar
 
 		JButton Jugar = new JButton(); //creamos el boton
 		Jugar.setText("Jugar");	//establecemos texto al boton
-		Jugar.setBounds(178,150,300,70);  //tamaño y posicion del boton
+		Jugar.setBounds(135,130,300,70);  //tamaño y posicion del boton
 		Jugar.setEnabled(true);  //habilita o deshabilita el click		
 		Jugar.setForeground(Color.BLACK); //color de las letras del boton
 		Jugar.setBackground(Color.WHITE);
@@ -100,12 +78,34 @@ public class Interfaz_Usuario extends JFrame {
 			}                      
 		});		
 		panel.add(Jugar);
+		
+		// Boton para Como jugar
+
+				JButton ComoJugar = new JButton(); //creamos el boton
+				ComoJugar.setText("Cómo jugar");	//establecemos texto al boton
+				ComoJugar.setBounds(135,295,300,70);  //tamaño y posicion del boton
+				ComoJugar.setEnabled(true);  //habilita o deshabilita el click		
+				ComoJugar.setForeground(Color.BLACK); //color de las letras del boton
+				ComoJugar.setBackground(Color.WHITE);
+				ComoJugar.setFont(new Font("algerian",Font.BOLD,40)); //fuente de la letra del boton
+				ComoJugar.setFocusPainted(false);
+
+				//  abre la ventana relacionada con las instrucciones del juego y cierra la ventana de inicio
+				ComoJugar.addActionListener(new ActionListener() {	
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						Interfaz_Como_Jugar ventanaComoJugar = new Interfaz_Como_Jugar();
+						ventanaComoJugar.setVisible(true);
+						((JFrame) SwingUtilities.getWindowAncestor(ComoJugar)).dispose();  //cierra la ventana
+					}
+				});
+				panel.add(ComoJugar);
 
 		//Boton para salir
 
 		JButton Salir = new JButton(); //creamos el boton
 		Salir.setText("Salir");	//establecemos texto al boton
-		Salir.setBounds(178,500,300,70);  //tamaño y posicion del boton
+		Salir.setBounds(135,470,300,70);  //tamaño y posicion del boton
 		Salir.setEnabled(true);  //habilita o deshabilita el click		
 		Salir.setForeground(Color.BLACK); //color de las letras del boton
 		Salir.setBackground(Color.WHITE);

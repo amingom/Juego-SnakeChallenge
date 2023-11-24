@@ -1,6 +1,7 @@
 package Juego;
 
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.*;
 
@@ -11,13 +12,13 @@ import java.awt.event.*;
 public class Interfaz_Piton extends JFrame {
 
 	/**
-     * Constructor de la clase que configura la interfaz "Piton".
-     * Establece el tamano, titulo, posicion y otros aspectos de la ventana.
-     * @param animal Parametro que representa el tipo de animal.
-     */
+	 * Constructor de la clase que configura la interfaz "Piton".
+	 * Establece el tamano, titulo, posicion y otros aspectos de la ventana.
+	 * @param animal Parametro que representa el tipo de animal.
+	 */
 	public Interfaz_Piton(String animal) {
 
-		setSize(700,700);                                                               //ancho largo
+		setSize(600,600);                                                               //ancho largo
 
 		setTitle("Snake Challenge");                                                  //establecemos el titulo de la ventana	
 
@@ -30,13 +31,13 @@ public class Interfaz_Piton extends JFrame {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);                              //hace que termine el programa al cerrar la ventana
 
 	}
-	
+
 	/**
-     * Inicializa los componentes visuales de la interfaz "Piton".
-     * Crea un panel, etiquetas de texto, un boton de "Atras" y un boton de "Start".
-     */
+	 * Inicializa los componentes visuales de la interfaz "Piton".
+	 * Crea un panel, etiquetas de texto, un boton de "Atras" y un boton de "Start".
+	 */
 	void iniciarComponentes() {
-		
+
 		JPanel piton = new JPanel() {
 			@Override
 			protected void paintComponent(Graphics g) {
@@ -48,31 +49,32 @@ public class Interfaz_Piton extends JFrame {
 		};
 		piton.setLayout(null);
 		getContentPane().add(piton);
-		
+
 		JLabel Info = new JLabel();   //creamos una etiqueta de texto		
 		Info.setText("Información de la pitón:\n"
 				+ "-Color: marrón.\n"
 				+ "-Velocidad: normal.");   //establecemos el texto de la etiqueta
 		Info.setText("<html>" + Info.getText().replaceAll("\n", "<br/>") + "</html>");
-		Info.setBounds(50,50,318,300);
+		Info.setBounds(2,2,280,180);
 		Info.setHorizontalAlignment(SwingConstants.CENTER);   //centramos el texto en la etiqueta
 		Info.setForeground(Color.WHITE);   //establecemos el color del texto
 		Info.setOpaque(false);  // establecemos el poder pintar la etiqueta
 		//etiqueta.setBackground(Color.black);  //cambiamos el color del fondo de la etiqueta
-		Info.setFont(new Font("arial",0,23));  //establecemos la fuente del texto
+		Info.setFont(new Font("arial",0,25));  //establecemos la fuente del texto
 		piton.add(Info);   //agregamos la etiqueta al panel
-		
+
 		JButton Atras = new JButton();                                         //creamos el boton
 		Atras.setText("Atras");	                                              //establecemos texto al boton
-		Atras.setBounds(50,600,150,40);                                      //tamaño y posicion del boton
+		Atras.setBounds(10,510,150,40);                                      //tamaño y posicion del boton
 		Atras.setEnabled(true);                                             //habilita o deshabilita el click		
-		Atras.setForeground(Color.BLACK);                                  //color de las letras del boton
-		Atras.setBackground(Color.WHITE);
+		Atras.setForeground(Color.white);                                  //color de las letras del boton
+		Atras.setBackground(Color.black);
 		Atras.setFont(new Font("algerian",Font.BOLD,20));                //fuente de la letra del boton
 		Atras.setFocusPainted(false);
-		Atras.setOpaque(false);  										// establecemos el poder pintar la etiqueta
+		Atras.setOpaque(true); 										// establecemos el poder pintar la etiqueta
 		Atras.setSelected(false);
-		piton.add(Atras);
+		LineBorder borde_Atras_Cobra = new LineBorder(Color.black);   // colorea el borde del boton
+		Atras.setBorder(borde_Atras_Cobra);
 		Atras.addActionListener(new ActionListener() {
 
 			@Override
@@ -83,19 +85,21 @@ public class Interfaz_Piton extends JFrame {
 
 			}
 		});
-		piton.add(Atras);                                //agregamos la etiqueta al panel	
-		
+		piton.add(Atras);                                //agregamos la etiqueta al panel
+
+
 		JButton Start = new JButton();                                         //creamos el boton
 		Start.setText("Start");	                                              //establecemos texto al boton
-		Start.setBounds(490,600,150,40);                                      //tamaño y posicion del boton
+		Start.setBounds(425,510,150,40);                                      //tamaño y posicion del boton
 		Start.setEnabled(true);                                             //habilita o deshabilita el click		
-		Start.setForeground(Color.WHITE);                                  //color de las letras del boton
-		Start.setBackground(Color.WHITE);
+		Start.setForeground(Color.white);                                  //color de las letras del boton
+		Start.setBackground(Color.black);
 		Start.setFont(new Font("algerian",Font.BOLD,20));                //fuente de la letra del boton
+		Start.setOpaque(true);  										// establecemos el poder pintar la etiqueta
 		Start.setFocusPainted(false);
-		Start.setOpaque(false);  										// establecemos el poder pintar la etiqueta
 		Start.setSelected(false);
-		piton.add(Start);
+		LineBorder borde_Start_Cobra = new LineBorder(Color.black);   // colorea el borde del boton
+		Start.setBorder(borde_Start_Cobra);
 		Start.addActionListener(new ActionListener() {
 
 			@Override
@@ -107,5 +111,5 @@ public class Interfaz_Piton extends JFrame {
 			}
 		});
 		piton.add(Start);                                //agregamos la etiqueta al panel
- }		
+	}		
 }

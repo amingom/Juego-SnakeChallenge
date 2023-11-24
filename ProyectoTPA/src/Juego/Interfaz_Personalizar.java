@@ -30,7 +30,7 @@ public class Interfaz_Personalizar extends JFrame {
 	 */
 	public Interfaz_Personalizar() {
 
-		setSize(700,700);                                             //ancho largo
+		setSize(600,600);                                             //ancho largo
 
 		setTitle("Snake Challenge");                                //establecemos el titulo de la ventana	
 
@@ -57,7 +57,7 @@ public class Interfaz_Personalizar extends JFrame {
 
 		JLabel Personalizacion_Serpiente = new JLabel();                               //creamos una etiqueta de texto		
 		Personalizacion_Serpiente.setText("PERSONALIZAR");                            //establecemos el texto de la etiqueta
-		Personalizacion_Serpiente.setBounds(-60,20,800,100);
+		Personalizacion_Serpiente.setBounds(-115,20,800,100);
 		Personalizacion_Serpiente.setHorizontalAlignment(SwingConstants.CENTER);    //centramos el texto en la etiqueta
 		Personalizacion_Serpiente.setForeground(Color.BLACK);                      //establecemos el color del texto
 		Personalizacion_Serpiente.setOpaque(true);                                // establecemos el poder pintar la etiqueta
@@ -70,7 +70,7 @@ public class Interfaz_Personalizar extends JFrame {
 
 		JButton Cobra = new JButton();                                //creamos el boton
 		Cobra.setText("Cobra");	                                     //establecemos texto al boton
-		Cobra.setBounds(178,150,300,70);                            //tamaño y posicion del boton
+		Cobra.setBounds(160,130,250,60);                            //tamaño y posicion del boton
 		Cobra.setEnabled(true);                                    //habilita o deshabilita el click		
 		Cobra.setForeground(Color.BLACK);                         //color de las letras del boton
 		Cobra.setBackground(Color.WHITE);
@@ -81,7 +81,7 @@ public class Interfaz_Personalizar extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				animal = "cobra";
+				setAnimal("cobra");
 				Interfaz_Cobra ventanaCobra = new Interfaz_Cobra(getAnimal());
 				ventanaCobra.setVisible(true);
 				((JFrame) SwingUtilities.getWindowAncestor(Cobra)).dispose();  //cierra la ventana
@@ -93,7 +93,7 @@ public class Interfaz_Personalizar extends JFrame {
 
 		JButton Piton = new JButton();                          //creamos el boton
 		Piton.setText("Pitón");	                               //establecemos texto al boton
-		Piton.setBounds(178,300,300,70);                      //tamaño y posicion del boton
+		Piton.setBounds(160,255,250,60);                      //tamaño y posicion del boton
 		Piton.setEnabled(true);                              //habilita o deshabilita el click		
 		Piton.setForeground(Color.BLACK);                   //color de las letras del boton
 		Piton.setBackground(Color.WHITE);
@@ -104,7 +104,7 @@ public class Interfaz_Personalizar extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				animal = "piton";
+				setAnimal("piton");
 				Interfaz_Piton ventanaPiton = new Interfaz_Piton(getAnimal());
 				ventanaPiton.setVisible(true);
 				((JFrame) SwingUtilities.getWindowAncestor(Piton)).dispose();  //cierra la ventana
@@ -116,7 +116,7 @@ public class Interfaz_Personalizar extends JFrame {
 
 		JButton Vibora = new JButton();                            //creamos el boton
 		Vibora.setText("Víbora");	                               //establecemos texto al boton
-		Vibora.setBounds(178,450,300,70);                        //tamaño y posicion del boton
+		Vibora.setBounds(160,380,250,60);                        //tamaño y posicion del boton
 		Vibora.setEnabled(true);                                //habilita o deshabilita el click		
 		Vibora.setForeground(Color.BLACK);                     //color de las letras del boton
 		Vibora.setBackground(Color.WHITE);
@@ -127,7 +127,7 @@ public class Interfaz_Personalizar extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				animal = "vibora";
+				setAnimal("vibora");
 				Interfaz_Vibora ventanaVibora = new Interfaz_Vibora(getAnimal());
 				ventanaVibora.setVisible(true);
 				((JFrame) SwingUtilities.getWindowAncestor(Vibora)).dispose();  //cierra la ventana
@@ -139,18 +139,17 @@ public class Interfaz_Personalizar extends JFrame {
 
 		JButton Atras = new JButton();                              //creamos el boton
 		Atras.setText("Atras");	                                   //establecemos texto al boton
-		Atras.setBounds(50,600,150,40);                           //tamaño y posicion del boton
+		Atras.setBounds(10,510,150,40);                           //tamaño y posicion del boton
 		Atras.setEnabled(true);                                  //habilita o deshabilita el click		
 		Atras.setForeground(Color.BLACK);                       //color de las letras del boton
 		Atras.setBackground(Color.WHITE);
 		Atras.setFont(new Font("algerian",Font.BOLD,20));     //fuente de la letra del boton
 		Atras.setFocusPainted(false);
-		Personalizar.add(Atras);
 		Atras.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Interfaz_Usuario ventanaInicial = new Interfaz_Usuario();
+				Interfaz_Niveles ventanaInicial = new Interfaz_Niveles();
 				ventanaInicial.setVisible(true);
 				((JFrame) SwingUtilities.getWindowAncestor(Atras)).dispose();  //cierra la ventana
 

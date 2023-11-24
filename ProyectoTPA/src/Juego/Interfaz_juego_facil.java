@@ -26,11 +26,14 @@ public class Interfaz_juego_facil extends JFrame {
 	private JLabel scoreLabel;  //Se utiliza para mostrar la puntuación 
 	private BufferedImage headImage;  // Almacena la imagen de la cabeza
 	private BufferedImage bodyImage; // Almacena la imagen del cuerpo
-	private Point obstacle;  // Representa la posición del obstáculo
+	private LinkedList<Point> obstacles; // Almacena las posiciones de los obstáculos
 	private BufferedImage obstacleImage; // Almacena la imagen obstáculo
 	private Interfaz_Personalizar animal; // Sirve para saber la serpiente elegida por el usuario
 	private long lastDirectionChangeTime = System.currentTimeMillis(); // Sirve para guardar el último cambio de dirección de la serpiente
 	private static final long tiempoMinimo = 100; // Tiempo mínimo entre cambios de dirección en milisegundos
+	private Interfaz_Niveles nivel;
+	private int velocidad; //Almacena el valor de la velocidad como numero entero
+	private int cantidadObstaculos;
 
 	//Método para obtener la puntuación
 	public int getScore() {
@@ -47,12 +50,14 @@ public class Interfaz_juego_facil extends JFrame {
 	 * Establece el tamano, titulo, posicion y otros aspectos de la ventana.
 	 */
 	public Interfaz_juego_facil() {
-		setSize(720, 750);							//tamaño de la ventana
+		setSize(500, 500);							//tamaño de la ventana
 		setTitle("Snake Challenge");				//título de la ventana
 		setLocationRelativeTo(null);				//establecer en el centro de la pantalla
+		animal = new Interfaz_Personalizar();
+		nivel = new Interfaz_Niveles();
 		iniciarComponentes();						//inicia el juego
 		setDefaultCloseOperation(EXIT_ON_CLOSE);	//cierra el programa al dar a la X
-		animal = new Interfaz_Personalizar();
+
 	}
 
 	/**
@@ -72,11 +77,11 @@ public class Interfaz_juego_facil extends JFrame {
 		getContentPane().add(NivelFacil);			//añade el panel
 
 		JPanel marcador = new JPanel();
-		marcador.setBounds(0, -5, 720, 35);
+		marcador.setBounds(0, -5, 500, 35);
 		marcador.setBackground(Color.GRAY); // Puedes cambiar el color según tus necesidades
 
 		JLabel imageLabel = new JLabel();
-		imageLabel.setBounds(0, -5, 720, 35);
+		imageLabel.setBounds(0, -5, 500, 35);
 		ImageIcon defaultImage = new ImageIcon("img\\marcador.png");
 		imageLabel.setIcon(defaultImage);
 
@@ -91,7 +96,7 @@ public class Interfaz_juego_facil extends JFrame {
 				draw(g);
 			}
 		};
-		gamePanel.setBounds(0, 30, 720, 720);		//establece el tamaño
+		gamePanel.setBounds(0, 30, 500, 500);		//establece el tamaño
 		gamePanel.setOpaque(false); // Hace que el fondo del gamePanel sea transparente
 		NivelFacil.add(gamePanel);
 
@@ -103,17 +108,25 @@ public class Interfaz_juego_facil extends JFrame {
 		// Nuevo componente JLabel para mostrar la puntuación
 		scoreLabel = new JLabel("0", SwingConstants.CENTER);
 		scoreLabel.setForeground(Color.WHITE);
-		scoreLabel.setBounds(73, 5, 770, 20);
+		scoreLabel.setBounds(209, 6, 500, 20);
 		scoreLabel.setFont(new Font("Arial", Font.PLAIN, 20));
 		imageLabel.add(scoreLabel);
 
 		// Agrega un temporizador para mover la serpiente
-		timer = new Timer(100, new ActionListener() { //velocidad de la serpiente
+		if(nivel.getNivel() == "facil") {
+			velocidad = 100;
+		}else if(nivel.getNivel() == "medio") {
+			velocidad = 75;
+		}else if(nivel.getNivel() == "dificil") {
+			velocidad = 50;
+		}
+		timer = new Timer(velocidad, new ActionListener() { //velocidad de la serpiente
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				move();
 				gamePanel.repaint();
 			}
+
 		});
 
 		timer.start();
@@ -143,6 +156,7 @@ public class Interfaz_juego_facil extends JFrame {
 
 
 		spawnFood(); // Inicializa la comida en una posición aleatoria
+		spawnEnemy(); // Inicializa los obstáculos en posiciones aleatorias
 
 		try {
 			obstacleImage = ImageIO.read(new File("img\\Enemy.png"));
@@ -152,11 +166,11 @@ public class Interfaz_juego_facil extends JFrame {
 	}
 
 	/**
-	 * Genera una posición aleatoria para la comida en el tablero.
+	 * Genera una posición aleatoria para la comida y para el obstaculo en el tablero.
 	 */
 	public void spawnFood() {
-		int maxX = 35; // Rango máximo de columnas
-		int maxY = 34; // Rango máximo de filas
+		int maxX = 24; // Rango máximo de columnas
+		int maxY = 21; // Rango máximo de filas
 		int foodX, foodY;
 
 		// Genera una posición aleatoria hasta que sea válida y que sea en una coordenada diferente a la serpiente
@@ -170,11 +184,37 @@ public class Interfaz_juego_facil extends JFrame {
 
 		food = new Point(foodX, foodY);
 
-		// Genera una posición aleatoria para el obstáculo hasta que sea válida y que sea en una coordenada diferente a la serpiente y a la comida
-		do {
-			obstacle = new Point((int) (Math.random() * maxX), (int) (Math.random() * maxY));
-		} while (snake.contains(obstacle) || obstacle.equals(food));
+
 	}
+
+	public boolean obstacleAtPosition(Point position) {
+        return obstacles != null && obstacles.contains(position);
+    }
+
+    public void spawnEnemy() {
+        int maxX = 24; // Rango máximo de columnas
+        int maxY = 21; // Rango máximo de filas
+
+        obstacles = new LinkedList<>(); // Lista para almacenar posiciones de obstáculos
+
+        // Genera una posición aleatoria para el obstáculo hasta que sea válida y que sea en una coordenada diferente a la serpiente y a la comida
+        if (nivel.getNivel() == "facil") {
+            cantidadObstaculos = 1;
+        } else if (nivel.getNivel() == "medio") {
+            cantidadObstaculos = 3;
+        } else if (nivel.getNivel() == "dificil") {
+            cantidadObstaculos = 5;
+        }
+
+        for (int i = 0; i < cantidadObstaculos; i++) {
+            Point obstaclePosition;
+            do {
+                obstaclePosition = new Point((int) (Math.random() * maxX), (int) (Math.random() * maxY));
+            } while (snake.contains(obstaclePosition) || obstaclePosition.equals(food) || obstacleAtPosition(obstaclePosition));
+
+            obstacles.add(obstaclePosition);
+        }
+    }
 
 	/**
 	 * Dibuja la serpiente y el alimento en el juego.
@@ -201,9 +241,12 @@ public class Interfaz_juego_facil extends JFrame {
 		} else if (foodType == 2) {
 			drawFoodImage(g, "img\\banana.png");
 		}
-
-		// Dibuja el obstáculo
-		g.drawImage(obstacleImage, obstacle.x * 20, obstacle.y * 20, 20, 20, this);
+		
+		// Dibuja los obstáculos
+        for (Point obstaclePosition : obstacles) {
+            g.drawImage(obstacleImage, obstaclePosition.x * 20, obstaclePosition.y * 20, 20, 20, this);
+        }
+	
 
 	}
 
@@ -319,7 +362,7 @@ public class Interfaz_juego_facil extends JFrame {
 		Point head = snake.getFirst();
 
 		// Verifica si la serpiente choca con el borde del juego
-		if (head.x < 0 || head.x >= 35 || head.y < 0 || head.y >= 34) {
+		if (head.x < 0 || head.x >= 24 || head.y < 0 || head.y >= 21) {
 			timer.stop(); // Detiene el temporizador
 			dispose();
 			abrirNuevaInterfaz();
@@ -333,7 +376,7 @@ public class Interfaz_juego_facil extends JFrame {
 		}
 
 		// Verifica si la serpiente choca con el obstáculo
-		if (snake.getFirst().equals(obstacle)) {
+		if (obstacles.contains(snake.getFirst())) {
 			timer.stop(); // Detiene el temporizador
 			dispose();
 			abrirNuevaInterfaz();
@@ -390,6 +433,9 @@ public class Interfaz_juego_facil extends JFrame {
 
 			// Genera otra posición para el alimento
 			spawnFood();
+
+			// Genera otra posición para el enemigo
+			spawnEnemy();
 
 		} else {
 			snake.removeLast();
