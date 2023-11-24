@@ -98,7 +98,7 @@ public class Interfaz_Piton extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Interfaz_juego_facil ventanaJuego = new Interfaz_juego_facil();
+				Interfaz_Juego ventanaJuego = new Interfaz_Juego();
 				ventanaJuego.setVisible(true);
 				((JFrame) SwingUtilities.getWindowAncestor(Start)).dispose();  //cierra la ventana
 

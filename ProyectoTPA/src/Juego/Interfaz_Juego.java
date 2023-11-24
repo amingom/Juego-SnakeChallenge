@@ -14,7 +14,7 @@ import java.util.LinkedList;
  * Permite a los jugadores jugar el juego en un nivel de dificultad mas bajo.
  */
 
-public class Interfaz_juego_facil extends JFrame {
+public class Interfaz_Juego extends JFrame {
 	private JPanel gamePanel;  // Sirve para representar visualmente el juego
 	private LinkedList<Point> snake; //Representa la serpiente
 	private Timer timer;  // Sirve para gestionar el tiempo en el juego
@@ -49,7 +49,7 @@ public class Interfaz_juego_facil extends JFrame {
 	 * Constructor de la clase que configura la interfaz del juego en el nivel facil.
 	 * Establece el tamano, titulo, posicion y otros aspectos de la ventana.
 	 */
-	public Interfaz_juego_facil() {
+	public Interfaz_Juego() {
 		setSize(500, 500);							//tamaño de la ventana
 		setTitle("Snake Challenge");				//título de la ventana
 		setLocationRelativeTo(null);				//establecer en el centro de la pantalla
@@ -78,7 +78,7 @@ public class Interfaz_juego_facil extends JFrame {
 
 		JPanel marcador = new JPanel();
 		marcador.setBounds(0, -5, 500, 35);
-		marcador.setBackground(Color.GRAY); // Puedes cambiar el color según tus necesidades
+		marcador.setBackground(Color.GRAY); // Color del fondo del marcador
 
 		JLabel imageLabel = new JLabel();
 		imageLabel.setBounds(0, -5, 500, 35);
@@ -188,33 +188,40 @@ public class Interfaz_juego_facil extends JFrame {
 	}
 
 	public boolean obstacleAtPosition(Point position) {
-        return obstacles != null && obstacles.contains(position);
-    }
+		return obstacles != null && obstacles.contains(position);
+	}
 
-    public void spawnEnemy() {
-        int maxX = 24; // Rango máximo de columnas
-        int maxY = 21; // Rango máximo de filas
+	public void spawnEnemy() {
+		int maxX = 24; // Rango máximo de columnas
+		int maxY = 21; // Rango máximo de filas
 
-        obstacles = new LinkedList<>(); // Lista para almacenar posiciones de obstáculos
+		obstacles = new LinkedList<>(); // Lista para almacenar posiciones de obstáculos
 
-        // Genera una posición aleatoria para el obstáculo hasta que sea válida y que sea en una coordenada diferente a la serpiente y a la comida
-        if (nivel.getNivel() == "facil") {
-            cantidadObstaculos = 1;
-        } else if (nivel.getNivel() == "medio") {
-            cantidadObstaculos = 3;
-        } else if (nivel.getNivel() == "dificil") {
-            cantidadObstaculos = 5;
-        }
+		// Genera una posición aleatoria para el obstáculo hasta que sea válida y que sea en una coordenada diferente a la serpiente y a la comida
+		if (nivel.getNivel() == "facil") {
+			cantidadObstaculos = 1;
+		} else if (nivel.getNivel() == "medio") {
+			cantidadObstaculos = 3;
+		} else if (nivel.getNivel() == "dificil") {
+			cantidadObstaculos = 5;
+		}
 
-        for (int i = 0; i < cantidadObstaculos; i++) {
-            Point obstaclePosition;
-            do {
-                obstaclePosition = new Point((int) (Math.random() * maxX), (int) (Math.random() * maxY));
-            } while (snake.contains(obstaclePosition) || obstaclePosition.equals(food) || obstacleAtPosition(obstaclePosition));
+		for (int i = 0; i < cantidadObstaculos; i++) {
+			Point obstaclePosition;
+			do {
+				obstaclePosition = new Point((int) (Math.random() * maxX), (int) (Math.random() * maxY));
+			} while (snake.contains(obstaclePosition) || obstaclePosition.equals(food) || obstacleAtPosition(obstaclePosition) || isObstacleTooCloseToHead(obstaclePosition));
 
-            obstacles.add(obstaclePosition);
-        }
-    }
+			obstacles.add(obstaclePosition);
+		}
+	}
+
+	private boolean isObstacleTooCloseToHead(Point obstaclePosition) {
+		Point head = snake.getFirst();
+		int minDistance = 2; // Mínima distancia permitida entre la cabeza y el obstáculo
+
+		return Math.abs(head.x - obstaclePosition.x) < minDistance || Math.abs(head.y - obstaclePosition.y) < minDistance;
+	}
 
 	/**
 	 * Dibuja la serpiente y el alimento en el juego.
@@ -241,12 +248,11 @@ public class Interfaz_juego_facil extends JFrame {
 		} else if (foodType == 2) {
 			drawFoodImage(g, "img\\banana.png");
 		}
-		
+
 		// Dibuja los obstáculos
-        for (Point obstaclePosition : obstacles) {
-            g.drawImage(obstacleImage, obstaclePosition.x * 20, obstaclePosition.y * 20, 20, 20, this);
-        }
-	
+		for (Point obstaclePosition : obstacles) {
+			g.drawImage(obstacleImage, obstaclePosition.x * 20, obstaclePosition.y * 20, 20, 20, this);
+		}
 
 	}
 
