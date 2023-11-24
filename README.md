@@ -17,7 +17,7 @@ distinto de puntos.
 
 En la pantalla de juego irán apareciendo obstáculos, los cuales aumentarán su frecuencia
 dependiendo del nivel de dificultad. Chocar con alguno de estos obstáculos finalizará el juego.
-- **Rocas**.
+- **Enemigos**.
 - **Muros**.
 
 Los jugadores irán obteniendo puntos al comer los distintos alimentos, el objetivo es
@@ -39,7 +39,9 @@ classDiagram
     Interfaz_Personalizar <|-- Interfaz_Cobra
     Interfaz_Personalizar <|-- Interfaz_Piton
     Interfaz_Personalizar <|-- Interfaz_Vibora
-
+    Interfaz_Pantalla_final <|-- Interfaz_juego_facil
+    Interfaz_juego_facil <|-- Interfaz_Pantalla_final
+    Interfaz_Niveles <|-- Interfaz_Pantalla_final
 
     JUEGOSERPIENTE : -Snake snake
     JUEGOSERPIENTE : -LinkedList<Food>foods
@@ -76,7 +78,13 @@ classDiagram
 	- Point obstacle;
 	- BufferedImage obstacleImage;
 	- String animal;
+        - long lastDirectionChangeTime; 
+	- static final long tiempoMinimo;
 
+
+
+    + void setScore(int _score)
+    + int getScore()
     + void updateScoreLabel()
     + void updateScoreLabel()
     + void checkCollision()
@@ -87,6 +95,7 @@ classDiagram
     + void iniciarComponentes()
     + void draw(Graphics g)
     + void move()
+    - void abrirNuevaInterfaz()
 
 
     }
@@ -96,7 +105,11 @@ classDiagram
     }
 
     class Interfaz_Personalizar{
+        static - String animal;
+
        + void iniciarComponentes()
+       + String getAnimal()
+       + static void setAnimal(String _animal)
     }
 
      class Interfaz_Cobra{
@@ -111,6 +124,15 @@ classDiagram
         + void iniciarComponentes()
      }
 
+     class Interfaz_Pantalla_final{
+        - Interfaz_juego_facil puntos;
+
+
+        + void iniciarComponentes()
+     }
+
+
+    
 
 
 ```

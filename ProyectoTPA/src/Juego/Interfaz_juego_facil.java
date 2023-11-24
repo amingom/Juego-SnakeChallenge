@@ -8,7 +8,6 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.LinkedList;
-import javax.swing.JOptionPane; //sirve para mostrar un cuadro al usuario para avisar que ha perdido
 
 /**
  * Esta clase representa la interfaz del juego Snake Challenge en el nivel facil.
@@ -44,6 +43,7 @@ public class Interfaz_juego_facil extends JFrame {
 	public void setScore(int _score) {
 		score = _score;
 	}
+
 
 	/**
 	 * Constructor de la clase que configura la interfaz del juego en el nivel facil.
