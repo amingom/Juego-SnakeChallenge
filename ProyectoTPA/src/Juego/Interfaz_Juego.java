@@ -29,10 +29,11 @@ public class Interfaz_Juego extends JFrame {
 	private BufferedImage obstacleImage; // Almacena la imagen obstáculo
 	private Interfaz_Personalizar animal; // Sirve para saber la serpiente elegida por el usuario
 	private long lastDirectionChangeTime = System.currentTimeMillis(); // Sirve para guardar el último cambio de dirección de la serpiente
-	private static final long tiempoMinimo = 80; // Tiempo mínimo entre cambios de dirección en milisegundos
+	private static final long tiempoMinimo = 90; // Tiempo mínimo entre cambios de dirección en milisegundos
 	private Interfaz_Niveles nivel; // Sirve para saber el nivel elegido por el usuario
 	private int velocidad; //Almacena el valor de la velocidad como numero entero
 	private int cantidadObstaculos; //Almacena la cantidad de obstáculos
+ 
 
 	//Método para obtener la puntuación
 	public int getScore() {
@@ -50,7 +51,7 @@ public class Interfaz_Juego extends JFrame {
 	 * Establece el tamano, titulo, posicion y otros aspectos de la ventana.
 	 */
 	public Interfaz_Juego() {
-		setSize(500, 500);							//tamaño de la ventana
+		setSize(495, 488);							//tamaño de la ventana
 		setTitle("Snake Challenge");				//título de la ventana
 		setLocationRelativeTo(null);				//establecer en el centro de la pantalla
 		animal = new Interfaz_Personalizar();
@@ -172,6 +173,7 @@ public class Interfaz_Juego extends JFrame {
 		int maxX = 24; // Rango máximo de columnas
 		int maxY = 21; // Rango máximo de filas
 		int foodX, foodY;
+		int totalPixels = maxX * maxY; // Ancho * Alto del tablero
 
 		// Genera una posición aleatoria hasta que sea válida y que sea en una coordenada diferente a la serpiente
 		do {
@@ -184,6 +186,12 @@ public class Interfaz_Juego extends JFrame {
 
 		food = new Point(foodX, foodY);
 
+		if (totalPixels == snake.size() + cantidadObstaculos) {
+		    timer.stop(); // Detén el temporizador
+		    dispose();
+		    JOptionPane.showMessageDialog(this, "¡Felicidades! ¡Has ganado!", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+		    // Puedes realizar alguna acción adicional aquí si es necesario
+		}
 
 	}
 
@@ -207,20 +215,22 @@ public class Interfaz_Juego extends JFrame {
 		}
 
 		for (int i = 0; i < cantidadObstaculos; i++) {
-			Point obstaclePosition;
-			do {
-				obstaclePosition = new Point((int) (Math.random() * maxX), (int) (Math.random() * maxY));
-			} while (snake.contains(obstaclePosition) || obstaclePosition.equals(food) || obstacleAtPosition(obstaclePosition) || isObstacleTooCloseToHead(obstaclePosition));
+	        Point obstaclePosition;
+	        int minDistance = 2; // Mínima distancia permitida entre la cabeza y el obstáculo
 
-			obstacles.add(obstaclePosition);
-		}
+	        do {
+	            obstaclePosition = new Point((int) (Math.random() * maxX), (int) (Math.random() * maxY));
+	            minDistance--; // Reducimos la distancia mínima
+	        } while (snake.contains(obstaclePosition) || obstaclePosition.equals(food) || obstacleAtPosition(obstaclePosition) || isObstacleTooCloseToHead(obstaclePosition, minDistance));
+
+	        obstacles.add(obstaclePosition);
+	    }
 	}
 
-	private boolean isObstacleTooCloseToHead(Point obstaclePosition) {
-		Point head = snake.getFirst();
-		int minDistance = 2; // Mínima distancia permitida entre la cabeza y el obstáculo
+	private boolean isObstacleTooCloseToHead(Point obstaclePosition, int minDistance) {
+	    Point head = snake.getFirst();
 
-		return Math.abs(head.x - obstaclePosition.x) < minDistance || Math.abs(head.y - obstaclePosition.y) < minDistance;
+	    return Math.abs(head.x - obstaclePosition.x) < minDistance || Math.abs(head.y - obstaclePosition.y) < minDistance;
 	}
 
 	/**

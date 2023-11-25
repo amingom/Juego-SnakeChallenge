@@ -9,7 +9,9 @@ public class Main {
 
 	//Main del programa
 	public static void main(String[] args) {
-		new Interfaz_Usuario().setVisible(true);
+		BarraDeCarga frame = new BarraDeCarga();
+        frame.setVisible(true);
+        frame.iniciarCarga();
 	}
 
 }
