@@ -9,7 +9,7 @@ import java.awt.event.*;
  * Esta clase representa la interfaz de la Pantalla Final
  * Permite a los jugadores jugar salir del juego, jugar de nuevo o seleccionar el nivel.
  */
-public class Interfaz_Pantalla_final extends JFrame{
+public class Interfaz_Derrota extends JFrame{
 	private Interfaz_Juego puntos;  // Se utiliza para obtener la puntuación del juego a través del getScore()
 
 	/**
@@ -17,7 +17,7 @@ public class Interfaz_Pantalla_final extends JFrame{
 	 * Establece el tamano, titulo, posicion y otros aspectos de la ventana.
 	 * @param puntos Instancia de Interfaz juego facil para acceder a la puntuacion del juego.
 	 */
-	public Interfaz_Pantalla_final(Interfaz_Juego puntos) {
+	public Interfaz_Derrota(Interfaz_Juego puntos) {
 		this.puntos = puntos;
 		setSize(400,300);                                                               //ancho largo
 		setTitle("Snake Challenge");                                                  //establecemos el titulo de la ventana	

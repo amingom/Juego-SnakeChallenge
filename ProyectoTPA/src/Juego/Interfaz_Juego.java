@@ -189,8 +189,8 @@ public class Interfaz_Juego extends JFrame {
 		if (totalPixels == snake.size() + cantidadObstaculos) {
 		    timer.stop(); // Detén el temporizador
 		    dispose();
-		    JOptionPane.showMessageDialog(this, "¡Felicidades! ¡Has ganado!", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
-		    // Puedes realizar alguna acción adicional aquí si es necesario
+		    Victoria();
+		    
 		}
 
 	}
@@ -381,33 +381,44 @@ public class Interfaz_Juego extends JFrame {
 		if (head.x < 0 || head.x >= 24 || head.y < 0 || head.y >= 21) {
 			timer.stop(); // Detiene el temporizador
 			dispose();
-			abrirNuevaInterfaz();
+			Derrota();
 		}
 
 		// Verifica si la serpiente se choca con su propio cuerpo
 		if (snake.size() > 1 && snake.subList(1, snake.size()).contains(head)) {
 			timer.stop(); // Detiene el temporizador
 			dispose();
-			abrirNuevaInterfaz();
+			Derrota();
 		}
 
 		// Verifica si la serpiente choca con el obstáculo
 		if (obstacles.contains(snake.getFirst())) {
 			timer.stop(); // Detiene el temporizador
 			dispose();
-			abrirNuevaInterfaz();
+			Derrota();
 		}
 
 	}
 
 	/**
-	 * Método para interfaz de Game Over
+	 * Método para interfaz de Derrota
 	 */
-	private void abrirNuevaInterfaz() {
+	private void Derrota() {
 		// Crea una nueva interfaz
 
-		Interfaz_Pantalla_final pantalla_final = new Interfaz_Pantalla_final(this); 
-		pantalla_final.setVisible(true);
+		Interfaz_Derrota pantalla_Derrota = new Interfaz_Derrota(this); 
+		pantalla_Derrota.setVisible(true);
+
+	}
+	
+	/**
+	 * Método para interfaz de Victoria
+	 */
+	private void Victoria() {
+		// Crea una nueva interfaz
+
+		Interfaz_Victoria pantalla_Victoria = new Interfaz_Victoria(this); 
+		pantalla_Victoria.setVisible(true);
 
 	}
 
