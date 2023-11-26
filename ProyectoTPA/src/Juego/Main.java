@@ -7,11 +7,12 @@ package Juego;
 
 public class Main {
 
-	//Main del programa
-	public static void main(String[] args) {
-		BarraDeCarga frame = new BarraDeCarga();
-        frame.setVisible(true);
-        frame.iniciarCarga();
-	}
+    //Main del programa
+    public static void main(String[] args) {
+
+        BarraCarga BarraDeCarga = new BarraDeCarga();
+        BarraDeCarga.cargar();
+
+    }
 
 }

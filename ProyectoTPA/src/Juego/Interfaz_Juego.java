@@ -364,7 +364,7 @@ public class Interfaz_Juego extends JFrame {
 		try {
 			BufferedImage foodImage = ImageIO.read(new File(imgPath));
 			// Dentro del método drawFoodImage
-			g.drawImage(foodImage, food.x * 20, food.y * 20, 25, 25, this);  // Aumenta el tamaño de la imagen de la comida a 40x40 píxeles
+			g.drawImage(foodImage, food.x * 20, food.y * 20, 20, 20, this);  // Modifica el tamaño de la comida
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

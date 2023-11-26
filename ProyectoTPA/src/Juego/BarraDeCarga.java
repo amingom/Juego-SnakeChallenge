@@ -5,17 +5,18 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class BarraDeCarga extends JFrame {
+public class BarraDeCarga extends BarraCarga {
     private JProgressBar progressBar;
     private Timer timer;
     private int progreso;
+    private JFrame frame;
 
     public BarraDeCarga() {
-        super("SNAKE CHALLENGE");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(500, 400);
-        setLocationRelativeTo(null);
-
+        frame = new JFrame("SNAKE CHALLENGE");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(500, 400);
+        frame.setLocationRelativeTo(null);
+        
         // Panel con imagen de fondo
         JPanel panel = new JPanel() {
             Image imagenFondo = new ImageIcon("img//fondo_barra.png").getImage();
@@ -40,8 +41,8 @@ public class BarraDeCarga extends JFrame {
 
                 if (progreso == 100) {
                     timer.stop();
-                    dispose();
-                    new Interfaz_Usuario().setVisible(true);
+                    frame.dispose();
+                    cargaCompleta();
                 }
             }
         });
@@ -56,11 +57,17 @@ public class BarraDeCarga extends JFrame {
         panel.add(progressBar);
 
         // Agrega el panel al frame
-        getContentPane().setLayout(new BorderLayout());
-        getContentPane().add(panel, BorderLayout.CENTER);
+        frame.getContentPane().setLayout(new BorderLayout());
+        frame.getContentPane().add(panel, BorderLayout.CENTER);
     }
 
-    public void iniciarCarga() {
+    public void cargar() {
+        frame.setVisible(true);
         timer.start();
+    }
+    
+    public void cargaCompleta() {
+    	frame.dispose();
+    	new Interfaz_Usuario().setVisible(true);
     }
 }
