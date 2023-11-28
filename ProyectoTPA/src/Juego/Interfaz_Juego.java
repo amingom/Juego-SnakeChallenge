@@ -33,7 +33,8 @@ public class Interfaz_Juego extends JFrame {
 	private Interfaz_Niveles nivel; // Sirve para saber el nivel elegido por el usuario
 	private int velocidad; //Almacena el valor de la velocidad como numero entero
 	private int cantidadObstaculos; //Almacena la cantidad de obstáculos
- 
+	private Animal serpiente;
+
 
 	//Método para obtener la puntuación
 	public int getScore() {
@@ -44,7 +45,6 @@ public class Interfaz_Juego extends JFrame {
 	public void setScore(int _score) {
 		score = _score;
 	}
-
 
 	/**
 	 * Constructor de la clase que configura la interfaz del juego en el nivel facil.
@@ -58,7 +58,6 @@ public class Interfaz_Juego extends JFrame {
 		nivel = new Interfaz_Niveles();
 		iniciarComponentes();						//inicia el juego
 		setDefaultCloseOperation(EXIT_ON_CLOSE);	//cierra el programa al dar a la X
-
 	}
 
 	/**
@@ -115,11 +114,23 @@ public class Interfaz_Juego extends JFrame {
 
 		// Agrega un temporizador para mover la serpiente
 		if(nivel.getNivel() == "facil") {
-			velocidad = 100;
+
+			serpiente = new VelocidadInicial();
+			serpiente = new SlowSpeed(serpiente);
+			velocidad = serpiente.getVelocidad();
+
 		}else if(nivel.getNivel() == "medio") {
-			velocidad = 75;
+
+			serpiente = new VelocidadInicial();
+			serpiente = new MediumSpeed(serpiente);
+			velocidad = serpiente.getVelocidad();
+
 		}else if(nivel.getNivel() == "dificil") {
-			velocidad = 50;
+
+			serpiente = new VelocidadInicial();
+			serpiente = new FastSpeed(serpiente);
+			velocidad = serpiente.getVelocidad();
+			
 		}
 		timer = new Timer(velocidad, new ActionListener() { //velocidad de la serpiente
 			@Override
@@ -187,10 +198,10 @@ public class Interfaz_Juego extends JFrame {
 		food = new Point(foodX, foodY);
 
 		if (totalPixels == snake.size() + cantidadObstaculos) {
-		    timer.stop(); // Detén el temporizador
-		    dispose();
-		    Victoria();
-		    
+			timer.stop(); // Detén el temporizador
+			dispose();
+			Victoria();
+
 		}
 
 	}
@@ -215,22 +226,22 @@ public class Interfaz_Juego extends JFrame {
 		}
 
 		for (int i = 0; i < cantidadObstaculos; i++) {
-	        Point obstaclePosition;
-	        int minDistance = 2; // Mínima distancia permitida entre la cabeza y el obstáculo
+			Point obstaclePosition;
+			int minDistance = 2; // Mínima distancia permitida entre la cabeza y el obstáculo
 
-	        do {
-	            obstaclePosition = new Point((int) (Math.random() * maxX), (int) (Math.random() * maxY));
-	            minDistance--; // Reducimos la distancia mínima
-	        } while (snake.contains(obstaclePosition) || obstaclePosition.equals(food) || obstacleAtPosition(obstaclePosition) || isObstacleTooCloseToHead(obstaclePosition, minDistance));
+			do {
+				obstaclePosition = new Point((int) (Math.random() * maxX), (int) (Math.random() * maxY));
+				minDistance--; // Reducimos la distancia mínima
+			} while (snake.contains(obstaclePosition) || obstaclePosition.equals(food) || obstacleAtPosition(obstaclePosition) || isObstacleTooCloseToHead(obstaclePosition, minDistance));
 
-	        obstacles.add(obstaclePosition);
-	    }
+			obstacles.add(obstaclePosition);
+		}
 	}
 
 	private boolean isObstacleTooCloseToHead(Point obstaclePosition, int minDistance) {
-	    Point head = snake.getFirst();
+		Point head = snake.getFirst();
 
-	    return Math.abs(head.x - obstaclePosition.x) < minDistance || Math.abs(head.y - obstaclePosition.y) < minDistance;
+		return Math.abs(head.x - obstaclePosition.x) < minDistance || Math.abs(head.y - obstaclePosition.y) < minDistance;
 	}
 
 	/**
@@ -410,7 +421,7 @@ public class Interfaz_Juego extends JFrame {
 		pantalla_Derrota.setVisible(true);
 
 	}
-	
+
 	/**
 	 * Método para interfaz de Victoria
 	 */
