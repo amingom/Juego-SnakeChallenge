@@ -18,7 +18,6 @@ distinto de puntos.
 En la pantalla de juego irán apareciendo obstáculos, los cuales aumentarán su frecuencia
 dependiendo del nivel de dificultad. Chocar con alguno de estos obstáculos finalizará el juego.
 - **Enemigos**.
-- **Muros**.
 
 Los jugadores irán obteniendo puntos al comer los distintos alimentos, el objetivo es
 conseguir la mayor cantidad de puntos hasta perder. Se podrá ver la puntuación actual
@@ -28,43 +27,38 @@ en la pantalla en tiempo real.
 
 ```mermaid
 
-classDiagram
-    JUEGOSERPIENTE <|-- Interfaz_Usuario
-    Interfaz_Usuario <|-- Interfaz_Como_Jugar
-    Interfaz_Cobra <|-- Interfaz_juego_facil
-    Interfaz_Piton <|-- Interfaz_juego_facil
-    Interfaz_Vibora <|-- Interfaz_juego_facil
-    Interfaz_Usuario <|-- Interfaz_Niveles
-    Interfaz_Niveles <|-- Interfaz_Personalizar
-    Interfaz_Personalizar <|-- Interfaz_Cobra
-    Interfaz_Personalizar <|-- Interfaz_Piton
-    Interfaz_Personalizar <|-- Interfaz_Vibora
-    Interfaz_Pantalla_final <|-- Interfaz_juego_facil
-    Interfaz_juego_facil <|-- Interfaz_Pantalla_final
-    Interfaz_Niveles <|-- Interfaz_Pantalla_final
-
-    JUEGOSERPIENTE : -Snake snake
-    JUEGOSERPIENTE : -LinkedList<Food>foods
-    JUEGOSERPIENTE : -LinkedList<Obstacle>obstacles
-    JUEGOSERPIENTE : -LinkedList<Food>foods
-    JUEGOSERPIENTE : +SnakeGame()
-    JUEGOSERPIENTE : +Void Start()
-    JUEGOSERPIENTE: +Void checkCollisions()
-    JUEGOSERPIENTE: +Void spawnFood()
-
-    
+classDiagram   
+    abstract BarraCarga --|> BarraDeCarga extends BarraCarga
+    Interfaz_Usuario <-- BarraDeCarga extends BarraCarga
+    Interfaz_Usuario <--> Interfaz_Niveles
+    Interfaz_Usuario <--> Interfaz_Como_Jugar
+    Interfaz_Personalizar <--> Interfaz_Niveles
+    Interfaz_Personalizar <--> Interfaz_Cobra
+    Interfaz_Personalizar <--> Interfaz_Piton
+    Interfaz_Personalizar <--> Interfaz_Vibora
+    Interfaz_Cobra -->Interfaz_Juego
+    Interfaz_Piton --> Interfaz_Juego
+    Interfaz_Vibora--> Interfaz_Juego
+    Interfaz_Juego <--> Interfaz_Derrota
+    Interfaz_Juego <--> Interfaz_Victoria
+    Interfaz_Derrota --> Interfaz_Niveles
+    Interfaz_Victoria --> Interfaz_Niveles
+    interfaceAnimal--|> abstract AnimalDecorator implements Animal
+    interfaceAnimal--|> VelocidadInicial implements Animal
+    abstract AnimalDecorator implements Animal --|> SlowSpeed extends AnimalDecorator
+    abstract AnimalDecorator implements Animal --|> MediumSpeed extends AnimalDecorator
+    abstract AnimalDecorator implements Animal --|> FastSpeed extends AnimalDecorator
+    interfaceAnimal-->Interfaz_Juego
 
    class Interfaz_Usuario{ 
     +void iniciarComponentes()
    }
  
-
     class Interfaz_Como_Jugar{
         + void iniciarComponentes()
     }
 
-
-    class Interfaz_juego_facil{
+    class Interfaz_Juego{
     - JPanel gamePanel;
 	- LinkedList<Point> snake;
 	- Timer timer;
@@ -78,14 +72,15 @@ classDiagram
 	- Point obstacle;
 	- BufferedImage obstacleImage;
 	- String animal;
-        - long lastDirectionChangeTime; 
+    - long lastDirectionChangeTime; 
 	- static final long tiempoMinimo;
-
-
+    - Interfaz_Niveles nivel; 
+	- int velocidad;
+	- int cantidadObstaculos;
+	- Animal serpiente;
 
     + void setScore(int _score)
     + int getScore()
-    + void updateScoreLabel()
     + void updateScoreLabel()
     + void checkCollision()
     + void drawFoodImage(Graphics g, String imgPath)
@@ -96,17 +91,23 @@ classDiagram
     + void draw(Graphics g)
     + void move()
     - void abrirNuevaInterfaz()
-
-
+    - void Derrota()
+    - void Victoria()
+    - int getGrowthAmount()
+    - boolean isObstacleTooCloseToHead(Point obstaclePosition, int minDistance)
+    + boolean obstacleAtPosition(Point position)
+    + void spawnEnemy()
     }
 
     class Interfaz_Niveles{
+        static private String nivel
        + void iniciarComponentes()
+       + String getNivel()
+       + static void setNivel(String _nivel)
     }
 
     class Interfaz_Personalizar{
-        static - String animal;
-
+       static private String animal;
        + void iniciarComponentes()
        + String getAnimal()
        + static void setAnimal(String _animal)
@@ -124,16 +125,65 @@ classDiagram
         + void iniciarComponentes()
      }
 
-     class Interfaz_Pantalla_final{
-        - Interfaz_juego_facil puntos;
-
-
-        + void iniciarComponentes()
+     class Interfaz_Derrota{
+       - Interfaz_Juego puntos
+       + void iniciarComponentes()
      }
 
+     class Interfaz_Victoria{
+       - Interfaz_Juego puntos
+       + void iniciarComponentes()
+     }
 
-    
+     class interface Animal{
+       + int velocidad
+     }
 
+     class abstract AnimalDecorator implements Animal {
+        - Animal serpiente;
+        + AnimalDecorator(Animal slowAnimal)
+        + int getVelocidad()
+
+     }
+
+     class abstract BarraCarga{
+
+        + abstract void cargar();
+        + abstract void cargaCompleta();
+
+     }
+
+     class BarraDeCarga extends BarraCarga {
+
+    - JProgressBar progressBar;
+    - Timer timer;
+    - int progreso;
+    - JFrame frame;
+
+    + BarraDeCarga() 
+    + void cargar()
+    + void cargaCompleta()      
+    }
+
+    class FastSpeed extends AnimalDecorator{
+        + FastSpeed(Animal serpiente)
+        + int getVelocidad()
+    }
+
+    class MediumSpeed extends AnimalDecorator{
+       + MediumSpeed(Animal serpiente)
+       + int getVelocidad()
+    }
+
+    class SlowSpeed extends AnimalDecorator{
+        + SlowSpeed(Animal serpiente)
+        + int getVelocidad()
+    }
+
+    class VelocidadInicial implements Animal{
+       + int getVelocidad() 
+    }
+   
 
 ```
 
@@ -230,4 +280,11 @@ de la serpiente y el cuarto es el botón de salir, para finalizar el juego.
 **Platano**
 
 ![alt text](https://media.discordapp.net/attachments/807178652042264596/1172560418049380445/banana.png?ex=6569fd7c&is=6557887c&hm=e8a015466f0d7e62b8256d236ccc2c8ecea32741fb8fd202c445f108d7a58b13&=&format=webp)
+
+**Enemigo**
+
+![alt text](https://media.discordapp.net/attachments/1155565182584627280/1179921152936775827/Enemy.png?ex=657b8a34&is=65691534&hm=a2f85219be937fcaa44d10b7b77631efcf07a0f02b121579bb32ab438301584c&=&format=webp&quality=lossless)
+
+
+
 
