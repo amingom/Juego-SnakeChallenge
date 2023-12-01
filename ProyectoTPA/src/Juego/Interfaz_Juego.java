@@ -33,7 +33,7 @@ public class Interfaz_Juego extends JFrame {
 	private Interfaz_Niveles nivel; // Sirve para saber el nivel elegido por el usuario
 	private int velocidad; //Almacena el valor de la velocidad como numero entero
 	private int cantidadObstaculos; //Almacena la cantidad de obstáculos
-	private Animal serpiente;
+	private Velocidad serpiente;
 
 
 	//Método para obtener la puntuación
@@ -114,19 +114,22 @@ public class Interfaz_Juego extends JFrame {
 
 		// Agrega un temporizador para mover la serpiente
 		if(nivel.getNivel() == "facil") {
-
+			
+			//Se decora la velocidad a lenta
 			serpiente = new VelocidadInicial();
 			serpiente = new SlowSpeed(serpiente);
 			velocidad = serpiente.getVelocidad();
 
 		}else if(nivel.getNivel() == "medio") {
-
+			
+			//Se decora la velocidad a media
 			serpiente = new VelocidadInicial();
 			serpiente = new MediumSpeed(serpiente);
 			velocidad = serpiente.getVelocidad();
 
 		}else if(nivel.getNivel() == "dificil") {
 
+			//Se decora la velocidad a rapida
 			serpiente = new VelocidadInicial();
 			serpiente = new FastSpeed(serpiente);
 			velocidad = serpiente.getVelocidad();
