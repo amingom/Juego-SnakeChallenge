@@ -27,7 +27,7 @@ en la pantalla en tiempo real.
 
 ```mermaid
 
-classDiagram   
+ classDiagram   
     abstract BarraCarga --|> BarraDeCarga extends BarraCarga
     Interfaz_Usuario <-- BarraDeCarga extends BarraCarga
     Interfaz_Usuario <--> Interfaz_Niveles
@@ -43,12 +43,12 @@ classDiagram
     Interfaz_Juego <--> Interfaz_Victoria
     Interfaz_Derrota --> Interfaz_Niveles
     Interfaz_Victoria --> Interfaz_Niveles
-    interfaceAnimal--|> abstract AnimalDecorator implements Animal
-    interfaceAnimal--|> VelocidadInicial implements Animal
-    abstract AnimalDecorator implements Animal --|> SlowSpeed extends AnimalDecorator
-    abstract AnimalDecorator implements Animal --|> MediumSpeed extends AnimalDecorator
-    abstract AnimalDecorator implements Animal --|> FastSpeed extends AnimalDecorator
-    interfaceAnimal-->Interfaz_Juego
+    interfaceVelocidad--|> abstract VelocidadDecorator implements Velocidad
+    interfaceVelocidad--|> VelocidadInicial implements Velocidad
+    abstract VelocidadDecorator implements Velocidad --|> SlowSpeed extends VelocidadDecorator
+    abstract VelocidadDecorator implements Velocidad --|> MediumSpeed extends VelocidadDecorator
+    abstract VelocidadDecorator implements Velocidad --|> FastSpeed extends VelocidadDecorator
+    interfaceVelocidad-->Interfaz_Juego
 
    class Interfaz_Usuario{ 
     +void iniciarComponentes()
@@ -135,11 +135,11 @@ classDiagram
        + void iniciarComponentes()
      }
 
-     class interface Animal{
+     class interface Velocidad{
        + int velocidad
      }
 
-     class abstract AnimalDecorator implements Animal {
+     class abstract VelocidadDecorator implements Velocidad {
         - Animal serpiente;
         + AnimalDecorator(Animal slowAnimal)
         + int getVelocidad()
@@ -165,25 +165,25 @@ classDiagram
     + void cargaCompleta()      
     }
 
-    class FastSpeed extends AnimalDecorator{
+    class FastSpeed extends VelocidadDecorator{
         + FastSpeed(Animal serpiente)
         + int getVelocidad()
     }
 
-    class MediumSpeed extends AnimalDecorator{
+    class MediumSpeed extends VelocidadDecorator{
        + MediumSpeed(Animal serpiente)
        + int getVelocidad()
     }
 
-    class SlowSpeed extends AnimalDecorator{
+    class SlowSpeed extends VelocidadDecorator{
         + SlowSpeed(Animal serpiente)
         + int getVelocidad()
     }
 
-    class VelocidadInicial implements Animal{
+    class VelocidadInicial implements Velocidad{
        + int getVelocidad() 
     }
-   
+     
 
 ```
 
