@@ -19,6 +19,6 @@ class SlowSpeed extends VelocidadDecorator{
 	 */
 	@Override
 	public int getVelocidad() {
-		return super.getVelocidad() + 10;
+		return super.getVelocidad() - 10;
 	}
 }

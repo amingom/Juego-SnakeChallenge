@@ -19,7 +19,7 @@ class MediumSpeed extends VelocidadDecorator{
 	 */
 	@Override
 	public int getVelocidad() {
-		return super.getVelocidad() - 15;
+		return super.getVelocidad() - 25;
 	}
 
 }

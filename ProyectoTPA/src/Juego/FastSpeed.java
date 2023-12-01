@@ -20,7 +20,7 @@ class FastSpeed extends VelocidadDecorator {
 	 */
 	@Override
 	public int getVelocidad() {
-		return super.getVelocidad() - 33;
+		return super.getVelocidad() - 15;
 	}
 	
 }

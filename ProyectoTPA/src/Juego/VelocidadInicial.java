@@ -11,6 +11,6 @@ public class VelocidadInicial implements Velocidad {
 	 */
 	@Override
 	public int getVelocidad() {
-		return 90;
+		return 110;
 	}
 }
