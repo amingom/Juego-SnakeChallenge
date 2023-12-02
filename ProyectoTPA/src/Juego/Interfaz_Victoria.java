@@ -10,17 +10,17 @@ import java.awt.event.*;
  */
 
 public class Interfaz_Victoria extends JFrame {
-	private Interfaz_Juego puntos; // Used to obtain the score of the game through getScore()
+	private Interfaz_Juego points; // Used to obtain the score of the game through getScore()
 
 	/**
 	 * Constructor of the class that configures the Final Screen interface. Sets the
 	 * size, title, position, and other aspects of the window.
 	 * 
-	 * @param points.
+	 * @param points Set the final score
 	 */
 
-	public Interfaz_Victoria(Interfaz_Juego puntos) {
-		this.puntos = puntos;
+	public Interfaz_Victoria(Interfaz_Juego points) {
+		this.points = points;
 		setSize(400, 300); // width height
 		setTitle("Snake Challenge"); // set the window title
 		setLocationRelativeTo(null); // set the window in the center of the screen
@@ -51,7 +51,7 @@ public class Interfaz_Victoria extends JFrame {
 		panel.add(messageLabel); // add the label to the panel
 
 		JLabel scoreLabel = new JLabel(); // create a text label
-		scoreLabel.setText("SCORE: " + puntos.getScore());
+		scoreLabel.setText("SCORE: " + points.getScore());
 		scoreLabel.setBounds(30, 60, 300, 30);
 		scoreLabel.setHorizontalAlignment(SwingConstants.CENTER); // center the text in the label
 		scoreLabel.setForeground(Color.BLACK); // set the text color

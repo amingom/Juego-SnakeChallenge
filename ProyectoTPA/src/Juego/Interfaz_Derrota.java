@@ -10,16 +10,17 @@ import java.awt.event.*;
  */
 
 public class Interfaz_Derrota extends JFrame {
-	private Interfaz_Juego puntos; // Used to obtain the game score through getScore()
+	private Interfaz_Juego points; // Used to obtain the game score through getScore()
 
 	/**
 	 * Constructor of the class that configures the final screen interface. Set the
 	 * size, title, position and other aspects of the window.
 	 * 
-	 * @param Game Interface Instance points to access the game score.
+	 * @param points Set the final score
 	 */
-	public Interfaz_Derrota(Interfaz_Juego puntos) {
-		this.puntos = puntos;
+
+	public Interfaz_Derrota(Interfaz_Juego points) {
+		this.points = points;
 		setSize(400, 300); // width height
 		setTitle("Snake Challenge"); // set the window title
 		setLocationRelativeTo(null); // set the window in the center of the screen
@@ -49,7 +50,7 @@ public class Interfaz_Derrota extends JFrame {
 		panel.add(message); // add the label to the panel
 
 		JLabel scoreLabel = new JLabel(); // create a text label
-		scoreLabel.setText("SCORE : " + puntos.getScore());
+		scoreLabel.setText("SCORE : " + points.getScore());
 		scoreLabel.setBounds(30, 60, 300, 30);
 		scoreLabel.setHorizontalAlignment(SwingConstants.CENTER); // center the text in the label
 		scoreLabel.setForeground(Color.BLACK); // set the text color
