@@ -5,82 +5,75 @@ import java.awt.*;
 import java.awt.event.*;
 
 /**
- * Esta clase representa la interfaz de "Como Jugar" en el juego Snake Challenge.
- * Proporciona informacion sobre las reglas y controles del juego.
+ * This class represents the interface of "How to Play" in the game Snake
+ * Challenge. Provides information about the rules and controls of the game.
  */
 
 public class Interfaz_Como_Jugar extends JFrame {
 
 	/**
-	 * Constructor de la clase que configura la interfaz "Como Jugar".
-	 * Establece el tamano, titulo, posicion y otros aspectos de la ventana.
+	 * Constructor of the class that configures the interface "How to Play". Sets
+	 * the size, title, position and other aspects of the window.
 	 */
+
 	public Interfaz_Como_Jugar() {
 
-		setSize(600,600);                                                               //ancho largo
-
-		setTitle("Snake Challenge");                                                  //establecemos el titulo de la ventana	
-
-		setLocationRelativeTo(null);                                                //establecemos la ventana en el centro de la pantalla
-
-		this.getContentPane().setBackground(Color.green);                         //establecemos el color de la ventana
-
-		iniciarComponentes();                                                   //Inicia los botones , imagenes...
-
-		setDefaultCloseOperation(EXIT_ON_CLOSE);                              //hace que termine el programa al cerrar la ventana
-
+		setSize(600, 600);
+		setTitle("Snake Challenge");
+		setLocationRelativeTo(null);
+		getContentPane().setBackground(Color.green);
+		iniciarComponentes();
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 
 	/**
-	 * Inicializa los componentes visuales de la interfaz "Como Jugar".
-	 * Crea un panel, etiquetas de texto y un boton de "Atras".
+	 * Initializes the visual components of the interface "How to Play". Creates a
+	 * panel, text labels and a "Back" button.
 	 */
 	void iniciarComponentes() {
 
-		JPanel ComoJugar = new JPanel();                                           // creacion de un panel		
-		ComoJugar.setBackground(Color.LIGHT_GRAY);                                //establecemos el color del panel
-		ComoJugar.setLayout(null);                                               //desactiva su diseño
-		this.getContentPane().add(ComoJugar);                                   //agregamos el panel a la ventana
+		JPanel ComoJugar = new JPanel(); // creates a panel
+		ComoJugar.setBackground(Color.LIGHT_GRAY);
+		ComoJugar.setLayout(null);
+		getContentPane().add(ComoJugar);
 
-		JLabel Comojugar = new JLabel();                                      //creamos una etiqueta de texto		
-		Comojugar.setText("Cómo jugar");                                     //establecemos el texto de la etiqueta
-		Comojugar.setBounds(-60,20,700,100);
-		Comojugar.setHorizontalAlignment(SwingConstants.CENTER);           //centramos el texto en la etiqueta
-		Comojugar.setForeground(Color.BLACK);                             //establecemos el color del texto
-		Comojugar.setOpaque(true);                                       // establecemos el poder pintar la etiqueta
-		Comojugar.setBackground(Color.LIGHT_GRAY);                      //cambiamos el color del fondo de la etiqueta
-		Comojugar.setFont(new Font("arial",Font.BOLD,50));             //establecemos la fuente del texto	
-		ComoJugar.add(Comojugar);                                     //agregamos la etiqueta al panel
+		JLabel Comojugar = new JLabel();
+		Comojugar.setText("How to play");
+		Comojugar.setBounds(-60, 20, 700, 100);
+		Comojugar.setHorizontalAlignment(SwingConstants.CENTER);
+		Comojugar.setForeground(Color.BLACK);
+		Comojugar.setOpaque(true);
+		Comojugar.setBackground(Color.LIGHT_GRAY);
+		Comojugar.setFont(new Font("arial", Font.BOLD, 50));
+		ComoJugar.add(Comojugar);
 
-		JLabel Instrucciones = new JLabel();                                                                        //creamos una etiqueta de texto		
-		Instrucciones.setText("El Snake Challenge es un juego que consiste en conseguir la mayor cantidad de puntos\n"
-				+ " antes de terminar la partida.\n"
-				+ " \nEl jugador debe dirigir a la serpiente hacia la comida esquivando todos los obstáculos y\n"
-				+ " los bordes del mapa para que la partida no finalice.\n"
-				+ " \nLos controles son las teclas w, a, s, d, que sirven para subir, derecha, abajo e izquierda\n"
-				+ " respectivamente.\n"
-				+ " \nLos puntos se conseguirán al alimentar a la serpiente y ésta a su vez irá creciendo.\n"
-				+ " \nHay distintos tipos de alimentos que harán crecer de distinta manera a la serpiente y\n"
-				+ " tendrán distinto valor de puntos.\n"
-				+ " \nEl jugador podrá ver la puntuación en tiempo real a través del marcador en la parte \n"
-				+ " superior de la pantalla.\n");       //establecemos el texto de la etiqueta
-
+		JLabel Instrucciones = new JLabel();
+		Instrucciones.setText("The Snake Challenge is a game that consists of getting the most points\n"
+				+ " before the game ends.\n"
+				+ " \nThe player must direct the snake towards the food, avoiding all obstacles and\n"
+				+ " the edges of the map so that the game does not end.\n"
+				+ " \nThe controls are the w, a, s, d keys, which are used to go up, right, down and left\n"
+				+ " respectively.\n" + " \nThe points will be obtained by feeding the snake and it will grow in turn.\n"
+				+ " \nThere are different types of food that will make the snake grow differently and\n"
+				+ " will have different point values.\n"
+				+ " \nThe player can see the score in real time through the scoreboard in the upper\n"
+				+ " part of the screen.\n");
 		Instrucciones.setText("<html>" + Instrucciones.getText().replaceAll("\n", "<br/>") + "</html>");
-		Instrucciones.setBounds(-50,40,700,500);
-		Instrucciones.setHorizontalAlignment(SwingConstants.CENTER);                  //centramos el texto en la etiqueta
-		Instrucciones.setForeground(Color.BLACK);                                    //establecemos el color del texto
-		Instrucciones.setOpaque(true);                                              // establecemos el poder pintar la etiqueta
-		Instrucciones.setBackground(Color.LIGHT_GRAY);                             //cambiamos el color del fondo de la etiqueta
-		Instrucciones.setFont(new Font("arial",Font.BOLD,13));                    //establecemos la fuente del texto	
-		ComoJugar.add(Instrucciones);                                            //agregamos la etiqueta al panel
+		Instrucciones.setBounds(-50, 40, 700, 500);
+		Instrucciones.setHorizontalAlignment(SwingConstants.CENTER);
+		Instrucciones.setForeground(Color.BLACK);
+		Instrucciones.setOpaque(true);
+		Instrucciones.setBackground(Color.LIGHT_GRAY);
+		Instrucciones.setFont(new Font("arial", Font.BOLD, 13));
+		ComoJugar.add(Instrucciones);
 
-		JButton Atras = new JButton();                                         //creamos el boton
-		Atras.setText("Atras");	                                              //establecemos texto al boton
-		Atras.setBounds(10,510,150,40);                                      //tamaño y posicion del boton
-		Atras.setEnabled(true);                                             //habilita o deshabilita el click		
-		Atras.setForeground(Color.BLACK);                                  //color de las letras del boton
+		JButton Atras = new JButton();
+		Atras.setText("Back");
+		Atras.setBounds(10, 510, 150, 40);
+		Atras.setEnabled(true);
+		Atras.setForeground(Color.BLACK);
 		Atras.setBackground(Color.WHITE);
-		Atras.setFont(new Font("algerian",Font.BOLD,20));                //fuente de la letra del boton
+		Atras.setFont(new Font("algerian", Font.BOLD, 20));
 		Atras.setFocusPainted(false);
 		Atras.addActionListener(new ActionListener() {
 
@@ -88,12 +81,9 @@ public class Interfaz_Como_Jugar extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				Interfaz_Usuario ventanaInicial = new Interfaz_Usuario();
 				ventanaInicial.setVisible(true);
-				((JFrame) SwingUtilities.getWindowAncestor(Atras)).dispose();  //cierra la ventana
-
+				((JFrame) SwingUtilities.getWindowAncestor(Atras)).dispose();
 			}
 		});
-		ComoJugar.add(Atras);                                //agregamos la etiqueta al panel
-
+		ComoJugar.add(Atras);
 	}
-
 }

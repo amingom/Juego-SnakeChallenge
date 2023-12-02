@@ -1,18 +1,17 @@
 package Juego;
 
 /**
- * Esta clase representa la clase principal del juego Snake Challenge.
- * Inicializa la interfaz de usuario del juego y la hace visible.
+ * The Main class represents the main class of the Snake Challenge game. It
+ * initializes the game's user interface and makes it visible.
  */
-
 public class Main {
 
-    //Main del programa
-    public static void main(String[] args) {
-
-        BarraCarga BarraDeCarga = new BarraDeCarga();
-        BarraDeCarga.cargar();
-
-    }
-
+	/**
+	 * The main entry point for the program. Initializes the loading bar and starts
+	 * the game.
+	 */
+	public static void main(String[] args) {
+		BarraCarga barraDeCarga = new BarraDeCarga();
+		barraDeCarga.cargar();
+	}
 }

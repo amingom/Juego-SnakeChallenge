@@ -1,25 +1,28 @@
 package Juego;
 
 /**
- * Clase abstracta que actua como la clase base para todos los decoradores
+ * An abstract class that serves as the base class for all decorators.
+ * Implements the 'Velocidad' interface and delegates the 'getVelocidad'
+ * operation to the decorated 'Velocidad' object.
  */
-
 abstract class VelocidadDecorator implements Velocidad {
 
 	private Velocidad serpiente;
-	
+
 	/**
-	 * Constructor para el decorador de velocidad
-	 * @param serpiente El objeto 'Velocidad' que esta siendo decorado
+	 * Constructor for the speed decorator.
 	 */
-	
 	public VelocidadDecorator(Velocidad serpiente) {
 		this.serpiente = serpiente;
 	}
-	
+
 	/**
-	 * Implementa la operacion 'getDescripcion' del componente 'Velocidad'
+	 * Implements the 'getVelocidad' operation of the 'Velocidad' component.
+	 * Delegates to the decorated 'Velocidad' object.
+	 * 
+	 * @return The speed value.
 	 */
+	@Override
 	public int getVelocidad() {
 		return serpiente.getVelocidad();
 	}

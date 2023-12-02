@@ -1,21 +1,23 @@
 package Juego;
 
 /**
- * Un decorador concreto que hace mas lenta la velocidad
+ * A concrete decorator that makes the speed slower.
  */
-
-class SlowSpeed extends VelocidadDecorator{
+class SlowSpeed extends VelocidadDecorator {
 
 	/**
-	 * Constructor para el decorador 'SlowSpeed'
-	 * @param serpiente El objeto 'Velocidad' que esta siendo decorado con una velocidad mas lenta
+	 * Constructor for the 'SlowSpeed' decorator.
+	 *
+	 * @param serpiente The 'Velocidad' object being decorated with a slower speed.
 	 */
 	public SlowSpeed(Velocidad serpiente) {
 		super(serpiente);
 	}
-	
+
 	/**
-	 * Añade mas velocidad para que vaya mas lento
+	 * Gets the speed after decreasing it for a slower effect.
+	 *
+	 * @return The modified speed after decreasing it.
 	 */
 	@Override
 	public int getVelocidad() {

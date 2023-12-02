@@ -5,151 +5,150 @@ import java.awt.*;
 import java.awt.event.*;
 
 /**
- * Esta clase representa la interfaz de seleccion de niveles en el juego Snake Challenge.
- * Permite al jugador elegir entre diferentes niveles de dificultad.
+ * This class represents the level selection interface in the Snake Challenge
+ * game. It allows the player to choose from different difficulty levels.
  */
+public class Interfaz_Niveles extends JFrame {
 
-public class Interfaz_Niveles extends JFrame{
-	
 	static private String nivel;
-	
-	//Método para obtener el nivel seleccionado
-		public String getNivel() {
-			return nivel;
-		}
-		
-		//Método que permite establecer el valor de la variable nivel
-		public static void setNivel(String _nivel) {
-			nivel = _nivel;
-		}
 
-	/**
-	 * Constructor de la clase que configura la interfaz de seleccion de niveles.
-	 * Establece el tamaño, titulo, posicion y otros aspectos de la ventana.
-	 */
-	public Interfaz_Niveles() {
+	// Method to get the selected level
+	public String getNivel() {
+		return nivel;
+	}
 
-		setSize(600,600);                                                       //ancho largo
-
-		setTitle("Snake Challenge");                                          //establecemos el titulo de la ventana	
-
-		setLocationRelativeTo(null); 									    //establecemos la ventana en el centro de la pantalla
-
-		this.getContentPane().setBackground(Color.green);				  //establecemos el color de la ventana
-
-		iniciarComponentes(); 											//Inicia los botones , imagenes...
-
-		setDefaultCloseOperation(EXIT_ON_CLOSE);					  //hace que termine el programa al cerrar la ventana
-
+	// Method to set the value of the level variable
+	public static void setNivel(String _nivel) {
+		nivel = _nivel;
 	}
 
 	/**
-	 * Inicializa los componentes visuales de la interfaz de seleccion de niveles.
-	 * Crea un panel, etiquetas de texto y botones para diferentes niveles de dificultad.
+	 * Constructor of the class that configures the level selection interface. Sets
+	 * the size, title, position, and other aspects of the window.
+	 */
+
+	public Interfaz_Niveles() {
+
+		setSize(600, 600); // width height
+
+		setTitle("Snake Challenge"); // set the window title
+
+		setLocationRelativeTo(null); // set the window in the center of the screen
+
+		this.getContentPane().setBackground(Color.green); // set the window color
+
+		iniciarComponentes(); // Initialize buttons, images...
+
+		setDefaultCloseOperation(EXIT_ON_CLOSE); // close the program when closing the window
+	}
+
+	/**
+	 * Initializes the visual components of the level selection interface. Creates a
+	 * panel, text labels, and buttons for different difficulty levels.
 	 */
 	void iniciarComponentes() {
 
-		JPanel niveles = new JPanel();    									// creacion de un panel		
-		niveles.setBackground(Color.green); 							   //establecemos el color del panel
-		niveles.setLayout(null);  										  //desactiva su diseño
-		this.getContentPane().add(niveles);                              //agregamos el panel a la ventana
-		JLabel Niveles = new JLabel();                                 //creamos una etiqueta de texto		
-		Niveles.setText("NIVELES");                                   //establecemos el texto de la etiqueta
-		Niveles.setBounds(-115,20,800,100);
-		Niveles.setHorizontalAlignment(SwingConstants.CENTER);      //centramos el texto en la etiqueta
-		Niveles.setForeground(Color.BLACK);            	        //establecemos el color del texto
-		Niveles.setOpaque(true);   							   // establecemos el poder pintar la etiqueta
-		Niveles.setBackground(Color.green);                      //cambiamos el color del fondo de la etiqueta
-		Niveles.setFont(new Font("arial",Font.BOLD,50));        //establecemos la fuente del texto	
-		niveles.add(Niveles);                                  //agregamos la etiqueta al panel
+		JPanel levels = new JPanel(); // create a panel
+		levels.setBackground(Color.green); // set the panel color
+		levels.setLayout(null); // disable its layout
+		this.getContentPane().add(levels); // add the panel to the window
+		JLabel Levels = new JLabel(); // create a text label
+		Levels.setText("LEVELS"); // set the text of the label
+		Levels.setBounds(-115, 20, 800, 100);
+		Levels.setHorizontalAlignment(SwingConstants.CENTER); // center the text in the label
+		Levels.setForeground(Color.BLACK); // set the text color
+		Levels.setOpaque(true); // set the ability to paint the label
+		Levels.setBackground(Color.green); // change the background color of the label
+		Levels.setFont(new Font("arial", Font.BOLD, 50)); // set the text font
+		levels.add(Levels); // add the label to the panel
 
-		JButton Facil = new JButton();  							//creamos el boton
-		Facil.setText("Facil");								       //establecemos texto al boton
-		Facil.setBounds(160,130,250,60);  						  //tamaño y posicion del boton
-		Facil.setEnabled(true);  								 //habilita o deshabilita el click		
-		Facil.setForeground(Color.BLACK); 						//color de las letras del boton
-		Facil.setBackground(Color.WHITE);					   //color del boton
-		Facil.setFont(new Font("algerian",Font.BOLD,40)); 	  //fuente de la letra del boton
-		Facil.setFocusPainted(false);
+		JButton Easy = new JButton(); // create the button
+		Easy.setText("Easy"); // set text to the button
+		Easy.setBounds(160, 130, 250, 60); // size and position of the button
+		Easy.setEnabled(true); // enable or disable the click
+		Easy.setForeground(Color.BLACK); // button text color
+		Easy.setBackground(Color.WHITE); // button color
+		Easy.setFont(new Font("algerian", Font.BOLD, 40)); // button text font
+		Easy.setFocusPainted(false);
 
-		//  abre la ventana relacionada con la personalización de las serpientes y cierra la ventana de inicio
-		Facil.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				setNivel("facil");
-				Interfaz_Personalizar ventanaNiveles = new Interfaz_Personalizar();
-				ventanaNiveles.setVisible(true);    
-				((JFrame) SwingUtilities.getWindowAncestor(Facil)).dispose();  //cierra la ventana
-			}                      
-		});		
-		niveles.add(Facil);
-
-		JButton Medio = new JButton(); 							    //creamos el boton
-		Medio.setText("Medio");									   //establecemos texto al boton
-		Medio.setBounds(160,255,250,60);  						  //tamaño y posicion del boton
-		Medio.setEnabled(true);  								 //habilita o deshabilita el click		
-		Medio.setForeground(Color.BLACK); 						//color de las letras del boton
-		Medio.setBackground(Color.WHITE); 					   //color del boton
-		Medio.setFont(new Font("algerian",Font.BOLD,40));     //fuente de la letra del boton
-		Medio.setFocusPainted(false);
-
-		//  abre la ventana relacionada con la personalización de las serpientes y cierra la ventana de inicio
-		Medio.addActionListener(new ActionListener() {
+		// Open the window related to snake customization and close the start window
+		Easy.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				setNivel("medio");
-				Interfaz_Personalizar ventanaPersonalizacion = new Interfaz_Personalizar();
-				ventanaPersonalizacion.setVisible(true);
-				((JFrame) SwingUtilities.getWindowAncestor(Medio)).dispose();  //cierra la ventana
+				setNivel("easy");
+				Interfaz_Personalizar levelCustomizationWindow = new Interfaz_Personalizar();
+				levelCustomizationWindow.setVisible(true);
+				((JFrame) SwingUtilities.getWindowAncestor(Easy)).dispose(); // close the window
+			}
+		});
+		levels.add(Easy);
+
+		JButton Medium = new JButton(); // create the button
+		Medium.setText("Medium"); // set text to the button
+		Medium.setBounds(160, 255, 250, 60); // size and position of the button
+		Medium.setEnabled(true); // enable or disable the click
+		Medium.setForeground(Color.BLACK); // button text color
+		Medium.setBackground(Color.WHITE); // button color
+		Medium.setFont(new Font("algerian", Font.BOLD, 40)); // button text font
+		Medium.setFocusPainted(false);
+
+		// Open the window related to snake customization and close the start window
+		Medium.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				setNivel("medium");
+				Interfaz_Personalizar customizationWindow = new Interfaz_Personalizar();
+				customizationWindow.setVisible(true);
+				((JFrame) SwingUtilities.getWindowAncestor(Medium)).dispose(); // close the window
 
 			}
 		});
 
-		niveles.add(Medio);
+		levels.add(Medium);
 
-		JButton Dificil = new JButton(); 							//creamos el boton
-		Dificil.setText("Dificil");								   //establecemos texto al boton
-		Dificil.setBounds(160,380,250,60); 						  //tamaño y posicion del boton
-		Dificil.setEnabled(true);  								 //habilita o deshabilita el click		
-		Dificil.setForeground(Color.BLACK); 					//color de las letras del boton
-		Dificil.setBackground(Color.WHITE); 				   //color del boton
-		Dificil.setFont(new Font("algerian",Font.BOLD,40));   //fuente de la letra del boton
-		Dificil.setFocusPainted(false);
+		JButton Hard = new JButton(); // create the button
+		Hard.setText("Hard"); // set text to the button
+		Hard.setBounds(160, 380, 250, 60); // size and position of the button
+		Hard.setEnabled(true); // enable or disable the click
+		Hard.setForeground(Color.BLACK); // button text color
+		Hard.setBackground(Color.WHITE); // button color
+		Hard.setFont(new Font("algerian", Font.BOLD, 40)); // button text font
+		Hard.setFocusPainted(false);
 
-		//  abre la ventana relacionada con la personalización de las serpientes y cierra la ventana de inicio
-		Dificil.addActionListener(new ActionListener() {
+		// Open the window related to snake customization and close the start window
+		Hard.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				setNivel("dificil");
-				Interfaz_Personalizar ventanaPersonalizacion = new Interfaz_Personalizar();
-				ventanaPersonalizacion.setVisible(true);
-				((JFrame) SwingUtilities.getWindowAncestor(Dificil)).dispose();  //cierra la ventana
+				setNivel("hard");
+				Interfaz_Personalizar customizationWindow = new Interfaz_Personalizar();
+				customizationWindow.setVisible(true);
+				((JFrame) SwingUtilities.getWindowAncestor(Hard)).dispose(); // close the window
 
 			}
 		});
 
-		niveles.add(Dificil);
+		levels.add(Hard);
 
-		JButton Atras = new JButton(); 							   //creamos el boton
-		Atras.setText("Atras");									  //establecemos texto al boton
-		Atras.setBounds(10,510,150,40); 						 //tamaño y posicion del boton
-		Atras.setEnabled(true);  								//habilita o deshabilita el click		
-		Atras.setForeground(Color.BLACK); 					   //color de las letras del boton
-		Atras.setBackground(Color.WHITE);				      //color del boton
-		Atras.setFont(new Font("algerian",Font.BOLD,20));    //fuente de la letra del boton
-		Atras.setFocusPainted(false);
-		Atras.addActionListener(new ActionListener() {
+		JButton Back = new JButton(); // create the button
+		Back.setText("Back"); // set text to the button
+		Back.setBounds(10, 510, 150, 40); // size and position of the button
+		Back.setEnabled(true); // enable or disable the click
+		Back.setForeground(Color.BLACK); // button text color
+		Back.setBackground(Color.WHITE); // button color
+		Back.setFont(new Font("algerian", Font.BOLD, 20)); // button text font
+		Back.setFocusPainted(false);
+		Back.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Interfaz_Usuario ventanaInicial = new Interfaz_Usuario();
-				ventanaInicial.setVisible(true); 
-				((JFrame) SwingUtilities.getWindowAncestor(Atras)).dispose();  //cierra la ventana
+				Interfaz_Usuario initialWindow = new Interfaz_Usuario();
+				initialWindow.setVisible(true);
+				((JFrame) SwingUtilities.getWindowAncestor(Back)).dispose(); // close the window
 			}
 		});
-		niveles.add(Atras);
+		levels.add(Back);
 	}
 }

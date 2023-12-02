@@ -1,122 +1,125 @@
 package Juego;
 
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
 /**
- * Esta clase representa la interfaz de la Pantalla Final
- * Permite a los jugadores jugar salir del juego, jugar de nuevo o seleccionar el nivel.
+ * This class represents the interface of the Final Screen. Allows players to
+ * exit the game, play again, or select the level.
  */
-public class Interfaz_Victoria extends JFrame{
-	private Interfaz_Juego puntos;  // Se utiliza para obtener la puntuación del juego a través del getScore()
+
+public class Interfaz_Victoria extends JFrame {
+	private Interfaz_Juego puntos; // Used to obtain the score of the game through getScore()
 
 	/**
-	 * Constructor de la clase que configura la interfaz de la pantalla final.
-	 * Establece el tamano, titulo, posicion y otros aspectos de la ventana.
-	 * @param puntos Instancia de Interfaz juego facil para acceder a la puntuacion del juego.
+	 * Constructor of the class that configures the Final Screen interface. Sets the
+	 * size, title, position, and other aspects of the window.
+	 * 
+	 * @param points.
 	 */
+
 	public Interfaz_Victoria(Interfaz_Juego puntos) {
 		this.puntos = puntos;
-		setSize(400,300);                                                               //ancho largo
-		setTitle("Snake Challenge");                                                  //establecemos el titulo de la ventana	
-		setLocationRelativeTo(null);                                                //establecemos la ventana en el centro de la pantalla
-		this.getContentPane().setBackground(Color.green);                         //establecemos el color de la ventana
-		iniciarComponentes();                                                   //Inicia los botones , imagenes...
-		setDefaultCloseOperation(EXIT_ON_CLOSE);                              //hace que termine el programa al cerrar la ventana
+		setSize(400, 300); // width height
+		setTitle("Snake Challenge"); // set the window title
+		setLocationRelativeTo(null); // set the window in the center of the screen
+		this.getContentPane().setBackground(Color.green); // set the window color
+		iniciarComponentes(); // Initialize buttons, images...
+		setDefaultCloseOperation(EXIT_ON_CLOSE); // close the program when closing the window
 	}
 
 	/**
-	 * Inicializa los componentes visuales de la interfaz de Pantalla Final.
-	 * Crea un panel, etiquetas de texto y botones para Salir, Volver a jugar y Seleccionar nivel.
+	 * Initializes the visual components of the Final Screen interface. Creates a
+	 * panel, text labels, and buttons for Exit, Play Again, and Select Level.
 	 */
+
 	void iniciarComponentes() {
 
-		JPanel panel = new JPanel();    // creacion de un panel		
-		panel.setBackground(Color.MAGENTA);  //establecemos el color del panel
-		panel.setLayout(null);  //desactiva su diseno
-		this.getContentPane().add(panel);  //agregamos el panel a la ventana
+		JPanel panel = new JPanel(); // create a panel
+		panel.setBackground(Color.MAGENTA); // set the color of the panel
+		panel.setLayout(null); // deactivate its design
+		this.getContentPane().add(panel); // add the panel to the window
 
-		JLabel Mensaje = new JLabel();   //creamos una etiqueta de texto		
-		Mensaje.setText("GG WELL PLAY");
-		Mensaje.setBounds(60,10,240,40);
-		Mensaje.setHorizontalAlignment(SwingConstants.CENTER);   //centramos el texto en la etiqueta
-		Mensaje.setForeground(Color.BLACK);   //establecemos el color del texto
-		Mensaje.setOpaque(false);  // establecemos el poder pintar la etiqueta
-		Mensaje.setFont(new Font("arial",0,30));  //establecemos la fuente del texto
-		panel.add(Mensaje);   //agregamos la etiqueta al panel
+		JLabel messageLabel = new JLabel(); // create a text label
+		messageLabel.setText("GG WELL PLAY");
+		messageLabel.setBounds(60, 10, 240, 40);
+		messageLabel.setHorizontalAlignment(SwingConstants.CENTER); // center the text in the label
+		messageLabel.setForeground(Color.BLACK); // set the text color
+		messageLabel.setOpaque(false); // set the ability to paint the label
+		messageLabel.setFont(new Font("arial", 0, 30)); // set the text font
+		panel.add(messageLabel); // add the label to the panel
 
-		JLabel Puntuacion = new JLabel();   //creamos una etiqueta de texto		
-		Puntuacion.setText("PUNTUACION : " + puntos.getScore());
-		Puntuacion.setBounds(30,60,300,30);
-		Puntuacion.setHorizontalAlignment(SwingConstants.CENTER);   //centramos el texto en la etiqueta
-		Puntuacion.setForeground(Color.BLACK);   //establecemos el color del texto
-		Puntuacion.setOpaque(false);  // establecemos el poder pintar la etiqueta
-		Puntuacion.setFont(new Font("arial",0,30));  //establecemos la fuente del texto
-		panel.add(Puntuacion);   //agregamos la etiqueta al panel
+		JLabel scoreLabel = new JLabel(); // create a text label
+		scoreLabel.setText("SCORE: " + puntos.getScore());
+		scoreLabel.setBounds(30, 60, 300, 30);
+		scoreLabel.setHorizontalAlignment(SwingConstants.CENTER); // center the text in the label
+		scoreLabel.setForeground(Color.BLACK); // set the text color
+		scoreLabel.setOpaque(false); // set the ability to paint the label
+		scoreLabel.setFont(new Font("arial", 0, 30)); // set the text font
+		panel.add(scoreLabel); // add the label to the panel
 
-		JButton Salir = new JButton(); //creamos el boton
-		Salir.setText("EXIT");	//establecemos texto al boton
-		Salir.setBounds(2,218,100,30);  //tamano y posicion del boton
-		Salir.setEnabled(true);  //habilita o deshabilita el click		
-		Salir.setForeground(Color.BLACK); //color de las letras del boton
-		Salir.setBackground(Color.WHITE);
-		Salir.setFont(new Font("algerian",Font.BOLD,20)); //fuente de la letra del boton
-		Salir.setFocusPainted(false);
+		JButton exitButton = new JButton(); // create the button
+		exitButton.setText("EXIT"); // set text to the button
+		exitButton.setBounds(2, 218, 100, 30); // size and position of the button
+		exitButton.setEnabled(true); // enable or disable the click
+		exitButton.setForeground(Color.BLACK); // color of the letters of the button
+		exitButton.setBackground(Color.WHITE);
+		exitButton.setFont(new Font("algerian", Font.BOLD, 20)); // font of the button's letter
+		exitButton.setFocusPainted(false);
 
-		//cierra la ventana principal
-		Salir.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {   
+		// close the main window
+		exitButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
 			}
 		});
 
-		panel.add(Salir);	
+		panel.add(exitButton);
 
-		JButton Reiniciar = new JButton(); //creamos el boton
-		Reiniciar.setText("PLAY AGAIN");	//establecemos texto al boton
-		Reiniciar.setBounds(108,218,130,30);  //tamano y posicion del boton
-		Reiniciar.setEnabled(true);  //habilita o deshabilita el click		
-		Reiniciar.setForeground(Color.BLACK); //color de las letras del boton
-		Reiniciar.setBackground(Color.WHITE);
-		Reiniciar.setFont(new Font("algerian",Font.BOLD,15)); //fuente de la letra del boton
-		Reiniciar.setFocusPainted(false);
+		JButton restartButton = new JButton(); // create the button
+		restartButton.setText("PLAY AGAIN"); // set text to the button
+		restartButton.setBounds(108, 218, 130, 30); // size and position of the button
+		restartButton.setEnabled(true); // enable or disable the click
+		restartButton.setForeground(Color.BLACK); // color of the letters of the button
+		restartButton.setBackground(Color.WHITE);
+		restartButton.setFont(new Font("algerian", Font.BOLD, 15)); // font of the button's letter
+		restartButton.setFocusPainted(false);
 
-		Reiniciar.addActionListener(new ActionListener() {
+		restartButton.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Interfaz_Juego ventanafacil = new Interfaz_Juego();
-				ventanafacil.setVisible(true);
-				((JFrame) SwingUtilities.getWindowAncestor(Reiniciar)).dispose();  //cierra la ventana
+				Interfaz_Juego newGameInterface = new Interfaz_Juego();
+				newGameInterface.setVisible(true);
+				((JFrame) SwingUtilities.getWindowAncestor(restartButton)).dispose(); // close the window
 
 			}
 		});
 
-		panel.add(Reiniciar);	
+		panel.add(restartButton);
 
-		JButton Jugar_de_nuevo = new JButton(); //creamos el boton
-		Jugar_de_nuevo.setText("SELECCION NIVEL");	//establecemos texto al boton
-		Jugar_de_nuevo.setBounds(245,218,140,30);  //tamano y posicion del boton
-		Jugar_de_nuevo.setEnabled(true);  //habilita o deshabilita el click		
-		Jugar_de_nuevo.setForeground(Color.BLACK); //color de las letras del boton
-		Jugar_de_nuevo.setBackground(Color.WHITE);
-		Jugar_de_nuevo.setFont(new Font("algerian",Font.BOLD,12)); //fuente de la letra del boton
-		Jugar_de_nuevo.setFocusPainted(false);
+		JButton selectLevelButton = new JButton(); // create the button
+		selectLevelButton.setText("SELECT LEVEL"); // set text to the button
+		selectLevelButton.setBounds(245, 218, 140, 30); // size and position of the button
+		selectLevelButton.setEnabled(true); // enable or disable the click
+		selectLevelButton.setForeground(Color.BLACK); // color of the letters of the button
+		selectLevelButton.setBackground(Color.WHITE);
+		selectLevelButton.setFont(new Font("algerian", Font.BOLD, 12)); // font of the button's letter
+		selectLevelButton.setFocusPainted(false);
 
-		Jugar_de_nuevo.addActionListener(new ActionListener() {
+		selectLevelButton.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Interfaz_Niveles ventanaNiveles = new Interfaz_Niveles();
-				ventanaNiveles.setVisible(true);
-				((JFrame) SwingUtilities.getWindowAncestor(Jugar_de_nuevo)).dispose();  //cierra la ventana
+				Interfaz_Niveles levelInterface = new Interfaz_Niveles();
+				levelInterface.setVisible(true);
+				((JFrame) SwingUtilities.getWindowAncestor(selectLevelButton)).dispose(); // close the window
 
 			}
 		});
 
-		panel.add(Jugar_de_nuevo);
+		panel.add(selectLevelButton);
 
 	}
 }

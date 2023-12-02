@@ -1,10 +1,12 @@
 package Juego;
 
-/** 
- * La interfaz 'Animal' define la operacion de un objeto de velocidad
+/**
+ * The 'Velocidad' interface defines the operation of an object's speed.
  */
 interface Velocidad {
-	
+
+	/**
+	 * Gets the speed of the object.
+	 */
 	public int getVelocidad();
-    
 }
