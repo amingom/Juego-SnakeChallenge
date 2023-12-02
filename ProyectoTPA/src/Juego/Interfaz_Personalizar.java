@@ -9,7 +9,6 @@ import java.awt.event.*;
  * Challenge game. It allows the player to choose from different aspects for the
  * snake.
  */
-
 public class Interfaz_Personalizar extends JFrame {
 
 	static private String animal; // Stores the selected snake in the customization interface

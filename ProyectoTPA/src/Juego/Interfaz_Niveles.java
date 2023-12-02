@@ -26,7 +26,6 @@ public class Interfaz_Niveles extends JFrame {
 	 * Constructor of the class that configures the level selection interface. Sets
 	 * the size, title, position, and other aspects of the window.
 	 */
-
 	public Interfaz_Niveles() {
 
 		setSize(600, 600); // width height

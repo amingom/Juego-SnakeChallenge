@@ -8,14 +8,12 @@ import java.awt.event.*;
  * This class represents the interface of "How to Play" in the game Snake
  * Challenge. Provides information about the rules and controls of the game.
  */
-
 public class Interfaz_Como_Jugar extends JFrame {
 
 	/**
 	 * Constructor of the class that configures the interface "How to Play". Sets
 	 * the size, title, position and other aspects of the window.
 	 */
-
 	public Interfaz_Como_Jugar() {
 
 		setSize(600, 600);

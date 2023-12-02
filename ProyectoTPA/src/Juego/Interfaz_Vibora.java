@@ -9,7 +9,6 @@ import java.awt.event.*;
  * This class represents the "Vibora" interface in the Snake Challenge game. It
  * provides information about the Snake and its abilities.
  */
-
 public class Interfaz_Vibora extends JFrame {
 
 	/**
@@ -18,7 +17,6 @@ public class Interfaz_Vibora extends JFrame {
 	 * 
 	 * @param animal Parameter that represents the type of animal.
 	 */
-
 	public Interfaz_Vibora(String animal) {
 
 		setSize(600, 600); // width height
@@ -38,7 +36,6 @@ public class Interfaz_Vibora extends JFrame {
 	 * Initializes the visual components of the "Vibora" interface. Creates a panel,
 	 * text labels, a "Back" button, and a "Start" button.
 	 */
-
 	void iniciarComponentes() {
 
 		JPanel viper = new JPanel() {

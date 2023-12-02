@@ -8,7 +8,6 @@ import java.awt.event.*;
  * This class represents the "Python" interface in the Snake Challenge game. It
  * provides information about the Python and its abilities.
  */
-
 public class Interfaz_Piton extends JFrame {
 
 	/**
@@ -17,7 +16,6 @@ public class Interfaz_Piton extends JFrame {
 	 * 
 	 * @param animal Parameter representing the type of animal.
 	 */
-
 	public Interfaz_Piton(String animal) {
 
 		setSize(600, 600); // width height
@@ -38,7 +36,6 @@ public class Interfaz_Piton extends JFrame {
 	 * Initializes the visual components of the "Python" interface. Creates a panel,
 	 * text labels, a "Back" button, and a "Start" button.
 	 */
-
 	void iniciarComponentes() {
 
 		JPanel python = new JPanel() {

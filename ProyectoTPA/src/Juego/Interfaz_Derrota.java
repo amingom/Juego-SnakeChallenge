@@ -8,7 +8,6 @@ import java.awt.event.*;
  * This class represents the interface of the Game Over Screen. It allows
  * players to exit the game, play again, or select the level.
  */
-
 public class Interfaz_Derrota extends JFrame {
 	private Interfaz_Juego points; // Used to obtain the game score through getScore()
 
@@ -18,7 +17,6 @@ public class Interfaz_Derrota extends JFrame {
 	 * 
 	 * @param points Set the final score
 	 */
-
 	public Interfaz_Derrota(Interfaz_Juego points) {
 		this.points = points;
 		setSize(400, 300); // width height

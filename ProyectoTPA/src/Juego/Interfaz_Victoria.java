@@ -8,7 +8,6 @@ import java.awt.event.*;
  * This class represents the interface of the Final Screen. Allows players to
  * exit the game, play again, or select the level.
  */
-
 public class Interfaz_Victoria extends JFrame {
 	private Interfaz_Juego points; // Used to obtain the score of the game through getScore()
 
@@ -18,7 +17,6 @@ public class Interfaz_Victoria extends JFrame {
 	 * 
 	 * @param points Set the final score
 	 */
-
 	public Interfaz_Victoria(Interfaz_Juego points) {
 		this.points = points;
 		setSize(400, 300); // width height
@@ -33,7 +31,6 @@ public class Interfaz_Victoria extends JFrame {
 	 * Initializes the visual components of the Final Screen interface. Creates a
 	 * panel, text labels, and buttons for Exit, Play Again, and Select Level.
 	 */
-
 	void iniciarComponentes() {
 
 		JPanel panel = new JPanel(); // create a panel

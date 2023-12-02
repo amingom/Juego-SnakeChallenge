@@ -9,7 +9,6 @@ import java.awt.event.*;
  * allows players to access different options such as play, learn how to play,
  * customize, and exit.
  */
-
 public class Interfaz_Usuario extends JFrame {
 
 	/**
@@ -35,7 +34,6 @@ public class Interfaz_Usuario extends JFrame {
 	 * Initializes the visual components of the main user interface. Creates a
 	 * panel, text labels, and buttons for different options.
 	 */
-
 	void iniciarComponentes() {
 
 		JPanel panel = new JPanel(); // create a panel

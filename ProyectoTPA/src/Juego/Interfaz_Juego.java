@@ -13,7 +13,6 @@ import java.util.LinkedList;
  * This class represents the interface of the Snake Challenge game on the easy
  * level. It allows players to play the game at a lower difficulty level.
  */
-
 public class Interfaz_Juego extends JFrame {
 	private JPanel gamePanel; // Used to visually represent the game
 	private LinkedList<Point> snake; // Represents the snake

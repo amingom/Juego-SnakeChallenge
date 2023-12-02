@@ -9,7 +9,6 @@ import java.awt.event.*;
  * This class represents the interface of "Cobra" in the game Snake Challenge.
  * Provides information about the Cobra and its abilities.
  */
-
 public class Interfaz_Cobra extends JFrame {
 
 	/**
