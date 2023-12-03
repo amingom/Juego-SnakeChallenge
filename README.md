@@ -15,8 +15,8 @@ distinto de puntos.
 - **Cereza**. (2p)
 - **Plátano**. (3p)
 
-En la pantalla de juego irán apareciendo obstáculos, los cuales aumentarán su frecuencia
-dependiendo del nivel de dificultad. Chocar con alguno de estos obstáculos finalizará el juego.
+En la pantalla de juego irán apareciendo enemigos, los cuales aumentarán su frecuencia
+dependiendo del nivel de dificultad. Chocar con los enemigos finalizará el juego.
 - **Enemigos**.
 
 Los jugadores irán obteniendo puntos al comer los distintos alimentos, el objetivo es
