@@ -24,6 +24,8 @@ public class Viper_Interface extends JFrame {
 		setTitle("Snake Challenge"); // set the window title
 
 		setLocationRelativeTo(null); // set the window in the center of the screen
+		
+		setResizable(false);
 
 		this.getContentPane().setBackground(Color.green); // set the window color
 

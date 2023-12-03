@@ -22,6 +22,7 @@ public class Victory_Interface extends JFrame {
 		setSize(400, 300); // width height
 		setTitle("Snake Challenge"); // set the window title
 		setLocationRelativeTo(null); // set the window in the center of the screen
+		setResizable(false);
 		this.getContentPane().setBackground(Color.green); // set the window color
 		components(); // Initialize buttons, images...
 		setDefaultCloseOperation(EXIT_ON_CLOSE); // close the program when closing the window

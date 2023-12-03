@@ -21,6 +21,7 @@ public class Defeat_Interface extends JFrame {
 		this.points = points;
 		setSize(400, 300); // width height
 		setTitle("Snake Challenge"); // set the window title
+		setResizable(false);
 		setLocationRelativeTo(null); // set the window in the center of the screen
 		this.getContentPane().setBackground(Color.green); // set the window color
 		components(); // Initialize buttons, images, etc.

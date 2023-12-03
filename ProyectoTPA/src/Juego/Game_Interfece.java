@@ -62,6 +62,7 @@ public class Game_Interfece extends JFrame {
 	public Game_Interfece() {
 		setSize(495, 488); // Sets the size of the window
 		setTitle("Snake Challenge"); // Sets the title of the window
+		setResizable(false);
 		setLocationRelativeTo(null); // Sets the window to the center of the screen
 		animal = new Customization_Interface(); // Initializes the customization interface
 		level = new Level_Interface(); // Initializes the levels interface
@@ -179,7 +180,7 @@ public class Game_Interfece extends JFrame {
 		spawnEnemy(); // Initializes obstacles at random positions
 
 		try {
-			obstacleImage = ImageIO.read(new File("img\\Enemy.png"));
+			obstacleImage = ImageIO.read(new File("img\\enemy.png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -451,7 +452,7 @@ public class Game_Interfece extends JFrame {
 
 	/**
 	 * Displays the defeat interface when the conditions for losing the game are
-	 * met. Creates a new instance of the Interfaz_Derrota class and makes it
+	 * met. Creates a new instance of the defeat interface class and makes it
 	 * visible.
 	 */
 	private void Defeat() {
@@ -462,7 +463,7 @@ public class Game_Interfece extends JFrame {
 
 	/**
 	 * Displays the victory interface when the conditions for winning the game are
-	 * met. Creates a new instance of the Interfaz_Victoria class and makes it
+	 * met. Creates a new instance of the Victory_Interface class and makes it
 	 * visible.
 	 */
 	private void Victory() {

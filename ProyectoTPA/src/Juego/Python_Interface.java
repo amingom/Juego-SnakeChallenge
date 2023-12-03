@@ -1,6 +1,8 @@
 package Juego;
 
 import javax.swing.*;
+import javax.swing.border.LineBorder;
+
 import java.awt.*;
 import java.awt.event.*;
 
@@ -23,6 +25,8 @@ public class Python_Interface extends JFrame {
 		setTitle("Snake Challenge"); // set the window title
 
 		setLocationRelativeTo(null); // set the window in the center of the screen
+		
+		setResizable(false);
 
 		this.getContentPane().setBackground(Color.green); // set the window color
 
@@ -64,12 +68,14 @@ public class Python_Interface extends JFrame {
 		back.setText("Back"); // set text to the button
 		back.setBounds(10, 510, 150, 40); // size and position of the button
 		back.setEnabled(true); // enable or disable the click
-		back.setForeground(Color.BLACK); // button text color
-		back.setBackground(Color.WHITE); // background text color
+		back.setForeground(Color.white); // button text color
+		back.setBackground(Color.black); // background text color
 		back.setFont(new Font("algerian", Font.BOLD, 20)); // button text font
 		back.setFocusPainted(false);
-		back.setOpaque(false); // set the ability to paint the label
+		back.setOpaque(true); // set the ability to paint the label
 		back.setSelected(false);
+		LineBorder border_back_cobra = new LineBorder(Color.black);
+		back.setBorder(border_back_cobra);
 		back.addActionListener(new ActionListener() {
 
 			@Override
@@ -86,12 +92,14 @@ public class Python_Interface extends JFrame {
 		start.setText("Start"); // set text to the button
 		start.setBounds(425, 510, 150, 40); // size and position of the button
 		start.setEnabled(true); // enable or disable the click
-		start.setForeground(Color.WHITE); // button text color
-		start.setBackground(Color.WHITE);
+		start.setForeground(Color.white); // button text color
+		start.setBackground(Color.black);
 		start.setFont(new Font("algerian", Font.BOLD, 20)); // button text font
 		start.setFocusPainted(false);
-		start.setOpaque(false); // set the ability to paint the label
+		start.setOpaque(true); // set the ability to paint the label
 		start.setSelected(false);
+		LineBorder border_start_cobra = new LineBorder(Color.black);
+		start.setBorder(border_start_cobra);
 		start.addActionListener(new ActionListener() {
 
 			@Override

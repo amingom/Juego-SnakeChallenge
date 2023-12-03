@@ -27,6 +27,7 @@ public class Bar extends LoadingBar {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(500, 400);
 		frame.setLocationRelativeTo(null);
+		frame.setResizable(false);
 
 		// Panel with background image
 		JPanel panel = new JPanel() {

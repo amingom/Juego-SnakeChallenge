@@ -18,6 +18,7 @@ public class How_To_Play_Interface extends JFrame {
 
 		setSize(600, 600);
 		setTitle("Snake Challenge");
+		setResizable(false);
 		setLocationRelativeTo(null);
 		getContentPane().setBackground(Color.green);
 		components();
