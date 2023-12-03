@@ -218,7 +218,7 @@ de la serpiente y el cuarto es el botón de salir, para finalizar el juego.
 
 **Marcador y Tablero**
 
-![alt text](https://media.discordapp.net/attachments/1155565182584627280/1176214816470351912/pixil-frame-0_1.png?ex=656e0e69&is=655b9969&hm=0e0e20d461ebeed00b1d9a791b40b3dbb9f7d70039eeb60d0eb81ce08ec8a7b2&=)
+![alt text](https://media.discordapp.net/attachments/1155565182584627280/1180896455167332513/marcador.png?ex=657f1686&is=656ca186&hm=857dba9c097653609e999c9fc05680f08426178b0c63a0472348fb2a48d77a3d&=&format=webp&quality=lossless)
 
 ![alt text](https://cdn.discordapp.com/attachments/807178652042264596/1176121409999736912/pixil-frame-0_7.png?ex=656db76b&is=655b426b&hm=240acdc0838208d968b2bebb1df41dcae1422a083759e8a1652975eb42f7d369&)
 
