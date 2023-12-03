@@ -197,23 +197,27 @@ muestran las instrucciones de cómo jugar, el tercer botón sirve para personali
 de la serpiente y el cuarto es el botón de salir, para finalizar el juego.
 
 
+**Barra de carga**
+
+![alt text](https://cdn.discordapp.com/attachments/1155565182584627280/1180902485750198283/image.png?ex=657f1c24&is=656ca724&hm=c2f8f524af51eb23de9c8ba8af26ce34505b5afdaee5657af89ba0488d1bd6cb&)
+
 **Pantalla Inicial**
 
-![alt text](https://media.discordapp.net/attachments/1155565182584627280/1171145032158412861/image.png?ex=655b9cce&is=654927ce&hm=22dd7376a5a56399ca134348a1c64d6335a4383f089b9e9c7fb318866a3390d4&=)
+![alt text](https://media.discordapp.net/attachments/1155565182584627280/1180903835963760660/image.png?ex=657f1d66&is=656ca866&hm=79377f711d4b86130891793fa25f76646addd2b05102c81c039cab6c1fd3ef08&=&format=webp&quality=lossless)
 
 **Pantalla de Niveles**
 
-![alt text](https://cdn.discordapp.com/attachments/1155565182584627280/1163522767258398760/image.png?ex=653fe204&is=652d6d04&hm=4f8709773805420dbd7b68c391b10579f42b957cccf730f9e0d27b6e4d7afa5d&)
+![alt text](https://media.discordapp.net/attachments/1155565182584627280/1180904798703337603/image.png?ex=657f1e4c&is=656ca94c&hm=22e9461cb1ebc0ce251f33165083e18297da09bc0c17a729394c7fdf5b4b5439&=&format=webp&quality=lossless)
 
 
 **Pantalla de Personalización**
 
-![alt text](https://cdn.discordapp.com/attachments/1155565182584627280/1163522953590341722/image.png?ex=653fe231&is=652d6d31&hm=3259e88cf23c21f90e328d811e836cdfc424f8890702261b717d1cee8afe7c08&)
+![alt text](https://media.discordapp.net/attachments/1155565182584627280/1180904883939971113/image.png?ex=657f1e60&is=656ca960&hm=1a8e395a7b8125fcdb7f4d0522d2309260697f1e2e8be596ac3d70c22670ef45&=&format=webp&quality=lossless)
 
 
 **Pantalla de Cómo Jugar**
 
-![alt text](https://cdn.discordapp.com/attachments/1155565182584627280/1163522890042441728/image.png?ex=653fe222&is=652d6d22&hm=8e2046f2f04d3953e92e93569775c58dceac48ee1f75361edd4f26ba2e50a7c3&)
+![alt text](https://media.discordapp.net/attachments/1155565182584627280/1180904719829450822/image.png?ex=657f1e39&is=656ca939&hm=55c851ea940f0561549825528e0dc1ab36bde55fdfc7202c7cbb25b3c7819a77&=&format=webp&quality=lossless)
 
 
 **Marcador y Tablero**
@@ -224,19 +228,25 @@ de la serpiente y el cuarto es el botón de salir, para finalizar el juego.
 
 **Personalización de la serpiente**
 
-
 **Cobra**
 
-![alt text](https://cdn.discordapp.com/attachments/1155565182584627280/1171136205354700981/cobra.png?ex=655b9496&is=65491f96&hm=34b27f165e6cd8570b7753ccb858dd570567add485d2557b619c98ed05c9dec1&)
+![alt text](https://media.discordapp.net/attachments/1155565182584627280/1180905233304518666/image.png?ex=657f1eb3&is=656ca9b3&hm=321148942ba045b40fcd8f3dc74b4a2219117d47a690403c3ef5c8ef7ac0c9e8&=&format=webp&quality=lossless)
 
 **Pitón.**
 
-![alt text](https://cdn.discordapp.com/attachments/1159130537831694397/1170875111197376542/piton.jpg?ex=655aa16c&is=65482c6c&hm=a0a31393de1f4aae8ff60a1d76c93e3e5ca9d1f4f8bba3aaeb1623b84be6cf11&)
+![alt text](https://media.discordapp.net/attachments/1155565182584627280/1180905303231963347/image.png?ex=657f1ec4&is=656ca9c4&hm=8cc42c294f6ed856c80ae16f859c809054a7e98133bae7df9185c61a12965f31&=&format=webp&quality=lossless)
 
 **Víbora**
 
-![alt text](https://cdn.discordapp.com/attachments/1155565182584627280/1171136377115643914/vibora.png?ex=655b94be&is=65491fbe&hm=afc943d30d697bdd1e86f0d41578d084b59009a781755241199ba378ab074333&)
+![alt text](https://media.discordapp.net/attachments/1155565182584627280/1180905375143317574/image.png?ex=657f1ed5&is=656ca9d5&hm=f02ef110edb01812cab326fc8119eb3e7f7d63c36354a611ee77e565768f8419&=&format=webp&quality=lossless)
 
+**Derrota**
+
+![alt text](https://media.discordapp.net/attachments/1155565182584627280/1180905559638167693/image.png?ex=657f1f01&is=656caa01&hm=54c3f8290fa044171db02e015fdfd907accd23fd721e1444c2164e1f0426fe21&=&format=webp&quality=lossless)
+
+**Victoria**
+
+![alt text](https://media.discordapp.net/attachments/1155565182584627280/1180906350927167548/image.png?ex=657f1fbe&is=656caabe&hm=91270e86e6b797f49b76fdcb965ad3e48afc715e6394812113f0fc69141430ab&=&format=webp&quality=lossless)
 
 
 **Cobra en el juego**
@@ -286,6 +296,14 @@ de la serpiente y el cuarto es el botón de salir, para finalizar el juego.
 **Enemigo**
 
 ![alt text](https://media.discordapp.net/attachments/1155565182584627280/1179921152936775827/Enemy.png?ex=657b8a34&is=65691534&hm=a2f85219be937fcaa44d10b7b77631efcf07a0f02b121579bb32ab438301584c&=&format=webp&quality=lossless)
+
+**Juego en accion**
+
+![alt text](https://media.discordapp.net/attachments/1155565182584627280/1180905505376456745/image.png?ex=657f1ef4&is=656ca9f4&hm=4b43028403242ce613cd9596c3751b609e21e0b65b344e10c65c1242de13c2e2&=&format=webp&quality=lossless)
+
+![alt text](https://media.discordapp.net/attachments/1155565182584627280/1180905753352089650/image.png?ex=657f1f2f&is=656caa2f&hm=354b6e67d16d79e97c67b820f4a60d14c1371300ca4d44a2a2d4a7702a28a248&=&format=webp&quality=lossless)
+
+![alt text](https://media.discordapp.net/attachments/1155565182584627280/1180905920453152869/image.png?ex=657f1f57&is=656caa57&hm=94396631fbe700aa18f715030fec5ce54a74fa02fbcf9c1620548cb8820f34f0&=&format=webp&quality=lossless)
 
 
 
