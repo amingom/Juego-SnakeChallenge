@@ -16,7 +16,7 @@ distinto de puntos.
 - **Plátano**. (3p)
 
 En la pantalla de juego irán apareciendo enemigos, los cuales aumentarán su frecuencia
-dependiendo del nivel de dificultad. Chocar con alguno de estos enemigos finalizará el juego.
+dependiendo del nivel de dificultad. Chocar con los enemigos finalizará el juego.
 - **Enemigos**.
 
 Los jugadores irán obteniendo puntos al comer los distintos alimentos, el objetivo es
