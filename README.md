@@ -28,37 +28,37 @@ en la pantalla en tiempo real.
 ```mermaid
 
  classDiagram   
-    abstract BarraCarga --|> BarraDeCarga extends BarraCarga
-    Interfaz_Usuario <-- BarraDeCarga extends BarraCarga
-    Interfaz_Usuario <--> Interfaz_Niveles
-    Interfaz_Usuario <--> Interfaz_Como_Jugar
-    Interfaz_Personalizar <--> Interfaz_Niveles
-    Interfaz_Personalizar <--> Interfaz_Cobra
-    Interfaz_Personalizar <--> Interfaz_Piton
-    Interfaz_Personalizar <--> Interfaz_Vibora
-    Interfaz_Cobra -->Interfaz_Juego
-    Interfaz_Piton --> Interfaz_Juego
-    Interfaz_Vibora--> Interfaz_Juego
-    Interfaz_Juego <--> Interfaz_Derrota
-    Interfaz_Juego <--> Interfaz_Victoria
-    Interfaz_Derrota --> Interfaz_Niveles
-    Interfaz_Victoria --> Interfaz_Niveles
-    interfaceVelocidad--|> abstract VelocidadDecorator implements Velocidad
-    interfaceVelocidad--|> VelocidadInicial implements Velocidad
-    abstract VelocidadDecorator implements Velocidad --|> SlowSpeed extends VelocidadDecorator
-    abstract VelocidadDecorator implements Velocidad --|> MediumSpeed extends VelocidadDecorator
-    abstract VelocidadDecorator implements Velocidad --|> FastSpeed extends VelocidadDecorator
-    interfaceVelocidad-->Interfaz_Juego
+    abstract LoadingBar --|> Bar extends LoadingBar
+    User_Interface <-- Bar extends LoadingBar
+    User_Interface <--> Level_Interface
+    User_Interface <--> How_To_Play_Interface
+    Customization_Interface <--> Level_Interface
+    Customization_Interface <--> Cobra_Interface
+    Customization_Interface <--> Python_Interface
+    Customization_Interface <--> Viper_Interface
+    Cobra_Interface -->Game_Interfece
+    Python_Interface --> Game_Interfece
+    Viper_Interface--> Game_Interfece
+    Game_Interfece <--> Defeat_Interface
+    Game_Interfece <--> Victory_Interface
+    Defeat_Interface --> Level_Interface
+    Victory_Interface --> Level_Interface
+    interfaceSpeed--|> abstract SpeedDecorator implements Speed
+    interfaceSpeed--|> InitialSpeed implements Speed
+    abstract SpeedDecorator implements Speed --|> SlowSpeed extends SpeedDecorator
+    abstract SpeedDecorator implements Speed --|> MediumSpeed extends SpeedDecorator
+    abstract SpeedDecorator implements Speed --|> FastSpeed extends SpeedDecorator
+    interfaceSpeed-->Game_Interfece
 
-   class Interfaz_Usuario{ 
-    +void iniciarComponentes()
+   class User_Interface{ 
+    +void components()
    }
  
-    class Interfaz_Como_Jugar{
-        + void iniciarComponentes()
+    class How_To_Play_Interface{
+        + void components()
     }
 
-    class Interfaz_Juego{
+    class Game_Interfece{
     - JPanel gamePanel;
 	- LinkedList<Point> snake;
 	- Timer timer;
@@ -69,121 +69,123 @@ en la pantalla en tiempo real.
 	- JLabel scoreLabel;
 	- BufferedImage headImage;
 	- BufferedImage bodyImage;
-	- Point obstacle;
+	- LinkedList<Point> obstacles;
 	- BufferedImage obstacleImage;
-	- String animal;
+	- Customization_Interface animal;
     - long lastDirectionChangeTime; 
-	- static final long tiempoMinimo;
-    - Interfaz_Niveles nivel; 
-	- int velocidad;
-	- int cantidadObstaculos;
-	- Animal serpiente;
+	- static final long minimunTime;
+    - Level_Interface level; 
+	- int speed;
+	- int amountObstacles;
+    - int appleEaten;
+    - int cherryEaten;
+    - int bananaEaten;
 
+    
     + void setScore(int _score)
     + int getScore()
-    + void updateScoreLabel()
-    + void checkCollision()
-    + void drawFoodImage(Graphics g, String imgPath)
-    + void drawBodyImage(Graphics g, int x, int y)
-    + void drawHeadImage(Graphics g, int x, int y)
+    + void components()
     + void spawnFood()
-    + void iniciarComponentes()
-    + void draw(Graphics g)
-    + void move()
-    - void abrirNuevaInterfaz()
-    - void Derrota()
-    - void Victoria()
-    - int getGrowthAmount()
-    - boolean isObstacleTooCloseToHead(Point obstaclePosition, int minDistance)
     + boolean obstacleAtPosition(Point position)
     + void spawnEnemy()
+    - boolean isObstacleTooCloseToHead(Point obstaclePosition, int minDistance)
+    + void draw(Graphics g)
+    + void drawHeadImage(Graphics g, int x, int y)
+    + void drawBodyImage(Graphics g, int x, int y)
+    + void drawFoodImage(Graphics g, String imgPath)
+    + void checkCollision()
+    - void Defeat()
+    - void Victory()
+    + void move()
+    - void updateFruits()
+    - int getGrowthAmount() 
+   
     }
 
-    class Interfaz_Niveles{
-        static private String nivel
-       + void iniciarComponentes()
-       + String getNivel()
-       + static void setNivel(String _nivel)
+    class Level_Interface{
+        static private String level
+       + void components()
+       + String getLevel()
+       + static void setLevel(String _level)
     }
 
-    class Interfaz_Personalizar{
+    class Customization_Interface{
        static private String animal;
-       + void iniciarComponentes()
+       + void components()
        + String getAnimal()
        + static void setAnimal(String _animal)
     }
 
-     class Interfaz_Cobra{
-        + void iniciarComponentes()
+     class Cobra_Interface{
+        + void components()
      }
 
-     class Interfaz_Piton{
-        + void iniciarComponentes()
+     class Python_Interface{
+        + void components()
      }
 
-     class Interfaz_Vibora{
-        + void iniciarComponentes()
+     class Viper_Interface{
+        + void components()
      }
 
-     class Interfaz_Derrota{
-       - Interfaz_Juego puntos
-       + void iniciarComponentes()
+     class Defeat_Interface{
+       - Interfaz_Juego points
+       + void components()
      }
 
-     class Interfaz_Victoria{
-       - Interfaz_Juego puntos
-       + void iniciarComponentes()
+     class Victory_Interface{
+       - Interfaz_Juego points
+       + void components()
      }
 
-     class interface Velocidad{
-       + int velocidad
+     class interface Speed{
+       + int getSpeed()
      }
 
-     class abstract VelocidadDecorator implements Velocidad {
-        - Animal serpiente;
+     class abstract SpeedDecorator implements Speed {
+        - Animal snake;
         + AnimalDecorator(Animal slowAnimal)
         + int getVelocidad()
 
      }
 
-     class abstract BarraCarga{
+     class abstract LoadingBar{
 
-        + abstract void cargar();
-        + abstract void cargaCompleta();
+        + abstract void charge();
+        + abstract void completeCharge();
 
      }
 
-     class BarraDeCarga extends BarraCarga {
+     class Bar extends LoadingBar {
 
     - JProgressBar progressBar;
     - Timer timer;
-    - int progreso;
+    - int progress;
     - JFrame frame;
 
-    + BarraDeCarga() 
-    + void cargar()
-    + void cargaCompleta()      
+    + Bar() 
+    + void charge()
+    + void completeCharge()      
     }
 
-    class FastSpeed extends VelocidadDecorator{
-        + FastSpeed(Animal serpiente)
-        + int getVelocidad()
+    class FastSpeed extends SpeedDecorator{
+        + FastSpeed(Animal snake)
+        + int getSpeed()
     }
 
-    class MediumSpeed extends VelocidadDecorator{
-       + MediumSpeed(Animal serpiente)
-       + int getVelocidad()
+    class MediumSpeed extends SpeedDecorator{
+       + MediumSpeed(Animal snake)
+       + int getSpeed()
     }
 
-    class SlowSpeed extends VelocidadDecorator{
-        + SlowSpeed(Animal serpiente)
-        + int getVelocidad()
+    class SlowSpeed extends SpeedDecorator{
+        + SlowSpeed(Animal snake)
+        + int getSpeed()
     }
 
-    class VelocidadInicial implements Velocidad{
-       + int getVelocidad() 
-    }
-     
+    class InitialSpeed implements Speed{
+       + int getSpeed() 
+    }     
 
 ```
 
