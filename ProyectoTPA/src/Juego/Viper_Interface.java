@@ -53,7 +53,7 @@ public class Viper_Interface extends JFrame {
 		getContentPane().add(viper);
 
 		JLabel infoLabel = new JLabel(); // create a text label
-		infoLabel.setText("Viper Information:\n" + "-Color: blue."); // set the text of the label
+		infoLabel.setText("Viper Information:\n" + "- Color: blue."); // set the text of the label
 		infoLabel.setText("<html>" + infoLabel.getText().replaceAll("\n", "<br/>") + "</html>");
 		infoLabel.setBounds(300, -50, 280, 250);
 		infoLabel.setHorizontalAlignment(SwingConstants.CENTER); // center the text in the label

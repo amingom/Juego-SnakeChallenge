@@ -64,7 +64,7 @@ public class How_To_Play_Interface extends JFrame {
 		instructions.setOpaque(true);
 		instructions.setBackground(Color.LIGHT_GRAY);
 		instructions.setFont(new Font("arial", Font.BOLD, 13));
-		instructions.add(instructions);
+		_howToPlay.add(instructions);
 
 		JButton back = new JButton(); //create a button
 		back.setText("Back");
@@ -83,6 +83,6 @@ public class How_To_Play_Interface extends JFrame {
 				((JFrame) SwingUtilities.getWindowAncestor(back)).dispose();
 			}
 		});
-		instructions.add(back);
+		_howToPlay.add(back);
 	}
 }

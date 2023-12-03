@@ -47,7 +47,7 @@ public class Cobra_Interface extends JFrame {
 		getContentPane().add(cobra);
 
 		JLabel info = new JLabel();
-		info.setText("Cobra information:\n" + "-Color: black.\n");  
+		info.setText("Cobra information:\n" + "- Color: black.\n");  
 		info.setText("<html>" + info.getText().replaceAll("\n", "<br/>") + "</html>"); // used to make line breaks
 		info.setBounds(2, 2, 280, 180);
 		info.setHorizontalAlignment(SwingConstants.CENTER);
