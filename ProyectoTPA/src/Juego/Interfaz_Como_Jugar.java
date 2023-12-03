@@ -20,7 +20,7 @@ public class Interfaz_Como_Jugar extends JFrame {
 		setTitle("Snake Challenge");
 		setLocationRelativeTo(null);
 		getContentPane().setBackground(Color.green);
-		iniciarComponentes();
+		components();
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 
@@ -28,25 +28,25 @@ public class Interfaz_Como_Jugar extends JFrame {
 	 * Initializes the visual components of the interface "How to Play". Creates a
 	 * panel, text labels and a "Back" button.
 	 */
-	void iniciarComponentes() {
+	void components() {
 
-		JPanel ComoJugar = new JPanel(); // creates a panel
-		ComoJugar.setBackground(Color.LIGHT_GRAY);
-		ComoJugar.setLayout(null);
-		getContentPane().add(ComoJugar);
+		JPanel _howToPlay = new JPanel(); // creates a panel
+		_howToPlay.setBackground(Color.LIGHT_GRAY);
+		_howToPlay.setLayout(null);
+		getContentPane().add(_howToPlay);
 
-		JLabel Comojugar = new JLabel();
-		Comojugar.setText("How to play");
-		Comojugar.setBounds(-60, 20, 700, 100);
-		Comojugar.setHorizontalAlignment(SwingConstants.CENTER);
-		Comojugar.setForeground(Color.BLACK);
-		Comojugar.setOpaque(true);
-		Comojugar.setBackground(Color.LIGHT_GRAY);
-		Comojugar.setFont(new Font("arial", Font.BOLD, 50));
-		ComoJugar.add(Comojugar);
+		JLabel howToPlay = new JLabel();
+		howToPlay.setText("How to play");
+		howToPlay.setBounds(-60, 20, 700, 100);
+		howToPlay.setHorizontalAlignment(SwingConstants.CENTER);
+		howToPlay.setForeground(Color.BLACK);
+		howToPlay.setOpaque(true);
+		howToPlay.setBackground(Color.LIGHT_GRAY);
+		howToPlay.setFont(new Font("arial", Font.BOLD, 50));
+		_howToPlay.add(howToPlay);
 
-		JLabel Instrucciones = new JLabel();
-		Instrucciones.setText("The Snake Challenge is a game that consists of getting the most points\n"
+		JLabel instructions = new JLabel();
+		instructions.setText("The Snake Challenge is a game that consists of getting the most points\n"
 				+ " before the game ends.\n"
 				+ " \nThe player must direct the snake towards the food, avoiding all obstacles and\n"
 				+ " the edges of the map so that the game does not end.\n"
@@ -56,32 +56,32 @@ public class Interfaz_Como_Jugar extends JFrame {
 				+ " will have different point values.\n"
 				+ " \nThe player can see the score in real time through the scoreboard in the upper\n"
 				+ " part of the screen.\n");
-		Instrucciones.setText("<html>" + Instrucciones.getText().replaceAll("\n", "<br/>") + "</html>");
-		Instrucciones.setBounds(-50, 40, 700, 500);
-		Instrucciones.setHorizontalAlignment(SwingConstants.CENTER);
-		Instrucciones.setForeground(Color.BLACK);
-		Instrucciones.setOpaque(true);
-		Instrucciones.setBackground(Color.LIGHT_GRAY);
-		Instrucciones.setFont(new Font("arial", Font.BOLD, 13));
-		ComoJugar.add(Instrucciones);
+		instructions.setText("<html>" + instructions.getText().replaceAll("\n", "<br/>") + "</html>");
+		instructions.setBounds(-50, 40, 700, 500);
+		instructions.setHorizontalAlignment(SwingConstants.CENTER);
+		instructions.setForeground(Color.BLACK);
+		instructions.setOpaque(true);
+		instructions.setBackground(Color.LIGHT_GRAY);
+		instructions.setFont(new Font("arial", Font.BOLD, 13));
+		instructions.add(instructions);
 
-		JButton Atras = new JButton();
-		Atras.setText("Back");
-		Atras.setBounds(10, 510, 150, 40);
-		Atras.setEnabled(true);
-		Atras.setForeground(Color.BLACK);
-		Atras.setBackground(Color.WHITE);
-		Atras.setFont(new Font("algerian", Font.BOLD, 20));
-		Atras.setFocusPainted(false);
-		Atras.addActionListener(new ActionListener() {
+		JButton back = new JButton();
+		back.setText("Back");
+		back.setBounds(10, 510, 150, 40);
+		back.setEnabled(true);
+		back.setForeground(Color.BLACK);
+		back.setBackground(Color.WHITE);
+		back.setFont(new Font("algerian", Font.BOLD, 20));
+		back.setFocusPainted(false);
+		back.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Interfaz_Usuario ventanaInicial = new Interfaz_Usuario();
-				ventanaInicial.setVisible(true);
-				((JFrame) SwingUtilities.getWindowAncestor(Atras)).dispose();
+				Interfaz_Usuario initialWindow = new Interfaz_Usuario();
+				initialWindow.setVisible(true);
+				((JFrame) SwingUtilities.getWindowAncestor(back)).dispose();
 			}
 		});
-		ComoJugar.add(Atras);
+		instructions.add(back);
 	}
 }

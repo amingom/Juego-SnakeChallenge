@@ -25,7 +25,7 @@ public class Interfaz_Usuario extends JFrame {
 
 		this.getContentPane().setBackground(Color.orange);// set the window color
 
-		iniciarComponentes(); // Initialize buttons, images...
+		components(); // Initialize buttons, images...
 
 		setDefaultCloseOperation(EXIT_ON_CLOSE); // close the program when closing the window
 	}
@@ -34,7 +34,7 @@ public class Interfaz_Usuario extends JFrame {
 	 * Initializes the visual components of the main user interface. Creates a
 	 * panel, text labels, and buttons for different options.
 	 */
-	void iniciarComponentes() {
+	void components() {
 
 		JPanel panel = new JPanel(); // create a panel
 		panel.setBackground(Color.orange); // set the color of the panel
@@ -80,44 +80,44 @@ public class Interfaz_Usuario extends JFrame {
 
 		// How to Play Button
 
-		JButton HowToPlay = new JButton(); // create the button
-		HowToPlay.setText("How to Play"); // set text to the button
-		HowToPlay.setBounds(135, 295, 300, 70); // size and position of the button
-		HowToPlay.setEnabled(true); // enable or disable the click
-		HowToPlay.setForeground(Color.BLACK); // button text color
-		HowToPlay.setBackground(Color.WHITE);
-		HowToPlay.setFont(new Font("algerian", Font.BOLD, 40)); // button text font
-		HowToPlay.setFocusPainted(false);
+		JButton howToPlay = new JButton(); // create the button
+		howToPlay.setText("How to Play"); // set text to the button
+		howToPlay.setBounds(135, 295, 300, 70); // size and position of the button
+		howToPlay.setEnabled(true); // enable or disable the click
+		howToPlay.setForeground(Color.BLACK); // button text color
+		howToPlay.setBackground(Color.WHITE);
+		howToPlay.setFont(new Font("algerian", Font.BOLD, 40)); // button text font
+		howToPlay.setFocusPainted(false);
 
 		// open the window related to the game instructions and close the initial window
-		HowToPlay.addActionListener(new ActionListener() {
+		howToPlay.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				Interfaz_Como_Jugar howToPlayWindow = new Interfaz_Como_Jugar();
 				howToPlayWindow.setVisible(true);
-				((JFrame) SwingUtilities.getWindowAncestor(HowToPlay)).dispose(); // close the window
+				((JFrame) SwingUtilities.getWindowAncestor(howToPlay)).dispose(); // close the window
 			}
 		});
-		panel.add(HowToPlay);
+		panel.add(howToPlay);
 
 		// Exit Button
 
-		JButton Exit = new JButton(); // create the button
-		Exit.setText("Exit"); // set text to the button
-		Exit.setBounds(135, 470, 300, 70); // size and position of the button
-		Exit.setEnabled(true); // enable or disable the click
-		Exit.setForeground(Color.BLACK); // button text color
-		Exit.setBackground(Color.WHITE);
-		Exit.setFont(new Font("algerian", Font.BOLD, 40)); // button text font
-		Exit.setFocusPainted(false);
+		JButton exit = new JButton(); // create the button
+		exit.setText("Exit"); // set text to the button
+		exit.setBounds(135, 470, 300, 70); // size and position of the button
+		exit.setEnabled(true); // enable or disable the click
+		exit.setForeground(Color.BLACK); // button text color
+		exit.setBackground(Color.WHITE);
+		exit.setFont(new Font("algerian", Font.BOLD, 40)); // button text font
+		exit.setFocusPainted(false);
 
 		// close the main window
-		Exit.addActionListener(new ActionListener() {
+		exit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
 			}
 		});
 
-		panel.add(Exit);
+		panel.add(exit);
 	}
 }

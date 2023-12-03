@@ -29,7 +29,7 @@ public class Interfaz_Juego extends JFrame {
 	private Interfaz_Personalizar animal; // Used to know the snake chosen by the user
 	private long lastDirectionChangeTime = System.currentTimeMillis(); // Used to save the last direction change time of
 																		// the snake
-	private static final long tiempoMinimo = 90; // Minimum time between direction changes in milliseconds
+	private static final long minimunTime = 90; // Minimum time between direction changes in milliseconds
 	private Interfaz_Niveles level; // Used to know the level chosen by the user
 	private int speed; // Stores the speed value as an integer
 	private int amountObstacles; // Stores the quantity of obstacles
@@ -38,18 +38,18 @@ public class Interfaz_Juego extends JFrame {
 	private int bananaEaten; // Counter for the bananas eaten
 
 	/**
-	 * Obtiene la punciacion actual del objeto
+	 * Gets the current score of the object
 	 * 
-	 * @return La puntuacion actual del objeto
+	 * @return The current score of the object
 	 */
 	public int getScore() {
 		return score;
 	}
 
 	/**
-	 * Establece el valor de la puntuacion del objeto
+	 * Sets the object's score value
 	 * 
-	 * @param _score El nuevo valor de la puntuacion a establecer
+	 * @param _score The new score value to set
 	 */
 	public void setScore(int _score) {
 		score = _score;
@@ -65,7 +65,7 @@ public class Interfaz_Juego extends JFrame {
 		setLocationRelativeTo(null); // Sets the window to the center of the screen
 		animal = new Interfaz_Personalizar(); // Initializes the customization interface
 		level = new Interfaz_Niveles(); // Initializes the levels interface
-		iniciarComponentes(); // Initializes the game components
+		components(); // Initializes the game components
 		setDefaultCloseOperation(EXIT_ON_CLOSE); // Closes the program when clicking the close button (X)
 	}
 
@@ -73,7 +73,7 @@ public class Interfaz_Juego extends JFrame {
 	 * Initializes the visual components of the game, such as the board, snake,
 	 * timer, and food.
 	 */
-	void iniciarComponentes() {
+	void components() {
 		JPanel Game = new JPanel() { // Creates the panel for the easy mode
 			@Override
 			protected void paintComponent(Graphics g) {
@@ -131,15 +131,15 @@ public class Interfaz_Juego extends JFrame {
 		Velocidad fastSnake = new FastSpeed(mediumSnake);
 
 		// Adds a timer to move the snake
-		if (level.getNivel() == "easy") {
+		if (level.getLevel() == "easy") {
 			// Decorates the speed to slow
-			speed = slowSnake.getVelocidad();
-		} else if (level.getNivel() == "medium") {
+			speed = slowSnake.getSpeed();
+		} else if (level.getLevel() == "medium") {
 			// Decorates the speed to medium
-			speed = mediumSnake.getVelocidad();
-		} else if (level.getNivel() == "hard") {
+			speed = mediumSnake.getSpeed();
+		} else if (level.getLevel() == "hard") {
 			// Decorates the speed to fast
-			speed = fastSnake.getVelocidad();
+			speed = fastSnake.getSpeed();
 		}
 
 		timer = new Timer(speed, new ActionListener() { // Snake speed
@@ -157,7 +157,7 @@ public class Interfaz_Juego extends JFrame {
 			public void keyPressed(KeyEvent e) {
 				long currentTime = System.currentTimeMillis();
 				// Verifies the time since the last direction change
-				if ((currentTime - lastDirectionChangeTime) >= tiempoMinimo) {
+				if ((currentTime - lastDirectionChangeTime) >= minimunTime) {
 					int keyCode = e.getKeyCode();
 					if (keyCode == KeyEvent.VK_W && direction != KeyEvent.VK_DOWN) {
 						direction = KeyEvent.VK_UP;
@@ -240,11 +240,11 @@ public class Interfaz_Juego extends JFrame {
 		obstacles = new LinkedList<>(); // List to store obstacle positions
 
 		// Determine the quantity of obstacles based on the level
-		if (level.getNivel().equals("easy")) {
+		if (level.getLevel().equals("easy")) {
 			amountObstacles = 1;
-		} else if (level.getNivel().equals("medium")) {
+		} else if (level.getLevel().equals("medium")) {
 			amountObstacles = 3;
-		} else if (level.getNivel().equals("hard")) {
+		} else if (level.getLevel().equals("hard")) {
 			amountObstacles = 5;
 		}
 

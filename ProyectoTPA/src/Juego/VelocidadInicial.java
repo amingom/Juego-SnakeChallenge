@@ -12,7 +12,7 @@ public class VelocidadInicial implements Velocidad {
 	 * @return The initial speed value.
 	 */
 	@Override
-	public int getVelocidad() {
+	public int getSpeed() {
 		return 110;
 	}
 }

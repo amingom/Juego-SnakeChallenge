@@ -11,8 +11,8 @@ class MediumSpeed extends VelocidadDecorator {
 	 * @param serpiente The 'Velocidad' object being decorated with a more moderate
 	 *                  speed.
 	 */
-	public MediumSpeed(Velocidad serpiente) {
-		super(serpiente);
+	public MediumSpeed(Velocidad snake) {
+		super(snake);
 	}
 
 	/**
@@ -21,7 +21,7 @@ class MediumSpeed extends VelocidadDecorator {
 	 * @return The modified speed after decreasing it.
 	 */
 	@Override
-	public int getVelocidad() {
-		return super.getVelocidad() - 25;
+	public int getSpeed() {
+		return super.getSpeed() - 25;
 	}
 }

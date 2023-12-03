@@ -37,7 +37,7 @@ public class Interfaz_Personalizar extends JFrame {
 
 		this.getContentPane().setBackground(Color.cyan); // set the window color
 
-		iniciarComponentes(); // Initialize buttons, images...
+		components(); // Initialize buttons, images...
 
 		setDefaultCloseOperation(EXIT_ON_CLOSE); // close the program when closing the window
 
@@ -47,7 +47,7 @@ public class Interfaz_Personalizar extends JFrame {
 	 * Initializes the visual components of the customization interface. Creates a
 	 * panel, text labels, and buttons for different aspects of the snake.
 	 */
-	void iniciarComponentes() {
+	void components() {
 
 		JPanel Customize = new JPanel(); // create a panel
 		Customize.setBackground(Color.cyan); // set the panel color

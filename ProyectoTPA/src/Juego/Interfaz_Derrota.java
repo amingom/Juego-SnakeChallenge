@@ -23,7 +23,7 @@ public class Interfaz_Derrota extends JFrame {
 		setTitle("Snake Challenge"); // set the window title
 		setLocationRelativeTo(null); // set the window in the center of the screen
 		this.getContentPane().setBackground(Color.green); // set the window color
-		iniciarComponentes(); // Initialize buttons, images, etc.
+		components(); // Initialize buttons, images, etc.
 		setDefaultCloseOperation(EXIT_ON_CLOSE); // close the program when closing the window
 	}
 
@@ -31,7 +31,7 @@ public class Interfaz_Derrota extends JFrame {
 	 * Initializes the visual components of the Game Over Screen interface. Creates
 	 * a panel, text labels, and buttons for Exit, Play Again, and Select Level.
 	 */
-	void iniciarComponentes() {
+	void components() {
 
 		JPanel panel = new JPanel(); // create a panel
 		panel.setBackground(Color.MAGENTA); // set the panel color

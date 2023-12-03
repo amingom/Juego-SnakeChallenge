@@ -8,5 +8,5 @@ interface Velocidad {
 	/**
 	 * Gets the speed of the object.
 	 */
-	public int getVelocidad();
+	public int getSpeed();
 }

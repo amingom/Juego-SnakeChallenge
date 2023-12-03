@@ -14,7 +14,7 @@ public class BarraDeCarga extends BarraCarga {
 
 	private JProgressBar progressBar;
 	private Timer timer;
-	private int progreso;
+	private int progress;
 	private JFrame frame;
 
 	/**
@@ -30,12 +30,12 @@ public class BarraDeCarga extends BarraCarga {
 
 		// Panel with background image
 		JPanel panel = new JPanel() {
-			Image imagenFondo = new ImageIcon("img//fondo_barra.png").getImage();
+			Image backgroundImage = new ImageIcon("img//fondo_barra.png").getImage();
 
 			@Override
 			protected void paintComponent(Graphics g) {
 				super.paintComponent(g);
-				g.drawImage(imagenFondo, 0, 0, 500, 300, this);
+				g.drawImage(backgroundImage, 0, 0, 500, 300, this);
 			}
 		};
 
@@ -47,13 +47,13 @@ public class BarraDeCarga extends BarraCarga {
 		timer = new Timer(20, new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				progreso += 1;
-				progressBar.setValue(progreso);
+				progress += 1;
+				progressBar.setValue(progress);
 
-				if (progreso == 100) {
+				if (progress == 100) {
 					timer.stop();
 					frame.dispose();
-					cargaCompleta();
+					completeCharge();
 				}
 			}
 		});
@@ -75,7 +75,7 @@ public class BarraDeCarga extends BarraCarga {
 	/**
 	 * Displays the loading frame and starts the timer.
 	 */
-	public void cargar() {
+	public void charge() {
 		frame.setVisible(true);
 		timer.start();
 	}
@@ -84,7 +84,7 @@ public class BarraDeCarga extends BarraCarga {
 	 * Disposes of the frame and opens a new user interface when the loading process
 	 * is complete.
 	 */
-	public void cargaCompleta() {
+	public void completeCharge() {
 		frame.dispose();
 		new Interfaz_Usuario().setVisible(true);
 	}

@@ -7,13 +7,13 @@ package Juego;
  */
 abstract class VelocidadDecorator implements Velocidad {
 
-	private Velocidad serpiente;
+	private Velocidad snake;
 
 	/**
 	 * Constructor for the speed decorator.
 	 */
-	public VelocidadDecorator(Velocidad serpiente) {
-		this.serpiente = serpiente;
+	public VelocidadDecorator(Velocidad snake) {
+		this.snake = snake;
 	}
 
 	/**
@@ -23,7 +23,7 @@ abstract class VelocidadDecorator implements Velocidad {
 	 * @return The speed value.
 	 */
 	@Override
-	public int getVelocidad() {
-		return serpiente.getVelocidad();
+	public int getSpeed() {
+		return snake.getSpeed();
 	}
 }

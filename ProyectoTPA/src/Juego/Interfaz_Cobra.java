@@ -23,7 +23,7 @@ public class Interfaz_Cobra extends JFrame {
 		setTitle("Snake Challenge");
 		setLocationRelativeTo(null);
 		getContentPane().setBackground(Color.green);
-		iniciarComponentes();
+		components();
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 
@@ -31,7 +31,7 @@ public class Interfaz_Cobra extends JFrame {
 	 * Initializes the visual components of the interface "Cobra". Creates a panel,
 	 * text labels, a "Back" button and a "Start" button.
 	 */
-	void iniciarComponentes() {
+	void components() {
 
 		JPanel cobra = new JPanel() {
 			@Override
@@ -70,8 +70,8 @@ public class Interfaz_Cobra extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Interfaz_Personalizar ventanaPersonalizar = new Interfaz_Personalizar();
-				ventanaPersonalizar.setVisible(true);
+				Interfaz_Personalizar customizationWindow = new Interfaz_Personalizar();
+				customizationWindow.setVisible(true);
 				((JFrame) SwingUtilities.getWindowAncestor(back)).dispose();
 			}
 		});
@@ -92,8 +92,8 @@ public class Interfaz_Cobra extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Interfaz_Juego ventanaJuego = new Interfaz_Juego();
-				ventanaJuego.setVisible(true);
+				Interfaz_Juego gameWindow = new Interfaz_Juego();
+				gameWindow.setVisible(true);
 				((JFrame) SwingUtilities.getWindowAncestor(start)).dispose();
 			}
 		});

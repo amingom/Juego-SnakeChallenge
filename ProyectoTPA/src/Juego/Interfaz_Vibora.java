@@ -27,7 +27,7 @@ public class Interfaz_Vibora extends JFrame {
 
 		this.getContentPane().setBackground(Color.green); // set the window color
 
-		iniciarComponentes(); // Initialize buttons, images...
+		components(); // Initialize buttons, images...
 
 		setDefaultCloseOperation(EXIT_ON_CLOSE); // close the program when closing the window
 	}
@@ -36,7 +36,7 @@ public class Interfaz_Vibora extends JFrame {
 	 * Initializes the visual components of the "Vibora" interface. Creates a panel,
 	 * text labels, a "Back" button, and a "Start" button.
 	 */
-	void iniciarComponentes() {
+	void components() {
 
 		JPanel viper = new JPanel() {
 			@Override

@@ -10,16 +10,16 @@ import java.awt.event.*;
  */
 public class Interfaz_Niveles extends JFrame {
 
-	static private String nivel;
+	static private String level;
 
 	// Method to get the selected level
-	public String getNivel() {
-		return nivel;
+	public String getLevel() {
+		return level;
 	}
 
 	// Method to set the value of the level variable
-	public static void setNivel(String _nivel) {
-		nivel = _nivel;
+	public static void setLevel(String _level) {
+		level = _level;
 	}
 
 	/**
@@ -36,7 +36,7 @@ public class Interfaz_Niveles extends JFrame {
 
 		this.getContentPane().setBackground(Color.green); // set the window color
 
-		iniciarComponentes(); // Initialize buttons, images...
+		components(); // Initialize buttons, images...
 
 		setDefaultCloseOperation(EXIT_ON_CLOSE); // close the program when closing the window
 	}
@@ -45,7 +45,7 @@ public class Interfaz_Niveles extends JFrame {
 	 * Initializes the visual components of the level selection interface. Creates a
 	 * panel, text labels, and buttons for different difficulty levels.
 	 */
-	void iniciarComponentes() {
+	void components() {
 
 		JPanel levels = new JPanel(); // create a panel
 		levels.setBackground(Color.green); // set the panel color
@@ -75,7 +75,7 @@ public class Interfaz_Niveles extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				setNivel("easy");
+				setLevel("easy");
 				Interfaz_Personalizar levelCustomizationWindow = new Interfaz_Personalizar();
 				levelCustomizationWindow.setVisible(true);
 				((JFrame) SwingUtilities.getWindowAncestor(Easy)).dispose(); // close the window
@@ -97,7 +97,7 @@ public class Interfaz_Niveles extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				setNivel("medium");
+				setLevel("medium");
 				Interfaz_Personalizar customizationWindow = new Interfaz_Personalizar();
 				customizationWindow.setVisible(true);
 				((JFrame) SwingUtilities.getWindowAncestor(Medium)).dispose(); // close the window
@@ -121,7 +121,7 @@ public class Interfaz_Niveles extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				setNivel("hard");
+				setLevel("hard");
 				Interfaz_Personalizar customizationWindow = new Interfaz_Personalizar();
 				customizationWindow.setVisible(true);
 				((JFrame) SwingUtilities.getWindowAncestor(Hard)).dispose(); // close the window

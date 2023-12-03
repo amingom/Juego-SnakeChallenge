@@ -10,8 +10,8 @@ class SlowSpeed extends VelocidadDecorator {
 	 *
 	 * @param serpiente The 'Velocidad' object being decorated with a slower speed.
 	 */
-	public SlowSpeed(Velocidad serpiente) {
-		super(serpiente);
+	public SlowSpeed(Velocidad snake) {
+		super(snake);
 	}
 
 	/**
@@ -20,7 +20,7 @@ class SlowSpeed extends VelocidadDecorator {
 	 * @return The modified speed after decreasing it.
 	 */
 	@Override
-	public int getVelocidad() {
-		return super.getVelocidad() - 10;
+	public int getSpeed() {
+		return super.getSpeed() - 10;
 	}
 }
