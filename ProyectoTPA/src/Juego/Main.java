@@ -11,7 +11,7 @@ public class Main {
 	 * the game.
 	 */
 	public static void main(String[] args) {
-		BarraCarga loadingBar = new BarraDeCarga();
+		LoadingBar loadingBar = new Bar();
 		loadingBar.charge();
 	}
 }

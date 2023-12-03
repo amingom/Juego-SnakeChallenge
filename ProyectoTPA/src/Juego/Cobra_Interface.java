@@ -9,7 +9,7 @@ import java.awt.event.*;
  * This class represents the interface of "Cobra" in the game Snake Challenge.
  * Provides information about the Cobra and its abilities.
  */
-public class Interfaz_Cobra extends JFrame {
+public class Cobra_Interface extends JFrame {
 
 	/**
 	 * Constructor of the class that configures the interface "Cobra". Sets the
@@ -17,7 +17,7 @@ public class Interfaz_Cobra extends JFrame {
 	 * 
 	 * @param animal Parameter that represents the type of animal.
 	 */
-	public Interfaz_Cobra(String animal) {
+	public Cobra_Interface(String animal) {
 
 		setSize(600, 600);
 		setTitle("Snake Challenge");
@@ -33,21 +33,21 @@ public class Interfaz_Cobra extends JFrame {
 	 */
 	void components() {
 
-		JPanel cobra = new JPanel() {
+		JPanel cobra = new JPanel() { //make a panel where the image of the "Cobra" appears
 			@Override
 			protected void paintComponent(Graphics g) {
 				super.paintComponent(g);
 				// Draws the background image
-				ImageIcon backgroundImage = new ImageIcon("img\\cobra.jpg");
-				g.drawImage(backgroundImage.getImage(), 0, 0, getWidth(), getHeight(), null);
+				ImageIcon backgroundImage = new ImageIcon("img\\cobra.jpg"); //set the image
+				g.drawImage(backgroundImage.getImage(), 0, 0, getWidth(), getHeight(), null); //set the dimensions of the image
 			}
 		};
 		cobra.setLayout(null);
 		getContentPane().add(cobra);
 
 		JLabel info = new JLabel();
-		info.setText("Cobra information:\n" + "-Color: black.\n");
-		info.setText("<html>" + info.getText().replaceAll("\n", "<br/>") + "</html>");
+		info.setText("Cobra information:\n" + "-Color: black.\n");  
+		info.setText("<html>" + info.getText().replaceAll("\n", "<br/>") + "</html>"); // used to make line breaks
 		info.setBounds(2, 2, 280, 180);
 		info.setHorizontalAlignment(SwingConstants.CENTER);
 		info.setForeground(Color.white);
@@ -66,11 +66,11 @@ public class Interfaz_Cobra extends JFrame {
 		back.setSelected(false);
 		LineBorder border_back_cobra = new LineBorder(Color.black);
 		back.setBorder(border_back_cobra);
-		back.addActionListener(new ActionListener() {
+		back.addActionListener(new ActionListener() { // after pressing the back button you will go to the customization Window
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Interfaz_Personalizar customizationWindow = new Interfaz_Personalizar();
+				Customization_Interface customizationWindow = new Customization_Interface();
 				customizationWindow.setVisible(true);
 				((JFrame) SwingUtilities.getWindowAncestor(back)).dispose();
 			}
@@ -88,11 +88,11 @@ public class Interfaz_Cobra extends JFrame {
 		start.setSelected(false);
 		LineBorder border_start_cobra = new LineBorder(Color.black);
 		start.setBorder(border_start_cobra);
-		start.addActionListener(new ActionListener() {
+		start.addActionListener(new ActionListener() { // after pressing the start button you will go to the game Window
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Interfaz_Juego gameWindow = new Interfaz_Juego();
+				Game_Interfece gameWindow = new Game_Interfece();
 				gameWindow.setVisible(true);
 				((JFrame) SwingUtilities.getWindowAncestor(start)).dispose();
 			}

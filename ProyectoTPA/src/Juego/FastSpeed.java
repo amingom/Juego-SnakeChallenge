@@ -3,14 +3,14 @@ package Juego;
 /**
  * A concrete decorator that makes the speed faster.
  */
-class FastSpeed extends VelocidadDecorator {
+class FastSpeed extends SpeedDecorator {
 
 	/**
 	 * Constructor for the 'FastSpeed' decorator.
 	 *
-	 * @param serpiente The 'Velocidad' object being decorated with a faster speed.
+	 * @param snake The 'Speed' object being decorated with a faster speed.
 	 */
-	public FastSpeed(Velocidad snake) {
+	public FastSpeed(Speed snake) {
 		super(snake);
 	}
 

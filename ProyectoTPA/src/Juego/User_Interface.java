@@ -5,17 +5,17 @@ import java.awt.*;
 import java.awt.event.*;
 
 /**
- * This class represents the main user interface of the Snake Challenge game. It
+ * This class represents the User_Interface of the Snake Challenge game. It
  * allows players to access different options such as play, learn how to play,
  * customize, and exit.
  */
-public class Interfaz_Usuario extends JFrame {
+public class User_Interface extends JFrame {
 
 	/**
-	 * Constructor of the class that configures the main user interface. Sets the
+	 * Constructor of the class that configures the User_Interface. Sets the
 	 * size, title, position, and other aspects of the window.
 	 */
-	public Interfaz_Usuario() {
+	public User_Interface() {
 
 		setSize(600, 600); // width height
 
@@ -31,7 +31,7 @@ public class Interfaz_Usuario extends JFrame {
 	}
 
 	/**
-	 * Initializes the visual components of the main user interface. Creates a
+	 * Initializes the visual components of the User_Interface. Creates a
 	 * panel, text labels, and buttons for different options.
 	 */
 	void components() {
@@ -43,40 +43,40 @@ public class Interfaz_Usuario extends JFrame {
 
 		// Text label (game title)
 
-		JLabel GameTitle = new JLabel(); // create a text label
-		GameTitle.setText("SNAKE CHALLENGE"); // set the text of the label
-		GameTitle.setBounds(-115, 20, 800, 100);
-		GameTitle.setHorizontalAlignment(SwingConstants.CENTER); // center the text in the label
-		GameTitle.setForeground(Color.BLACK); // set the text color
-		GameTitle.setOpaque(true); // set the ability to paint the label
-		GameTitle.setBackground(Color.orange); // change the background color of the label
-		GameTitle.setFont(new Font("arial", Font.BOLD, 50)); // set the text font
-		panel.add(GameTitle); // add the label to the panel
+		JLabel gameTitle = new JLabel(); // create a text label
+		gameTitle.setText("SNAKE CHALLENGE"); // set the text of the label
+		gameTitle.setBounds(-115, 20, 800, 100);
+		gameTitle.setHorizontalAlignment(SwingConstants.CENTER); // center the text in the label
+		gameTitle.setForeground(Color.BLACK); // set the text color
+		gameTitle.setOpaque(true); // set the ability to paint the label
+		gameTitle.setBackground(Color.orange); // change the background color of the label
+		gameTitle.setFont(new Font("arial", Font.BOLD, 50)); // set the text font
+		panel.add(gameTitle); // add the label to the panel
 
 		// Buttons of the initial screen
 
 		// Play Button
 
-		JButton Play = new JButton(); // create the button
-		Play.setText("Play"); // set text to the button
-		Play.setBounds(135, 130, 300, 70); // size and position of the button
-		Play.setEnabled(true); // enable or disable the click
-		Play.setForeground(Color.BLACK); // button text color
-		Play.setBackground(Color.WHITE);
-		Play.setFont(new Font("algerian", Font.BOLD, 40)); // button text font
-		Play.setFocusPainted(false);
+		JButton play = new JButton(); // create the button
+		play.setText("Play"); // set text to the button
+		play.setBounds(135, 130, 300, 70); // size and position of the button
+		play.setEnabled(true); // enable or disable the click
+		play.setForeground(Color.BLACK); // button text color
+		play.setBackground(Color.WHITE);
+		play.setFont(new Font("algerian", Font.BOLD, 40)); // button text font
+		play.setFocusPainted(false);
 
 		// open the window related to the game levels and close the initial window
-		Play.addActionListener(new ActionListener() {
+		play.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Interfaz_Niveles levelsWindow = new Interfaz_Niveles();
+				Level_Interface levelsWindow = new Level_Interface();
 				levelsWindow.setVisible(true);
-				((JFrame) SwingUtilities.getWindowAncestor(Play)).dispose(); // close the window
+				((JFrame) SwingUtilities.getWindowAncestor(play)).dispose(); // close the window
 			}
 		});
-		panel.add(Play);
+		panel.add(play);
 
 		// How to Play Button
 
@@ -93,7 +93,7 @@ public class Interfaz_Usuario extends JFrame {
 		howToPlay.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Interfaz_Como_Jugar howToPlayWindow = new Interfaz_Como_Jugar();
+				How_To_Play_Interface howToPlayWindow = new How_To_Play_Interface();
 				howToPlayWindow.setVisible(true);
 				((JFrame) SwingUtilities.getWindowAncestor(howToPlay)).dispose(); // close the window
 			}

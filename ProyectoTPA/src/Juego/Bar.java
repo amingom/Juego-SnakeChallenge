@@ -6,23 +6,23 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * The BarraDeCarga class represents a loading bar for a game. It includes a
+ * The Bar class represents a loading bar for a game. It includes a
  * progress bar with a background image and handles the loading process with a
  * timer.
  */
-public class BarraDeCarga extends BarraCarga {
+public class Bar extends LoadingBar {
 
-	private JProgressBar progressBar;
+	private JProgressBar progressBar; 
 	private Timer timer;
 	private int progress;
 	private JFrame frame;
 
 	/**
-	 * Constructs a new BarraDeCarga object. Initializes the frame and sets up the
+	 * Constructs a new Bar object. Initializes the frame and sets up the
 	 * user interface components, including a background image panel and a progress
 	 * bar.
 	 */
-	public BarraDeCarga() {
+	public Bar() {
 		frame = new JFrame("SNAKE CHALLENGE");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(500, 400);
@@ -46,11 +46,11 @@ public class BarraDeCarga extends BarraCarga {
 
 		timer = new Timer(20, new ActionListener() {
 			@Override
-			public void actionPerformed(ActionEvent e) {
-				progress += 1;
+			public void actionPerformed(ActionEvent e) { 
+				progress += 1; // add one percent to the loading bar 
 				progressBar.setValue(progress);
 
-				if (progress == 100) {
+				if (progress == 100) { // when it comes to 100 percent it close the loading bar and open another interface
 					timer.stop();
 					frame.dispose();
 					completeCharge();
@@ -86,6 +86,6 @@ public class BarraDeCarga extends BarraCarga {
 	 */
 	public void completeCharge() {
 		frame.dispose();
-		new Interfaz_Usuario().setVisible(true);
+		new User_Interface().setVisible(true);
 	}
 }

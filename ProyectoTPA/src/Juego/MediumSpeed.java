@@ -3,15 +3,15 @@ package Juego;
 /**
  * A concrete decorator that makes the speed moderate.
  */
-class MediumSpeed extends VelocidadDecorator {
+class MediumSpeed extends SpeedDecorator {
 
 	/**
 	 * Constructor for the 'MediumSpeed' decorator.
 	 *
-	 * @param serpiente The 'Velocidad' object being decorated with a more moderate
+	 * @param snake The 'Speed' object being decorated with a more moderate
 	 *                  speed.
 	 */
-	public MediumSpeed(Velocidad snake) {
+	public MediumSpeed(Speed snake) {
 		super(snake);
 	}
 

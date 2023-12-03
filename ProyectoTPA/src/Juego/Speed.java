@@ -1,9 +1,9 @@
 package Juego;
 
 /**
- * The 'Velocidad' interface defines the operation of an object's speed.
+ * The 'Speed' interface defines the operation of an object's speed.
  */
-interface Velocidad {
+interface Speed {
 
 	/**
 	 * Gets the speed of the object.

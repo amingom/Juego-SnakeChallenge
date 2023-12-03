@@ -5,10 +5,10 @@ import java.awt.*;
 import java.awt.event.*;
 
 /**
- * This class represents the level selection interface in the Snake Challenge
+ * This class represents the Level_Interface in the Snake Challenge
  * game. It allows the player to choose from different difficulty levels.
  */
-public class Interfaz_Niveles extends JFrame {
+public class Level_Interface extends JFrame {
 
 	static private String level;
 
@@ -23,10 +23,10 @@ public class Interfaz_Niveles extends JFrame {
 	}
 
 	/**
-	 * Constructor of the class that configures the level selection interface. Sets
+	 * Constructor of the class that configures the Level_Interface. Sets
 	 * the size, title, position, and other aspects of the window.
 	 */
-	public Interfaz_Niveles() {
+	public Level_Interface() {
 
 		setSize(600, 600); // width height
 
@@ -42,7 +42,7 @@ public class Interfaz_Niveles extends JFrame {
 	}
 
 	/**
-	 * Initializes the visual components of the level selection interface. Creates a
+	 * Initializes the visual components of the Level_Interface. Creates a
 	 * panel, text labels, and buttons for different difficulty levels.
 	 */
 	void components() {
@@ -76,7 +76,7 @@ public class Interfaz_Niveles extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				setLevel("easy");
-				Interfaz_Personalizar levelCustomizationWindow = new Interfaz_Personalizar();
+				Customization_Interface levelCustomizationWindow = new Customization_Interface();
 				levelCustomizationWindow.setVisible(true);
 				((JFrame) SwingUtilities.getWindowAncestor(Easy)).dispose(); // close the window
 			}
@@ -98,7 +98,7 @@ public class Interfaz_Niveles extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				setLevel("medium");
-				Interfaz_Personalizar customizationWindow = new Interfaz_Personalizar();
+				Customization_Interface customizationWindow = new Customization_Interface();
 				customizationWindow.setVisible(true);
 				((JFrame) SwingUtilities.getWindowAncestor(Medium)).dispose(); // close the window
 
@@ -122,7 +122,7 @@ public class Interfaz_Niveles extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				setLevel("hard");
-				Interfaz_Personalizar customizationWindow = new Interfaz_Personalizar();
+				Customization_Interface customizationWindow = new Customization_Interface();
 				customizationWindow.setVisible(true);
 				((JFrame) SwingUtilities.getWindowAncestor(Hard)).dispose(); // close the window
 
@@ -139,11 +139,11 @@ public class Interfaz_Niveles extends JFrame {
 		Back.setBackground(Color.WHITE); // button color
 		Back.setFont(new Font("algerian", Font.BOLD, 20)); // button text font
 		Back.setFocusPainted(false);
-		Back.addActionListener(new ActionListener() {
+		Back.addActionListener(new ActionListener() { 
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Interfaz_Usuario initialWindow = new Interfaz_Usuario();
+				User_Interface initialWindow = new User_Interface();
 				initialWindow.setVisible(true);
 				((JFrame) SwingUtilities.getWindowAncestor(Back)).dispose(); // close the window
 			}

@@ -8,13 +8,13 @@ import java.awt.event.*;
  * This class represents the interface of "How to Play" in the game Snake
  * Challenge. Provides information about the rules and controls of the game.
  */
-public class Interfaz_Como_Jugar extends JFrame {
+public class How_To_Play_Interface extends JFrame {
 
 	/**
 	 * Constructor of the class that configures the interface "How to Play". Sets
 	 * the size, title, position and other aspects of the window.
 	 */
-	public Interfaz_Como_Jugar() {
+	public How_To_Play_Interface() {
 
 		setSize(600, 600);
 		setTitle("Snake Challenge");
@@ -35,7 +35,7 @@ public class Interfaz_Como_Jugar extends JFrame {
 		_howToPlay.setLayout(null);
 		getContentPane().add(_howToPlay);
 
-		JLabel howToPlay = new JLabel();
+		JLabel howToPlay = new JLabel(); //create a label
 		howToPlay.setText("How to play");
 		howToPlay.setBounds(-60, 20, 700, 100);
 		howToPlay.setHorizontalAlignment(SwingConstants.CENTER);
@@ -45,7 +45,7 @@ public class Interfaz_Como_Jugar extends JFrame {
 		howToPlay.setFont(new Font("arial", Font.BOLD, 50));
 		_howToPlay.add(howToPlay);
 
-		JLabel instructions = new JLabel();
+		JLabel instructions = new JLabel(); //create a label
 		instructions.setText("The Snake Challenge is a game that consists of getting the most points\n"
 				+ " before the game ends.\n"
 				+ " \nThe player must direct the snake towards the food, avoiding all obstacles and\n"
@@ -65,7 +65,7 @@ public class Interfaz_Como_Jugar extends JFrame {
 		instructions.setFont(new Font("arial", Font.BOLD, 13));
 		instructions.add(instructions);
 
-		JButton back = new JButton();
+		JButton back = new JButton(); //create a button
 		back.setText("Back");
 		back.setBounds(10, 510, 150, 40);
 		back.setEnabled(true);
@@ -73,11 +73,11 @@ public class Interfaz_Como_Jugar extends JFrame {
 		back.setBackground(Color.WHITE);
 		back.setFont(new Font("algerian", Font.BOLD, 20));
 		back.setFocusPainted(false);
-		back.addActionListener(new ActionListener() {
+		back.addActionListener(new ActionListener() { // after pressing the back button you will go to the initial Window
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Interfaz_Usuario initialWindow = new Interfaz_Usuario();
+				User_Interface initialWindow = new User_Interface();
 				initialWindow.setVisible(true);
 				((JFrame) SwingUtilities.getWindowAncestor(back)).dispose();
 			}

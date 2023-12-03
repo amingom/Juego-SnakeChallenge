@@ -4,7 +4,7 @@ package Juego;
  * Abstract class that implements the loading bar. Provide two abstract methods
  * that must be implemented by the inherit classes.
  */
-abstract class BarraCarga {
+abstract class LoadingBar {
 
 	/**
 	 * This abstract method must be implemented to handle the loading logic of the

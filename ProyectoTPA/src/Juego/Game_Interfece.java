@@ -10,10 +10,10 @@ import java.io.IOException;
 import java.util.LinkedList;
 
 /**
- * This class represents the interface of the Snake Challenge game on the easy
- * level. It allows players to play the game at a lower difficulty level.
+ * This class represents the interface of the Snake Challenge game It allows
+ * players to play the game at a lower difficulty level.
  */
-public class Interfaz_Juego extends JFrame {
+public class Game_Interfece extends JFrame {
 	private JPanel gamePanel; // Used to visually represent the game
 	private LinkedList<Point> snake; // Represents the snake
 	private Timer timer; // Used to manage the time in the game
@@ -26,11 +26,11 @@ public class Interfaz_Juego extends JFrame {
 	private BufferedImage bodyImage; // Stores the image of the snake's body
 	private LinkedList<Point> obstacles; // Stores the positions of obstacles
 	private BufferedImage obstacleImage; // Stores the image of an obstacle
-	private Interfaz_Personalizar animal; // Used to know the snake chosen by the user
+	private Customization_Interface animal; // Used to know the snake chosen by the user
 	private long lastDirectionChangeTime = System.currentTimeMillis(); // Used to save the last direction change time of
 																		// the snake
 	private static final long minimunTime = 90; // Minimum time between direction changes in milliseconds
-	private Interfaz_Niveles level; // Used to know the level chosen by the user
+	private Level_Interface level; // Used to know the level chosen by the user
 	private int speed; // Stores the speed value as an integer
 	private int amountObstacles; // Stores the quantity of obstacles
 	private int appleEaten; // Counter for the apples eaten
@@ -56,15 +56,15 @@ public class Interfaz_Juego extends JFrame {
 	}
 
 	/**
-	 * Constructor of the class that configures the game interface at the easy
-	 * level. Sets the size, title, position, and other aspects of the window.
+	 * Constructor of the class that configures the game interface. Sets the size,
+	 * title, position, and other aspects of the window.
 	 */
-	public Interfaz_Juego() {
+	public Game_Interfece() {
 		setSize(495, 488); // Sets the size of the window
 		setTitle("Snake Challenge"); // Sets the title of the window
 		setLocationRelativeTo(null); // Sets the window to the center of the screen
-		animal = new Interfaz_Personalizar(); // Initializes the customization interface
-		level = new Interfaz_Niveles(); // Initializes the levels interface
+		animal = new Customization_Interface(); // Initializes the customization interface
+		level = new Level_Interface(); // Initializes the levels interface
 		components(); // Initializes the game components
 		setDefaultCloseOperation(EXIT_ON_CLOSE); // Closes the program when clicking the close button (X)
 	}
@@ -74,7 +74,7 @@ public class Interfaz_Juego extends JFrame {
 	 * timer, and food.
 	 */
 	void components() {
-		JPanel Game = new JPanel() { // Creates the panel for the easy mode
+		JPanel Game = new JPanel() { // Creates the panel for the game
 			@Override
 			protected void paintComponent(Graphics g) {
 				super.paintComponent(g);
@@ -125,10 +125,10 @@ public class Interfaz_Juego extends JFrame {
 		imageLabel.add(scoreLabel);
 
 		// Initializes the speed decorators
-		Velocidad initialSpeed = new VelocidadInicial();
-		Velocidad slowSnake = new SlowSpeed(initialSpeed);
-		Velocidad mediumSnake = new MediumSpeed(slowSnake);
-		Velocidad fastSnake = new FastSpeed(mediumSnake);
+		Speed initialSpeed = new InitialSpeed();
+		Speed slowSnake = new SlowSpeed(initialSpeed);
+		Speed mediumSnake = new MediumSpeed(slowSnake);
+		Speed fastSnake = new FastSpeed(mediumSnake);
 
 		// Adds a timer to move the snake
 		if (level.getLevel() == "easy") {
@@ -456,7 +456,7 @@ public class Interfaz_Juego extends JFrame {
 	 */
 	private void Defeat() {
 		// Creates a new defeat interface
-		Interfaz_Derrota defeatScreen = new Interfaz_Derrota(this);
+		Defeat_Interface defeatScreen = new Defeat_Interface(this);
 		defeatScreen.setVisible(true);
 	}
 
@@ -467,7 +467,7 @@ public class Interfaz_Juego extends JFrame {
 	 */
 	private void Victory() {
 		// Creates a new victory interface
-		Interfaz_Victoria victoryScreen = new Interfaz_Victoria(this);
+		Victory_Interface victoryScreen = new Victory_Interface(this);
 		victoryScreen.setVisible(true);
 	}
 
