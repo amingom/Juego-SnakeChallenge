@@ -206,17 +206,24 @@ muestran las instrucciones de cómo jugar y el tercer boton es el botón de "Exi
 
 **Pantalla de Niveles**
 
+En la interfaz de Niveles aparecerán tres botones, el primero botón corresponde con el nivel "Easy",el segundo botón con el nivel "Medium"
+y el tercer botón con el nivel "Hard". Los tres botones tras presionar alguno de ellos, te llevarán a la interfaz de personalización.
+
 ![alt text](https://media.discordapp.net/attachments/1155565182584627280/1180904798703337603/image.png?ex=657f1e4c&is=656ca94c&hm=22e9461cb1ebc0ce251f33165083e18297da09bc0c17a729394c7fdf5b4b5439&=&format=webp&quality=lossless)
 
 
 **Pantalla de Personalización**
+
+En la interfaz de Personalización aparecerán tres botones, el primero botón corresponde con la serpiente "Cobra",el segundo botón con la serpiente "Python"
+y el tercer botón con la serpiente "Viper". Los tres botones tras presionar alguno de ellos, te llevarán a la interfaz de dicha serpiente mostrando una descripción
+detallada de esta, además de tener dos botones, uno para empezar el juego y otro para volver atras para elegir otras serpientes.
 
 ![alt text](https://media.discordapp.net/attachments/1155565182584627280/1180904883939971113/image.png?ex=657f1e60&is=656ca960&hm=1a8e395a7b8125fcdb7f4d0522d2309260697f1e2e8be596ac3d70c22670ef45&=&format=webp&quality=lossless)
 
 
 **Pantalla de Cómo Jugar**
 
-![alt text](https://media.discordapp.net/attachments/1155565182584627280/1180904719829450822/image.png?ex=657f1e39&is=656ca939&hm=55c851ea940f0561549825528e0dc1ab36bde55fdfc7202c7cbb25b3c7819a77&=&format=webp&quality=lossless)
+![alt text](https://media.discordapp.net/attachments/1155565182584627280/1181286868256571402/image.png?ex=65808220&is=656e0d20&hm=0fb3ea351f2ed5d8bc16c7acf5541946c56d882a5918a86e8b9faa2bca72bedc&=&format=webp&quality=lossless)
 
 
 **Marcador y Tablero**
@@ -229,11 +236,11 @@ muestran las instrucciones de cómo jugar y el tercer boton es el botón de "Exi
 
 **Cobra**
 
-![alt text](https://media.discordapp.net/attachments/1155565182584627280/1180905233304518666/image.png?ex=657f1eb3&is=656ca9b3&hm=321148942ba045b40fcd8f3dc74b4a2219117d47a690403c3ef5c8ef7ac0c9e8&=&format=webp&quality=lossless)
+![alt text](https://media.discordapp.net/attachments/1155565182584627280/1181286953115717652/image.png?ex=65808234&is=656e0d34&hm=797c428430436b307677a7cfba1ba1a4c4e71647cbb923bdbeff853a387c0852&=&format=webp&quality=lossless)
 
 **Pitón.**
 
-![alt text](https://media.discordapp.net/attachments/1155565182584627280/1180905303231963347/image.png?ex=657f1ec4&is=656ca9c4&hm=8cc42c294f6ed856c80ae16f859c809054a7e98133bae7df9185c61a12965f31&=&format=webp&quality=lossless)
+![alt text](https://media.discordapp.net/attachments/1155565182584627280/1181287022942494853/image.png?ex=65808245&is=656e0d45&hm=8d61233cac012c581de6c10ecf255d62c333e4d10fa7b5ecc95aa58caf0b871f&=&format=webp&quality=lossless)
 
 **Víbora**
 
