@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.LinkedList;
 
 /**
- * This class represents the interface of the Snake Challenge game It allows
+ * This class represents the interface of the Snake Challenge game, it allows
  * players to play the game at a lower difficulty level.
  */
 public class Game_Interfece extends JFrame {
