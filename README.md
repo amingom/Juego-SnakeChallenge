@@ -206,7 +206,7 @@ muestran las instrucciones de cómo jugar y el tercer boton es el botón de "Exi
 
 **Pantalla de Niveles**
 
-En la interfaz de Niveles aparecerán tres botones, el primero botón corresponde con el nivel "Easy",el segundo botón con el nivel "Medium"
+En la interfaz de Niveles aparecerán tres botones, el primer botón corresponde con el nivel "Easy", el segundo botón con el nivel "Medium"
 y el tercer botón con el nivel "Hard". Los tres botones tras presionar alguno de ellos, te llevarán a la interfaz de personalización.
 
 ![alt text](https://media.discordapp.net/attachments/1155565182584627280/1180904798703337603/image.png?ex=657f1e4c&is=656ca94c&hm=22e9461cb1ebc0ce251f33165083e18297da09bc0c17a729394c7fdf5b4b5439&=&format=webp&quality=lossless)
@@ -214,9 +214,9 @@ y el tercer botón con el nivel "Hard". Los tres botones tras presionar alguno d
 
 **Pantalla de Personalización**
 
-En la interfaz de Personalización aparecerán tres botones, el primero botón corresponde con la serpiente "Cobra",el segundo botón con la serpiente "Python"
+En la interfaz de Personalización aparecerán tres botones, el primer botón corresponde con la serpiente "Cobra", el segundo botón con la serpiente "Python"
 y el tercer botón con la serpiente "Viper". Los tres botones tras presionar alguno de ellos, te llevarán a la interfaz de dicha serpiente mostrando una descripción
-detallada de esta, además de tener dos botones, uno para empezar el juego y otro para volver atras para elegir otras serpientes.
+detallada de esta, además de tener dos botones, uno para empezar el juego y otro para volver atrás para elegir otras serpientes.
 
 ![alt text](https://media.discordapp.net/attachments/1155565182584627280/1180904883939971113/image.png?ex=657f1e60&is=656ca960&hm=1a8e395a7b8125fcdb7f4d0522d2309260697f1e2e8be596ac3d70c22670ef45&=&format=webp&quality=lossless)
 
