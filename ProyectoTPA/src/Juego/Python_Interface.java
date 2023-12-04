@@ -55,7 +55,7 @@ public class Python_Interface extends JFrame {
 		getContentPane().add(python);
 
 		JLabel info = new JLabel(); // create a text label
-		info.setText("Python information:\n" + "- Color: Brown."); // set the text of the label
+		info.setText("Python Information:\n" + "- Color: brown."); // set the text of the label
 		info.setText("<html>" + info.getText().replaceAll("\n", "<br/>") + "</html>");
 		info.setBounds(2, 2, 280, 180);
 		info.setHorizontalAlignment(SwingConstants.CENTER); // center the text in the label

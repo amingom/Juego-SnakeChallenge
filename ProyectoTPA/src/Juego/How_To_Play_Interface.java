@@ -49,9 +49,9 @@ public class How_To_Play_Interface extends JFrame {
 		JLabel instructions = new JLabel(); //create a label
 		instructions.setText("The Snake Challenge is a game that consists of getting the most points\n"
 				+ " before the game ends.\n"
-				+ " \nThe player must direct the snake towards the food, avoiding all obstacles and\n"
+				+ " \nThe player must direct the snake towards the food, avoiding all the enemies and\n"
 				+ " the edges of the map so that the game does not end.\n"
-				+ " \nThe controls are the w, a, s, d keys, which are used to go up, right, down and left\n"
+				+ " \nThe controls are the w, a, s, d keys, which are used to go up, left, down and right\n"
 				+ " respectively.\n" + " \nThe points will be obtained by feeding the snake and it will grow in turn.\n"
 				+ " \nThere are different types of food that will make the snake grow differently and\n"
 				+ " will have different point values.\n"
